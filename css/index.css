@@ -1,0 +1,70 @@
+.index-bg-color{
+    background-color: #050714;
+}
+
+.btn-contratar-bg-color{
+    border-color: #6421ff;
+    background-color: #6421ff;
+}
+
+.btn-contratar-size{
+    height: 55px;
+}
+
+.fs-size-txt{
+    font-size:14px;
+}
+
+.dispositivos{
+    height: 520px;
+    width: 100%;
+}
+.dispositivos-txt-margin{
+margin-top:140px;
+}
+.container-img{
+    max-width:50%;
+}
+
+.img-size{
+    width: 500px;
+
+}
+
+.ourservices-content-img{
+max-width:350px;
+max-height: 300px;
+}
+
+.ourservices-img-border{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+.accordion-custom .accordion-button {
+    background-color: #13151d;
+    color: #fff;
+    border-radius: 0; 
+    border: none; 
+    box-shadow: none;
+  }
+  .accordion-custom .accordion-button:not(.collapsed)::after {
+    content: '--'; 
+    
+  }
+  .accordion-custom .accordion-button::after {
+    content: '++'; 
+    font-weight: bold;
+    transform: none;
+  }
+  .accordion-custom .accordion-body {
+    background-color:  #13151d; 
+    color: #fff;
+    border-top: none; 
+  }
+  .accordion-custom .accordion-item {
+    border: none; 
+  }
+  .accordion-custom .accordion-button:focus {
+    box-shadow: none; 
+  }
