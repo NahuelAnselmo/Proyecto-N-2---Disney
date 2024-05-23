@@ -2,6 +2,8 @@
     background-color: #050714;
 }
 
+
+
 .btn-contratar-bg-color{
     border-color: #6421ff;
     background-color: #6421ff;
@@ -13,6 +15,13 @@
 
 .fs-size-txt{
     font-size:14px;
+}
+
+.inicio-content-img{
+width:300px;
+}
+.img-inicio{
+    width: 100%;
 }
 
 .dispositivos{
