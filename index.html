@@ -25,42 +25,35 @@
   </head>
   <body class="index-bg-color">
     <main>
-      <section class="container mt-5 inicio">
+      <section class="inicio p-0">
         <div class="row">
-          <div class="col-6 mx-3 my-5">
-            <div class="row">
+          <div class="col-6 inicio-content-txt-margin">
+            <div class="row p-0">
               <img
                 src="./img/disney/disney-inicio-img.png"
                 alt="Disney"
-                class="img-fluid col-12 w-50"
+                class="col-12 inicio-img-size mb-4"
               />
-              <h2 class="col-12 text-white fs-2">
+              <h1 class="col-12 text-white fs-1 mb-4">
                 Tus historias favoritas, todas en un mismo lugar.
-              </h2>
-              <button
-                type="button"
-                class="btn btn-primary col-12 mb-2 btn-contratar-bg-color btn-contratar-size"
-              >
-                Contratá la oferta combo+
-              </button>
-              <a href="./pages/Error404.html" class="col-12 text-white fs-6"
+              </h1>
+              <div class="col-12 mb-3 inicio-btn-contratar-contenedor">
+                <button type="button" class="btn btn-primary btn-contratar-bg-color inicio-btn-contratar-size">
+                  CONTRATÁ LA OFERTA COMBO+
+                </button>
+              </div>
+              <a href="./pages/Error404.html" class="col-12 text-white fs-6 mb-2"
                 >Suscribirme solo a Disney+</a
               >
             </div>
           </div>
-          <div class="col-5">
-            <button
-            type="button"
-            class="btn btn-outline-dark btn-login col-12 h-25"
-          >
-            INICIAR SESIÓN
-          </button>
-          <div class="col-12 inicio-content-img">
-            <img src="./img/disney/bg-inicio.jpeg" alt="" class="img-inicio">
+          <div class="col-5 mt-2 d-flex justify-content-end p-0">
+            <div class="inicio-btn-login-contenedor">
+              <button type="button" class="btn btn-outline-dark btn-login w-100 h-100 inicio-btn-login border-white">
+                INICIAR SESIÓN
+              </button>
+            </div>
           </div>
-         
-          </div>
-          
         </div>
       </section>
       <section>
@@ -165,7 +158,7 @@
           </div>
         </div>
       </section>
-      <section class="answer container mt-5">
+      <section class="answer container">
         <h2 class="text-white text-center">Preguntas frecuentes</h2>
         <div class="accordion accordion-custom my-3" id="acordeon-answer">
           <div class="accordion-item my-3">
@@ -184,10 +177,17 @@
             <div
               id="collapseOne"
               class="accordion-collapse collapse show"
-              data-bs-parent="#acordeon-answer"
             >
               <div class="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <p class="text-secondary fs-size-txt pt-0">Beneficios de la suscripción a Disney+:</p>
+                <ul>
+                  <li class="text-secondary fs-size-txt my-4">Experiencia de entretenimiento exclusiva.</li>
+                  <li class="text-secondary fs-size-txt my-4">Las mejores historias de Disney, Pixar, Marvel, Star Wars y National Geographic, todo en un mismo lugar.</li>
+                  <li class="text-secondary fs-size-txt my-4">Descargas ilimitadas hasta en diez dispositivos compatibles.</li>
+                  <li class="text-secondary fs-size-txt my-4">Más de 300 títulos en 4K UHD y HDR.</li>
+                  <li class="text-secondary fs-size-txt my-4">Hasta cuatro pantallas a la vez: ¡disfrutan todos!</li>
+                  <li class="text-secondary fs-size-txt my-4">IMAX Enhanced: disponible en algunos títulos de Marvel y en todos los dispositivos compatibles con Disney+.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -207,11 +207,19 @@
             <div
               id="collapseTwo"
               class="accordion-collapse collapse"
-              data-bs-parent="#acordeon-answer"
             >
-              <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-              </div>
+            <div class="accordion-body">
+              <p class="text-secondary fs-size-txt pt-0">Con Combo+:</p>
+              <ul>
+                <li class="text-secondary fs-size-txt my-4">Descontaremos el valor de tu suscripción actual del precio de Combo+.</li>
+                <li class="text-secondary fs-size-txt my-4">Si tenés una suscripción mensual, el valor que pagás mensualmente se descontará del precio final de Combo+.</li>
+                <li class="text-secondary fs-size-txt my-4">Por el momento, si tenés una suscripción anual a Disney+ y recibís la factura a través de Disney+, no podés cambiarte a Combo+. Comunicate con <a href="./pages/Error404.html" class="text-white fs-size-txt">Atención al Cliente de Disney+</a> para más opciones.</li>
+                <li class="text-secondary fs-size-txt my-4">Te llegará un correo electrónico con el detalle de los cargos apenas confirmes el pago.</li>
+                <li class="text-secondary fs-size-txt my-4">Recordá que podés cancelar en cualquier momento.</li>
+                
+              </ul>
+              <p class="text-secondary fs-size-txt my-4">La suscripción a Combo+ es únicamente mensual, por el momento.</p>
+            </div>
             </div>
           </div>
           <div class="accordion-item my-3">
@@ -220,20 +228,19 @@
                 class="accordion-button collapsed fw-bold"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapseThree"
                 aria-expanded="false"
-                aria-controls="collapseTwo"
+                aria-controls="collapseThree"
               >
                 ¿Cómo puedo pagar?
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapseThree"
               class="accordion-collapse collapse"
-              data-bs-parent="#acordeon-answer"
             >
               <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <p class="text-secondary fs-size-txt pt-0">Podés pagar con tarjeta de crédito, débito, Mercado Pago o también a través de terceros, como App Store de Apple, Mercado Libre y proveedores locales de TV, telefonía e internet.</p>
               </div>
             </div>
           </div>
@@ -243,7 +250,7 @@
                 class="accordion-button collapsed fw-bold"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapseFour"
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
@@ -251,12 +258,11 @@
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapseFour"
               class="accordion-collapse collapse"
-              data-bs-parent="#acordeon-answer"
             >
               <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <p class="text-secondary fs-size-txt pt-0">Con una suscripción a Disney+ en Latinoamérica, tenés que actualizar los controles parentales de tu perfil para acceder al catálogo completo que incluye contenido 16+ y 18+. Podés restringir el contenido así como agregar un PIN de bloqueo en cada perfil. También podés dejar los controles parentales como están y seguir disfrutando Disney+ en un ambiente 14+ con la opción de modificarlos cuando quieras en Editar perfiles.</p>
               </div>
             </div>
           </div>
@@ -266,20 +272,19 @@
                 class="accordion-button collapsed fw-bold"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapseFive"
                 aria-expanded="false"
-                aria-controls="collapseTwo"
+                aria-controls="collapseFive"
               >
                 ¿Dónde puedo ver Disney+?
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapseFive"
               class="accordion-collapse collapse"
-              data-bs-parent="#acordeon-answer"
             >
               <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                <p class="text-secondary fs-size-txt pt-0">La aplicación de Disney+ está disponible en tu dispositivo móvil, navegador web, consola de videojuegos, decodificador y Smart TV. Podés ver <a href="./pages/Error404.html" class="text-white fs-size-txt">la lista completa de dispositivos compatibles en el Centro de ayuda.</a></p>
               </div>
             </div>
           </div>
