@@ -85,11 +85,11 @@
                 fill="#252526"
               ></path>
             </svg>
-            <p>PASO 1</p>
-            <h3>Escribir correo para continuar</h3>
+            <p>PASO <span id="paso-numero">1</span></p>
+            <h3>Escribir <span id="titulo-escribir-correo-o-contraseña">correo para continuar</span></h3>
             <p>
-              Es necesario iniciar sesión en Disney+ con tu cuenta de MyDisney.
-              En caso de no tener una, recibirás indicaciones para crearla.
+              Es necesario iniciar sesión en Disney+ <span id="texto-escribir-correo-o-contraseña">con tu cuenta de MyDisney.
+                En caso de no tener una, recibirás indicaciones para crearla.</span>
             </p>
             <div class="form-group">
               <input
@@ -100,17 +100,23 @@
                 placeholder="Correo electrónico"
               />
             </div>
-            <button class="custom-button mt-4 mb-3 w-100">Continuar</button>
+            <button id="btn-confirmar" class="custom-button mt-4 mb-3 w-100">Continuar</button>
             <hr />
-            <p class="fw-bold">
-              Disney+ es parte de la Familia de Compañías Walt Disney
-            </p>
-            <p>
-              MyDisney te permite iniciar sesión fácilmente en los servicios y
-              experiencias de la Familia de Compañías Walt Disney, como Disney+,
-              ESPN, Walt Disney World
-              <a href="https://my.disney.com/" target="_blank">y muchos más.</a>
-            </p>
+            <div id="formulario-footer">
+              <p class="fw-bold d-block">
+                Disney+ es parte de la Familia de Compañías Walt Disney
+              </p>
+              <p class="d-block">
+                MyDisney te permite iniciar sesión fácilmente en los servicios y
+                experiencias de la Familia de Compañías Walt Disney, como Disney+,
+                ESPN, Walt Disney World
+                <a href="https://my.disney.com/" target="_blank">y muchos más.</a>
+              </p>
+              <a href=""></a>
+            </div>
+            <div>
+
+            </div>
           </div>
         </form>
       </div>
@@ -171,5 +177,6 @@
         © Disney. Todos los derechos reservados.
       </p>
     </footer>
+    <script type="module" src="../js/login/utils.js"></script>
   </body>
 </html>
