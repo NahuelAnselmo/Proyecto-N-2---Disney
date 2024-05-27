@@ -1,0 +1,14 @@
+.table.tabla-categorias {
+    border: 2px solid white; /* Borde externo blanco */
+    border-radius: 10px; /* Ajusta el valor según el radio deseado */
+    overflow: hidden; /* Asegura que los bordes de las celdas no sobresalgan del borde redondeado de la tabla */
+}
+
+.table.tabla-categorias th,
+.table.tabla-categorias td {
+    border: 1px solid white; /* Bordes de las celdas blancos */
+}
+
+.table.tabla-categorias tr:hover {
+    background-color: #003333 /* Cambia el fondo de la fila en hover */
+}
