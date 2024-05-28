@@ -32,6 +32,7 @@
     <header></header>
     <main>
         <h1 class="text-center text-white">Edición de categorías</h1>
+        <button id="btnAgregarCategoria" type="button" class="btn btn-info">Nueva categoría +</button>
         <div class="container">
             <table class="table tabla-categorias">
                 <thead>
@@ -49,8 +50,35 @@
                 </tr>
               </table>
         </div>
-        
+        <div class="modal fade" id="modalAgregarCategoria" tabindex="-1" aria-labelledby="modalAgregarCategoriaLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="modalAgregarCategoriaLabel">Agregar Nueva Categoría</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <form id="formAgregarCategoria">
+                          <div class="mb-3">
+                              <label for="inputNombreCategoria" class="form-label">Nombre de la Categoría</label>
+                              <input type="text" class="form-control" id="inputNombreCategoria" required>
+                              <div class="invalid-feedback">
+                                <span class="badge text-bg-danger">Ingrese una categoría valido</span>
+                              </div>
+                          </div>
+                            <div class="mb-3">
+                              <label for="inputDescripcionCategoria" class="form-label">Descripción</label>
+                              <textarea class="form-control" id="inputDescripcionCategoria" rows="3"></textarea>
+                          </div>
+                          <button id="btnConfirmarCategoria" type="submit" class="btn btn-primary">Agregar</button>
+                          <button id="btnCancelarCategoria" type="submit" class="btn btn-primary">Cancelar</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
     </main>
     <footer></footer>
+    <script type="module" src="../js/admin/app.js"></script>
+    <script type="module" src="../js/admin/abmCategoria.js"></script>
 </body>
 </html>
