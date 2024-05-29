@@ -1,0 +1,11 @@
+body {
+    padding-top: 20px;
+}
+
+#movies-list .card {
+    margin-bottom: 20px;
+}
+
+#movie-detail {
+    margin-top: 20px;
+}
