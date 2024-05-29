@@ -7,43 +7,38 @@ export const agregarCategoria = (nombre, descripcion) => {
   agregarCategoriasALS(categoria);
 };
 
-/*export const editarContacto = (nombre, numero, email, imagen, notas) => {
-  const contactos = obtenerContactosDeLS();
-  const codigoContacto = sessionStorage.getItem('codigoContacto');
+export const editarCategoria = (nombreCategoria, descripcionCategoria) => {
+  const categorias = obtenerCategoriasDeLS();
+  const codigoCategoria = sessionStorage.getItem('codigoCategoria');
 
-  // 2. Encontrar la posicion del contacto a editar
-  const posicionContacto = contactos.findIndex((contacto) => {
-    return contacto.codigo === codigoContacto;
+  const posicionCategoria = categorias.findIndex((categoria) => {
+    return categoria.id === codigoCategoria;
   });
 
-  if (posicionContacto === -1) {
-    alert('El contacto no se encontró');
-    sessionStorage.removeItem('codigoContacto');
+  if (posicionCategoria === -1) {
+    alert('La categoria no se encontró');
+    sessionStorage.removeItem('codigoCategoria');
     return;
   }
 
-  // 3. Crear el nuevo objeto contacto
-  const nuevoContacto = new Contacto(nombre, numero, email, imagen, notas);
+  const nuevaCategoria = new Categoria(nombreCategoria, descripcionCategoria);
 
-  // 4. Editar la posicion del contacto existente por el nuevo
-  contactos.splice(posicionContacto, 1, nuevoContacto);
-  // contactos[posicionContacto] = nuevoContacto;
+  categorias.splice(posicionCategoria, 1, nuevaCategoria);
 
-  // 5. Actualizar LS
-  localStorage.setItem('contactos', JSON.stringify(contactos));
+  localStorage.setItem('categorias', JSON.stringify(categorias));
 
-  // 6. Eliminar el código de SS
-  sessionStorage.removeItem('codigoContacto');
+  sessionStorage.removeItem('codigoCategoria');
 
-  // 7. Esconder alert
-  const $alert = document.getElementById('alert-edicion-contacto');
+  const $alert = document.getElementById('alert-edicion-categoria');
   $alert.classList.add('d-none');
 
-  // 8. Mostrar boton
-  const $button = document.getElementById('button-cancelar');
+  const $button = document.getElementById('btnCancelar');
   $button.classList.add('d-none');
+
+  
 };
-*/
+
+
 export const eliminarCategoria = (idCategoria, nombreCategoria) => {
   swal
     .fire({
@@ -74,7 +69,7 @@ export const eliminarCategoria = (idCategoria, nombreCategoria) => {
           icon: 'success',
           showConfirmButton: true,
           showCancelButton: false,
-          confirmButtonText: 'Tremen2',
+          confirmButtonText: '¡OK!',
         });
       }
     });

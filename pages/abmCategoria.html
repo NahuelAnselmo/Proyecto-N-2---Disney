@@ -28,54 +28,58 @@
         />
         <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Categorías | Disney+</title>
-      </head>
-<body class="index-bg-color">
-    <header></header>
-    <main>
-        <h1 class="text-center text-white">Edición de categorías</h1>
-        <button id="btnAgregarCategoria" type="button" class="btn btn-info">Nueva categoría +</button>
-        <div class="container">
-            <table class="table tabla-categorias">
-                <thead>
-                  <tr>
-                    <th class="bg-dark text-white text-center">Índice</th>
-                    <th class="bg-dark text-white text-center">Categoría</th>
-                    <th class="bg-dark text-white text-center">Descripcion</th>
-                    <th class="bg-dark text-white text-center">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody id="tbody-categoria"></tbody>
-              </table>
-        </div>
-        <div class="modal fade" id="modalAgregarCategoria" tabindex="-1" aria-labelledby="modalAgregarCategoriaLabel" aria-hidden="true">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h5 class="modal-title" id="modalAgregarCategoriaLabel">Agregar Nueva Categoría</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                      <form id="formAgregarCategoria">
-                          <div class="mb-3">
-                              <label for="inputNombreCategoria" class="form-label">Nombre de la Categoría</label>
-                              <input type="text" class="form-control" id="inputNombreCategoria" required>
-                              <div class="invalid-feedback">
-                                <span class="badge text-bg-danger">Ingrese una categoría valida</span>
-                              </div>
-                          </div>
-                            <div class="mb-3">
-                              <label for="inputDescripcionCategoria" class="form-label">Descripción</label>
-                              <textarea class="form-control" id="inputDescripcionCategoria" rows="3"></textarea>
-                          </div>
-                          <button id="btnConfirmarCategoria" type="button" class="btn btn-primary">Agregar</button>
-                          <button id="btnCancelarCategoria" type="button" class="btn btn-primary">Cancelar</button>
-                      </form>
-                  </div>
-              </div>
+    </head>
+    <body class="index-bg-color">
+      <header></header>
+      <main>
+          <h1 class="text-center text-white">Edición de categorías</h1>
+          <div class="d-flex justify-content-center">
+            <button id="btnAgregarCategoria" type="button" class="btn btn-info my-4">Nueva categoría +</button>
           </div>
-    </main>
-    <footer></footer>
-    <script type="module" src="../js/admin/app.js"></script>
-    <script type="module" src="../js/admin/abmCategoria.js"></script>
-</body>
+          <div class="container">
+              <table class="table tabla-categorias">
+                  <thead>
+                    <tr>
+                      <th class="bg-dark text-white text-center">Índice</th>
+                      <th class="bg-dark text-white text-center">Categoría</th>
+                      <th class="bg-dark text-white text-center">Descripcion</th>
+                      <th class="bg-dark text-white text-center">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody-categoria"></tbody>
+                </table>
+          </div>
+          <div class="modal fade" id="modalAgregarCategoria" tabindex="-1" aria-labelledby="modalAgregarCategoriaLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <article id="alert-edicion-categoria" class="alert alert-warning d-none">
+                      Atencion: estás editando la categoria
+                      <span id="nombre-categoria-edicion"></span>
+                    </article>
+                    <div class="modal-body">
+                        <form id="formAgregarCategoria">
+                            <div class="mb-3">
+                                <label for="inputNombreCategoria" class="form-label">Nombre de la Categoría</label>
+                                <input type="text" class="form-control" id="inputNombreCategoria" required>
+                                <div class="invalid-feedback">
+                                  <span class="badge text-bg-danger">Ingrese una categoría valida</span>
+                                </div>
+                            </div>
+                              <div class="mb-3">
+                                <label for="inputDescripcionCategoria" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="inputDescripcionCategoria" rows="3"></textarea>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                              <button id="btnConfirmarCategoria" type="button" class="btn btn-primary me-2">Guardar</button>
+                              <button id="btnCancelarCategoria" type="button" class="btn btn-secondary">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+      </main>
+      <footer></footer>
+      <script type="module" src="../js/admin/app.js"></script>
+      <script type="module" src="../js/admin/abmCategoria.js"></script>
+  </body>
 </html>

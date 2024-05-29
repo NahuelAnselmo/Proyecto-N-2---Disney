@@ -1,6 +1,6 @@
 import { validateCategoria } from "../validators.js";
-import { agregarCategoria } from "./abmCategoria.js";
-import { cargarTabla, existeCategoria } from "./utils.js";
+import { agregarCategoria, editarCategoria } from "./abmCategoria.js";
+import { cargarTabla, existeCategoria, estaEditando } from "./utils.js";
 
 cargarTabla();
 
@@ -51,26 +51,33 @@ $modalAgregarCategoria.addEventListener('submit', (event) => {
 
   const descripcionCategoria = $inputDescripcionCategoria.value;
 
-  agregarCategoria(nombreCategoria, descripcionCategoria);
+  if (estaEditando()) {
+    editarCategoria(nombreCategoria, descripcionCategoria);
+  } else {
+    agregarCategoria(nombreCategoria, descripcionCategoria);
+  }
 
-  swal.fire({
-    title: 'Éxito',
-    text: `Categoría creada bajo el nombre de ${nombreCategoria}`,
-    icon: 'success',
-    showConfirmButton: true,
-    confirmButtonText: '¡OK!'
-  }).then(() => {
-    $inputNombreCategoria.value = '';
-    $inputDescripcionCategoria.value = '';
-
-    $inputNombreCategoria.classList.remove('is-valid', 'is-invalid');
-    $inputDescripcionCategoria.classList.remove('is-valid', 'is-invalid');
-
-    const modalInstance = bootstrap.Modal.getInstance($modalAgregarCategoria);
-    modalInstance.hide();
-  });
+  $inputNombreCategoria.value = '';
+  $inputDescripcionCategoria.value = '';
+  $inputNombreCategoria.classList.remove('is-valid', 'is-invalid');
+  $inputDescripcionCategoria.classList.remove('is-valid', 'is-invalid');
 
   cargarTabla();
+
+  let mensaje = `Categoria creada bajo el nombre de ${nombreCategoria}`;
+  if (estaEditando()) mensaje = 'Categoria editada exitosamente';
+
+  swal.fire({
+    title: 'Exito',
+    text: mensaje,
+    icon: 'success',
+    showConfirmButton: true,
+    showCancelButton: false,
+    confirmButtonText: '¡OK!',
+  });
+
+  const modalInstance = bootstrap.Modal.getInstance($modalAgregarCategoria);
+  modalInstance.hide();
 });
 
 $modalAgregarCategoria.addEventListener('hidden.bs.modal', () => {

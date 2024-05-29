@@ -27,13 +27,14 @@ const cargarFilaTabla = (categoria, indice) => {
   const $tdAcciones = document.createElement('td');
   const $btnEditar = document.createElement('button');
   const $btnEliminar = document.createElement('button');
-  $btnEditar.classList.add('btn', 'btn-sm', 'btn-warning', 'me-2');
-  $btnEliminar.classList.add('btn', 'btn-sm', 'btn-danger');
+  $btnEditar.classList.add('btn', 'btn-sm', 'btn-warning','me-1','mb-1');
+  $btnEliminar.classList.add('btn', 'btn-sm', 'btn-danger','ms-3', 'mb-1');
   $btnEditar.textContent = 'Editar';
   $btnEliminar.textContent = 'Eliminar';
-  /*$btnEditar.onclick = () => {
-    prepararEdicionContacto(contacto);
-  };*/
+  $btnEditar.onclick = () => {
+    mostrarModal();
+    prepararEdicionCategoria(categoria);
+  };
   $btnEliminar.onclick = () => {
     eliminarCategoria(categoria.id, categoria.nombre);
   };
@@ -65,42 +66,29 @@ export const existeCategoria = (nombreCategoria) => {
   return existe;
 };
 
-// Objetivo: Cargar en el formulario estos datos
-/*[export const prepararEdicionContacto = (contacto) => {
-  // 1. Seleccionar los nodos de los inputs
-  const $inputNombre = document.getElementById('input-nombre');
-  const $inputNumero = document.getElementById('input-numero');
-  const $inputEmail = document.getElementById('input-email');
-  const $inputImagen = document.getElementById('input-imagen');
-  const $inputNotas = document.getElementById('input-notas');
+export const prepararEdicionCategoria = (categoria) => {
+  const $inputNombreCategoria=document.getElementById("inputNombreCategoria");
+  const $inputDescripcionCategoria=document.getElementById("inputDescripcionCategoria");
 
-  // 2. Cargar la info
-  $inputNombre.value = contacto.nombre;
-  $inputNumero.value = contacto.numero;
-  $inputEmail.value = contacto.email;
-  $inputImagen.value = contacto.imagen;
-  $inputNotas.value = contacto.notas;
+  $inputNombreCategoria.value = categoria.nombre;
+  $inputDescripcionCategoria.value = categoria.descripcion;
 
-  // 3. Guardar código
-  sessionStorage.setItem('codigoContacto', contacto.codigo);
+  sessionStorage.setItem('codigoCategoria', categoria.id);
 
-  // 4. Mostrar alert
-  const $alert = document.getElementById('alert-edicion-contacto');
-  const $spanContacto = document.getElementById('nombre-contacto-edicion');
+  const $alert = document.getElementById('alert-edicion-categoria');
+  const $spanCategoria = document.getElementById('nombre-categoria-edicion');
   $alert.classList.remove('d-none');
-  $spanContacto.textContent = contacto.nombre;
+  $spanCategoria.textContent = categoria.nombre;
 
-  // 5. Mostrar boton
   const $button = document.getElementById('button-cancelar');
   $button.classList.remove('d-none');
-
-  // TODO: Agregar event listener al botón para deshacer la edicion de un contacto (eliminar el cod de SS, vaciar los campos, resetear las clases,esconder alert, esconder boton)
 };
 
+function mostrarModal() {
+  const modal = new bootstrap.Modal(document.getElementById('modalAgregarCategoria'));
+  modal.show();
+}
 export const estaEditando = () => {
-  // El usuario está editando cuando existe un "codigoContacto" en sessionStorage
-  // const codigo = sessionStorage.getItem('codigoContacto');
-  // if (codigo) return true;
-  // return false;
-  return !!sessionStorage.getItem('codigoContacto');
-};*/
+  return !!sessionStorage.getItem('codigoCategoria');
+};
+
