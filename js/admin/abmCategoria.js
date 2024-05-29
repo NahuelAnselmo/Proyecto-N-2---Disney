@@ -1,10 +1,20 @@
 import { obtenerCategoriasDeLS } from '../utils.js';
 import { Categoria } from './Categoria.js';
-import { agregarCategoriasALS, cargarTabla} from './utils.js';
+import { agregarCategoriasALS, cargarTabla, existeCategoria} from './utils.js';
 
 export const agregarCategoria = (nombre, descripcion) => {
   const categoria = new Categoria(nombre, descripcion);
   agregarCategoriasALS(categoria);
+  let mensaje = `Categoria creada bajo el nombre de ${nombre}`;
+  swal.fire({
+    title: 'Exito',
+    text: mensaje,
+    icon: 'success',
+    showConfirmButton: true,
+    showCancelButton: false,
+    confirmButtonText: '¡OK!',
+  });
+
 };
 
 export const editarCategoria = (nombreCategoria, descripcionCategoria) => {
@@ -24,18 +34,21 @@ export const editarCategoria = (nombreCategoria, descripcionCategoria) => {
   const nuevaCategoria = new Categoria(nombreCategoria, descripcionCategoria);
 
   categorias.splice(posicionCategoria, 1, nuevaCategoria);
-
+  
   localStorage.setItem('categorias', JSON.stringify(categorias));
-
+  
+  const mensaje = `Categoria ${nombreCategoria} editada`;
+  swal.fire({
+    title: 'Exito',
+    text: mensaje,
+    icon: 'success',
+    showConfirmButton: true,
+    showCancelButton: false,
+    confirmButtonText: '¡OK!',
+  });
   sessionStorage.removeItem('codigoCategoria');
-
   const $alert = document.getElementById('alert-edicion-categoria');
   $alert.classList.add('d-none');
-
-  const $button = document.getElementById('btnCancelar');
-  $button.classList.add('d-none');
-
-  
 };
 
 
@@ -74,3 +87,4 @@ export const eliminarCategoria = (idCategoria, nombreCategoria) => {
       }
     });
 };
+

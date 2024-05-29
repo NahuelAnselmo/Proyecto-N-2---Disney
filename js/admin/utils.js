@@ -55,17 +55,26 @@ export const cargarTabla = () => {
   });
 };
 
-export const existeCategoria = (nombreCategoria) => {
+export function existeCategoria(nombreCategoria) {
+  nombreCategoria = nombreCategoria.toUpperCase();
   const categorias = obtenerCategoriasDeLS();
-  let existe = false;
-  categorias.forEach((cat) => {
-    if (cat.nombre === nombreCategoria) {
-      existe = true;
-    }
-  });
-  return existe;
-};
 
+  for (const cat of categorias) {
+    if (cat.nombre === nombreCategoria) {
+      const mensaje = `Esa categoría ya existe, por favor, intente de nuevo`;
+      swal.fire({
+        title: 'Error',
+        text: mensaje,
+        icon: 'error',
+        showConfirmButton: true,
+        showCancelButton: false,
+        confirmButtonText: '¡OK!',
+      });
+      return true; 
+    }
+  }
+  return false; 
+}
 export const prepararEdicionCategoria = (categoria) => {
   const $inputNombreCategoria=document.getElementById("inputNombreCategoria");
   const $inputDescripcionCategoria=document.getElementById("inputDescripcionCategoria");
@@ -80,8 +89,6 @@ export const prepararEdicionCategoria = (categoria) => {
   $alert.classList.remove('d-none');
   $spanCategoria.textContent = categoria.nombre;
 
-  const $button = document.getElementById('button-cancelar');
-  $button.classList.remove('d-none');
 };
 
 function mostrarModal() {
@@ -91,4 +98,3 @@ function mostrarModal() {
 export const estaEditando = () => {
   return !!sessionStorage.getItem('codigoCategoria');
 };
-
