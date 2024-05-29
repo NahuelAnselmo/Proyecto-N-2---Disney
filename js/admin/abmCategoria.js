@@ -1,6 +1,11 @@
 import { obtenerCategoriasDeLS } from '../utils.js';
 import { Categoria } from './Categoria.js';
-import { agregarCategoriasALS, cargarTabla, existeCategoria} from './utils.js';
+import { agregarCategoriasALS, cargarTabla} from './utils.js';
+
+const $inputNombreCategoria=document.getElementById("inputNombreCategoria");
+const $inputDescripcionCategoria=document.getElementById("inputDescripcionCategoria");
+const $btnCancelarCategoria=document.getElementById("btnCancelarCategoria");
+const $modalAgregarCategoria=document.getElementById("modalAgregarCategoria");
 
 export const agregarCategoria = (nombre, descripcion) => {
   const categoria = new Categoria(nombre, descripcion);
@@ -14,7 +19,7 @@ export const agregarCategoria = (nombre, descripcion) => {
     showCancelButton: false,
     confirmButtonText: '¡OK!',
   });
-
+  
 };
 
 export const editarCategoria = (nombreCategoria, descripcionCategoria) => {

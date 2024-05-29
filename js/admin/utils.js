@@ -1,6 +1,13 @@
 import { obtenerCategoriasDeLS } from '../utils.js';
 import { eliminarCategoria } from './abmCategoria.js';
 
+const $btnAgregarCategoria=document.getElementById("btnAgregarCategoria");
+const $inputNombreCategoria=document.getElementById("inputNombreCategoria");
+const $inputDescripcionCategoria=document.getElementById("inputDescripcionCategoria");
+const $btnCancelarCategoria=document.getElementById("btnCancelarCategoria");
+const $modalAgregarCategoria=document.getElementById("modalAgregarCategoria");
+
+
 export const agregarCategoriasALS = (categoria) => {
   const categorias = obtenerCategoriasDeLS();
   categorias.push(categoria);
@@ -98,3 +105,13 @@ function mostrarModal() {
 export const estaEditando = () => {
   return !!sessionStorage.getItem('codigoCategoria');
 };
+
+export function btnCancelarCategoria(){
+    $inputNombreCategoria.value = '';
+    $inputDescripcionCategoria.value = '';
+    if (estaEditando()) {
+      sessionStorage.removeItem('codigoCategoria');
+    }
+    const modalInstance = bootstrap.Modal.getInstance($modalAgregarCategoria);
+    modalInstance.hide();
+}
