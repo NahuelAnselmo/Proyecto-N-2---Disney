@@ -1,6 +1,6 @@
-//import { obtenerCategoriasDeLS } from '../utils.js';
+import { obtenerCategoriasDeLS } from '../utils.js';
 import { Categoria } from './Categoria.js';
-import { agregarCategoriasALS} from './utils.js';
+import { agregarCategoriasALS, cargarTabla} from './utils.js';
 
 export const agregarCategoria = (nombre, descripcion) => {
   const categoria = new Categoria(nombre, descripcion);
@@ -57,6 +57,7 @@ export const eliminarCategoria = (idCategoria, nombreCategoria) => {
     })
     .then((result) => {
       if (result.isConfirmed) {
+        //PRIMERO OBTENGO PELICULAS ASOCIADAS A ESA CATEGORIA Y CAMBIO EL NOMBRE DE LA CATEGORIA POR EL NOMBRE MIX
         const categorias = obtenerCategoriasDeLS();
 
         const nuevasCategorias = categorias.filter((categoria) => {
@@ -69,7 +70,7 @@ export const eliminarCategoria = (idCategoria, nombreCategoria) => {
 
         swal.fire({
           title: 'Exito',
-          text: `Contacto ${nombreCategoria} eliminado correctamente`,
+          text: `Categoria ${nombreCategoria} eliminada correctamente`,
           icon: 'success',
           showConfirmButton: true,
           showCancelButton: false,
