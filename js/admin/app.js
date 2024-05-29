@@ -22,17 +22,27 @@ function mostrarModal() {
     const modal = new bootstrap.Modal(document.getElementById('modalAgregarCategoria'));
     modal.show();
 }
+$btnConfirmarCategoria.addEventListener('click', () => {
+  $modalAgregarCategoria.dispatchEvent(new Event('submit', { cancelable: true, bubbles: true }));
+});
 
+// Evento para el botón Cancelar
+$btnCancelarCategoria.addEventListener('click', () => {
+  const modalInstance = bootstrap.Modal.getInstance($modalAgregarCategoria);
+  $inputNombreCategoria.value = '';
+  $inputDescripcionCategoria.value = '';
+  modalInstance.hide();
+});
 $modalAgregarCategoria.addEventListener('submit', (event) => {
   event.preventDefault();
   if (!validateCategoria($inputNombreCategoria)) {
     alert('Revisá los campos');
     return;
   }
-  
+
   let nombreCategoria = $inputNombreCategoria.value;
   nombreCategoria = nombreCategoria.toUpperCase();
-  let existeCat = existeCategoria({ nombre: nombreCategoria });
+  let existeCat = existeCategoria(nombreCategoria);
 
   if (existeCat) {
     alert('La categoria ya existe');
