@@ -1,5 +1,5 @@
 import { obtenerCategoriasDeLS } from '../utils.js';
-//import { eliminarContacto } from './abm.js';
+import { eliminarCategoria } from './abmCategoria.js';
 
 export const agregarCategoriasALS = (categoria) => {
   const categorias = obtenerCategoriasDeLS();
@@ -7,47 +7,23 @@ export const agregarCategoriasALS = (categoria) => {
   localStorage.setItem('categorias', JSON.stringify(categorias));
 };
 
-/*
 const cargarFilaTabla = (categoria, indice) => {
-  const $tbody = document.getElementById('tbody-contactos');
+  const $tbody = document.getElementById('tbody-categoria');
 
   const $tr = document.createElement('tr');
 
-  // INDICE
   const $tdIndice = document.createElement('td');
   $tdIndice.textContent = indice;
   $tr.appendChild($tdIndice);
 
-  // IMAGEN
-  const $tdImagen = document.createElement('td');
-  const $imagen = document.createElement('img');
-  $imagen.src = contacto.imagen;
-  $imagen.alt = contacto.nombre;
-  $imagen.classList.add('imagen-tabla');
-  $tdImagen.appendChild($imagen);
-  $tr.appendChild($tdImagen);
-
-  // NOMBRE
   const $tdNombre = document.createElement('td');
-  $tdNombre.textContent = contacto.nombre;
+  $tdNombre.textContent = categoria.nombre;
   $tr.appendChild($tdNombre);
 
-  // NUMERO
-  const $tdNumero = document.createElement('td');
-  $tdNumero.textContent = contacto.numero;
-  $tr.appendChild($tdNumero);
+  const $tdDescripcion = document.createElement('td');
+  $tdDescripcion.textContent = categoria.descripcion;
+  $tr.appendChild($tdDescripcion);
 
-  // EMAIL
-  const $tdEmail = document.createElement('td');
-  $tdEmail.textContent = contacto.email;
-  $tr.appendChild($tdEmail);
-
-  // NOTAS
-  const $tdNotas = document.createElement('td');
-  $tdNotas.textContent = contacto.notas;
-  $tr.appendChild($tdNotas);
-
-  // ACCIONES
   const $tdAcciones = document.createElement('td');
   const $btnEditar = document.createElement('button');
   const $btnEliminar = document.createElement('button');
@@ -55,36 +31,42 @@ const cargarFilaTabla = (categoria, indice) => {
   $btnEliminar.classList.add('btn', 'btn-sm', 'btn-danger');
   $btnEditar.textContent = 'Editar';
   $btnEliminar.textContent = 'Eliminar';
-  $btnEditar.onclick = () => {
+  /*$btnEditar.onclick = () => {
     prepararEdicionContacto(contacto);
-  };
+  };*/
   $btnEliminar.onclick = () => {
-    eliminarContacto(contacto.codigo, contacto.nombre);
+    eliminarCategoria(categoria.id, categoria.nombre);
   };
   $tdAcciones.appendChild($btnEditar);
   $tdAcciones.appendChild($btnEliminar);
   $tr.appendChild($tdAcciones);
-
   $tbody.appendChild($tr);
 };
 
 export const cargarTabla = () => {
-  // 1. Recuperar los contactos
-  const contactos = obtenerContactosDeLS();
+  const categorias = obtenerCategoriasDeLS();
 
-  // 2. Vaciar la tabla de los datos anteriores
-  const $tbody = document.getElementById('tbody-contactos');
+  const $tbody = document.getElementById('tbody-categoria');
   $tbody.innerHTML = '';
 
-  // 3. Crear una fila (tr) por cada contacto
-  contactos.forEach((contacto, indice) => {
-    // Crear fila para este elemento
-    cargarFilaTabla(contacto, indice + 1);
+  categorias.forEach((categoria, indice) => {
+    cargarFilaTabla(categoria, indice + 1);
   });
 };
 
+export const existeCategoria = (nombreCategoria) => {
+  const categorias = obtenerCategoriasDeLS();
+  let existe = false;
+  categorias.forEach((cat) => {
+    if (cat.nombre === nombreCategoria) {
+      existe = true;
+    }
+  });
+  return existe;
+};
+
 // Objetivo: Cargar en el formulario estos datos
-export const prepararEdicionContacto = (contacto) => {
+/*[export const prepararEdicionContacto = (contacto) => {
   // 1. Seleccionar los nodos de los inputs
   const $inputNombre = document.getElementById('input-nombre');
   const $inputNumero = document.getElementById('input-numero');
@@ -121,4 +103,4 @@ export const estaEditando = () => {
   // if (codigo) return true;
   // return false;
   return !!sessionStorage.getItem('codigoContacto');
-}*/;
+};*/

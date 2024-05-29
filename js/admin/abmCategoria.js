@@ -43,13 +43,12 @@ export const agregarCategoria = (nombre, descripcion) => {
   const $button = document.getElementById('button-cancelar');
   $button.classList.add('d-none');
 };
-
-export const eliminarContacto = (idContacto, nombreContacto) => {
-  // 1. CONFIRMAR que se desea eliminar el contacto
+*/
+export const eliminarCategoria = (idCategoria, nombreCategoria) => {
   swal
     .fire({
       title: 'Atención',
-      text: `¿Estás seguro que deseas eliminar el contacto de ${nombreContacto}? Esta acción es irreversible.`,
+      text: `¿Estás seguro que deseas eliminar la categoria ${nombreCategoria}? Esta acción es irreversible.`,
       icon: 'warning',
       showConfirmButton: true,
       showCancelButton: true,
@@ -58,24 +57,19 @@ export const eliminarContacto = (idContacto, nombreContacto) => {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        // 2. Obtener el listado de contactos
-        const contactos = obtenerContactosDeLS();
+        const categorias = obtenerCategoriasDeLS();
 
-        // 3. Filtrar esa lista para eliminar el contacto con id indicado
-        const nuevosContactos = contactos.filter((contacto) => {
-          return contacto.codigo !== idContacto;
+        const nuevasCategorias = categorias.filter((categoria) => {
+          return categoria.id !== idCategoria;
         });
 
-        // 4. Actualizar lista en LS
-        localStorage.setItem('contactos', JSON.stringify(nuevosContactos));
+        localStorage.setItem('categorias', JSON.stringify(nuevasCategorias));
 
-        // 5. Actualizar la tabla
         cargarTabla();
 
-        // 6. Notificar al usuario del exito
         swal.fire({
           title: 'Exito',
-          text: `Contacto ${nombreContacto} eliminado correctamente`,
+          text: `Contacto ${nombreCategoria} eliminado correctamente`,
           icon: 'success',
           showConfirmButton: true,
           showCancelButton: false,
@@ -83,4 +77,4 @@ export const eliminarContacto = (idContacto, nombreContacto) => {
         });
       }
     });
-}*/;
+};
