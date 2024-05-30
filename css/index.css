@@ -79,6 +79,49 @@ margin-top:140px;
     object-fit: cover;
 }
 
+.table.tabla-plan {
+  overflow: hidden;
+  background-color: transparent;
+  max-width: 100%;
+}
+
+.table.tabla-plan th,
+.table.tabla-plan td {
+  border: none;
+  background-color: transparent;
+  width: 200px;
+}
+
+.table.tabla-plan thead th {
+  border-bottom: 2px solid white; 
+}
+
+.table.tabla-plan tbody tr td {
+  border-bottom: 1px solid #6c757d;
+}
+
+.table.tabla-plan tr {
+  height: 110px;
+}
+
+.tabla-contenedor-img {
+  width: 100%;
+}
+
+.tabla-img{
+  width: 120px;
+  height: 55px;
+  object-fit: cover;
+}
+
+.tabla-btn{
+  height: 50px;
+}
+
+.borde-superior{
+  border-top: 1px solid #6c757d;
+}
+
 .ourservices-content-img{
 max-width:350px;
 max-height: 300px;
