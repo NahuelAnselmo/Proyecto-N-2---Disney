@@ -28,16 +28,10 @@
     <title>Iniciar sesión en Disney+</title>
   </head>
   <body>
-    <header></header>
-    <main class="login-bg-color mb-5">
+    <main class="login-bg-color py-5">
       <div
         class="container d-flex flex-column justify-content-center align-items-center vh-100"
       >
-        <img
-          src="../img/disney/disney-inicio-img.png"
-          alt="Disney"
-          class="login-icono mt-5 mb-3"
-        />
         <form class="login-form shadow">
           <div class="form-contenedor-contenidos container">
             <svg
@@ -85,8 +79,7 @@
                 fill="#252526"
               ></path>
             </svg>
-            <p>PASO <span id="paso-numero">1</span></p>
-            <h3>Escribir <span id="titulo-escribir-correo-o-contraseña">correo para continuar</span></h3>
+            <h3>Escribir correo electrónico y contraseña para continuar</h3>
             <p>
               Es necesario iniciar sesión en Disney+ <span id="texto-escribir-correo-o-contraseña">con tu cuenta de MyDisney.
                 En caso de no tener una, recibirás indicaciones para crearla.</span>
@@ -94,10 +87,21 @@
             <div class="form-group">
               <input
                 type="email"
-                id="email"
+                id="inputEmail"
                 name="email"
-                class="form-control form-control-lg input-email"
+                class="form-control form-control-lg input-email p-3 pt-3"
                 placeholder="Correo electrónico"
+                required
+              />
+            </div>
+            <div class="form-group mt-3">
+              <input
+                type="password"
+                id="inputPassword"
+                name="password"
+                class="form-control form-control-lg input-password p-3 pt-3"
+                placeholder="Contraseña"
+                required
               />
             </div>
             <button id="btn-confirmar" class="custom-button mt-4 mb-3 w-100">Continuar</button>
@@ -115,7 +119,6 @@
               <a href=""></a>
             </div>
             <div>
-
             </div>
           </div>
         </form>
@@ -177,6 +180,6 @@
         © Disney. Todos los derechos reservados.
       </p>
     </footer>
-    <script type="module" src="../js/login/utils.js"></script>
+    <script type="module" src="../js/login/app.js"></script>
   </body>
 </html>

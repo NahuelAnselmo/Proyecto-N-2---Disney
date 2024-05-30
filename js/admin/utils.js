@@ -7,7 +7,6 @@ const $inputDescripcionCategoria=document.getElementById("inputDescripcionCatego
 const $btnCancelarCategoria=document.getElementById("btnCancelarCategoria");
 const $modalAgregarCategoria=document.getElementById("modalAgregarCategoria");
 
-
 export const agregarCategoriasALS = (categoria) => {
   const categorias = obtenerCategoriasDeLS();
   categorias.push(categoria);
@@ -20,24 +19,27 @@ const cargarFilaTabla = (categoria, indice) => {
   const $tr = document.createElement('tr');
 
   const $tdIndice = document.createElement('td');
+  $tdIndice.classList.add('text-white', 'text-center', 'fw-bold');
   $tdIndice.textContent = indice;
   $tr.appendChild($tdIndice);
 
   const $tdNombre = document.createElement('td');
+  $tdNombre.classList.add('text-white', 'w-25');
   $tdNombre.textContent = categoria.nombre;
   $tr.appendChild($tdNombre);
 
   const $tdDescripcion = document.createElement('td');
+  $tdDescripcion.classList.add('text-white', 'w-25');
   $tdDescripcion.textContent = categoria.descripcion;
   $tr.appendChild($tdDescripcion);
 
   const $tdAcciones = document.createElement('td');
   const $btnEditar = document.createElement('button');
   const $btnEliminar = document.createElement('button');
-  $btnEditar.classList.add('btn', 'btn-sm', 'btn-warning','me-1','mb-1');
-  $btnEliminar.classList.add('btn', 'btn-sm', 'btn-danger','ms-3', 'mb-1');
-  $btnEditar.textContent = 'Editar';
-  $btnEliminar.textContent = 'Eliminar';
+  $btnEditar.classList.add('btn', 'btn-sm', 'btn-warning','mb-1','me-2','col-12', 'col-md-5');
+  $btnEliminar.classList.add('btn', 'btn-sm', 'btn-danger', 'mb-1','col-12','col-md-5');
+  $btnEditar.innerHTML = 'Editar <i class="fas fa-pencil-alt"></i>'; 
+  $btnEliminar.innerHTML = 'Eliminar <i class="fas fa-trash"></i>'; 
   $btnEditar.onclick = () => {
     mostrarModal();
     prepararEdicionCategoria(categoria);
@@ -49,6 +51,7 @@ const cargarFilaTabla = (categoria, indice) => {
   $tdAcciones.appendChild($btnEliminar);
   $tr.appendChild($tdAcciones);
   $tbody.appendChild($tr);
+
 };
 
 export const cargarTabla = () => {
@@ -65,7 +68,6 @@ export const cargarTabla = () => {
 export function existeCategoria(nombreCategoria) {
   nombreCategoria = nombreCategoria.toUpperCase();
   const categorias = obtenerCategoriasDeLS();
-
   for (const cat of categorias) {
     if (cat.nombre === nombreCategoria) {
       const mensaje = `Esa categoría ya existe, por favor, intente de nuevo`;
@@ -95,7 +97,6 @@ export const prepararEdicionCategoria = (categoria) => {
   const $spanCategoria = document.getElementById('nombre-categoria-edicion');
   $alert.classList.remove('d-none');
   $spanCategoria.textContent = categoria.nombre;
-
 };
 
 function mostrarModal() {
@@ -107,11 +108,11 @@ export const estaEditando = () => {
 };
 
 export function btnCancelarCategoria(){
-    $inputNombreCategoria.value = '';
-    $inputDescripcionCategoria.value = '';
     if (estaEditando()) {
       sessionStorage.removeItem('codigoCategoria');
     }
+    $inputNombreCategoria.value = '';
+    $inputDescripcionCategoria.value = '';
     const modalInstance = bootstrap.Modal.getInstance($modalAgregarCategoria);
     modalInstance.hide();
 }

@@ -20,7 +20,6 @@ $btnCancelarCategoria.addEventListener('click',btnCancelarCategoria);
       const modal = new bootstrap.Modal(document.getElementById('modalAgregarCategoria'));
       modal.show();
   }
-  // Evento para el botón Cancelar
   $modalAgregarCategoria.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!validateCategoria($inputNombreCategoria)) {

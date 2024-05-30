@@ -26,6 +26,7 @@
           href="../img/icons/logo.svg"
           type="imgage/x-con"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-FpPXxUjNmazR7Yqg3CLPPuyCp9Nf7eWeVpC86Gb/hyFLuT+ZpePWw58nYmzN8rKfjB69e8AKaUrKQjCND+3pAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <title>Categorías | Disney+</title>
     </head>
@@ -34,9 +35,9 @@
       <main>
           <h1 class="text-center text-white">Edición de categorías</h1>
           <div class="d-flex justify-content-center">
-            <button id="btnAgregarCategoria" type="button" class="btn btn-info my-4">Nueva categoría +</button>
+            <button id="btnAgregarCategoria" type="button" class="btn my-4">Nueva categoría <i class="fas fa-plus"></i></button>
           </div>
-          <div class="container">
+          <div class="container tabla-contenedor">
               <table class="table tabla-categorias">
                   <thead>
                     <tr>
@@ -49,7 +50,8 @@
                   <tbody id="tbody-categoria"></tbody>
                 </table>
           </div>
-          <div class="modal fade" id="modalAgregarCategoria" tabindex="-1" aria-labelledby="modalAgregarCategoriaLabel" aria-hidden="true">
+          <div class="container">
+<div class="modal fade" id="modalAgregarCategoria" tabindex="-1" aria-labelledby="modalAgregarCategoriaLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <article id="alert-edicion-categoria" class="alert alert-warning d-none">
@@ -59,14 +61,14 @@
                     <div class="modal-body">
                         <form id="formAgregarCategoria">
                             <div class="mb-3">
-                                <label for="inputNombreCategoria" class="form-label">Nombre de la Categoría</label>
+                                <label for="inputNombreCategoria" class="form-label text-white">Nombre de la Categoría</label>
                                 <input type="text" class="form-control" id="inputNombreCategoria" required>
                                 <div class="invalid-feedback">
                                   <span class="badge text-bg-danger">Ingrese una categoría valida</span>
                                 </div>
                             </div>
                               <div class="mb-3">
-                                <label for="inputDescripcionCategoria" class="form-label">Descripción</label>
+                                <label for="inputDescripcionCategoria" class="form-label text-white">Descripción</label>
                                 <textarea class="form-control" id="inputDescripcionCategoria" rows="3"></textarea>
                             </div>
                             <div class="d-flex justify-content-end">
@@ -77,8 +79,8 @@
                     </div>
                 </div>
             </div>
+          </div>
       </main>
-     
       <script type="module" src="../js/admin/app.js"></script>
       <script type="module" src="../js/admin/abmCategoria.js"></script>
   </body>

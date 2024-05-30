@@ -1,11 +1,7 @@
 import { obtenerCategoriasDeLS } from '../utils.js';
 import { Categoria } from './Categoria.js';
-import { agregarCategoriasALS, cargarTabla} from './utils.js';
+import { agregarCategoriasALS, cargarTabla, existeCategoria} from './utils.js';
 
-const $inputNombreCategoria=document.getElementById("inputNombreCategoria");
-const $inputDescripcionCategoria=document.getElementById("inputDescripcionCategoria");
-const $btnCancelarCategoria=document.getElementById("btnCancelarCategoria");
-const $modalAgregarCategoria=document.getElementById("modalAgregarCategoria");
 
 export const agregarCategoria = (nombre, descripcion) => {
   const categoria = new Categoria(nombre, descripcion);
@@ -23,6 +19,7 @@ export const agregarCategoria = (nombre, descripcion) => {
 };
 
 export const editarCategoria = (nombreCategoria, descripcionCategoria) => {
+  nombreCategoria = nombreCategoria.toUpperCase();
   const categorias = obtenerCategoriasDeLS();
   const codigoCategoria = sessionStorage.getItem('codigoCategoria');
 
@@ -36,24 +33,27 @@ export const editarCategoria = (nombreCategoria, descripcionCategoria) => {
     return;
   }
 
-  const nuevaCategoria = new Categoria(nombreCategoria, descripcionCategoria);
+  
+    const nuevaCategoria = new Categoria(nombreCategoria, descripcionCategoria);
 
-  categorias.splice(posicionCategoria, 1, nuevaCategoria);
+    categorias.splice(posicionCategoria, 1, nuevaCategoria);
+    
+    localStorage.setItem('categorias', JSON.stringify(categorias));
+    
+    const mensaje = `Categoria ${nombreCategoria} editada`;
+    swal.fire({
+      title: 'Exito',
+      text: mensaje,
+      icon: 'success',
+      showConfirmButton: true,
+      showCancelButton: false,
+      confirmButtonText: '¡OK!',
+    });
+    sessionStorage.removeItem('codigoCategoria');
+    const $alert = document.getElementById('alert-edicion-categoria');
+    $alert.classList.add('d-none');
   
-  localStorage.setItem('categorias', JSON.stringify(categorias));
-  
-  const mensaje = `Categoria ${nombreCategoria} editada`;
-  swal.fire({
-    title: 'Exito',
-    text: mensaje,
-    icon: 'success',
-    showConfirmButton: true,
-    showCancelButton: false,
-    confirmButtonText: '¡OK!',
-  });
-  sessionStorage.removeItem('codigoCategoria');
-  const $alert = document.getElementById('alert-edicion-categoria');
-  $alert.classList.add('d-none');
+ 
 };
 
 
