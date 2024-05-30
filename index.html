@@ -26,62 +26,62 @@
   </head>
   <body class="index-bg-color">
     <main>
-      <section class="inicio p-0">
+      <section class="inicio p-0 container">
         <div class="row">
-          <div class="col-6 inicio-content-txt-margin">
-            <div class="row p-0">
-              <img
-                src="./img/disney/disney-inicio-img.png"
-                alt="Disney"
-                class="col-12 inicio-img-size mb-4"
-              />
-              <h1 class="col-12 text-white fs-1 mb-4">
-                Tus historias favoritas, todas en un mismo lugar.
-              </h1>
-              <div class="col-12 mb-3 inicio-btn-contratar-contenedor">
-                <button type="button" class="btn btn-primary btn-contratar-bg-color inicio-btn-contratar-size">
-                  CONTRATÁ LA OFERTA COMBO+
-                </button>
-              </div>
-              <a href="./pages/Error404.html" class="col-12 text-white fs-6 mb-2"
-                >Suscribirme solo a Disney+</a
-              >
-            </div>
-          </div>
-          <div class="col-5 mt-2 d-flex justify-content-end p-0">
+          <article class="col-12 mt-2 d-flex justify-content-end p-0">
             <div class="inicio-btn-login-contenedor">
-              <button type="button" class="btn btn-outline-dark btn-login w-100 h-100 inicio-btn-login border-white" id="btnIniciarSesion">
-                INICIAR SESIÓN
-              </button>
+                <button type="button" class="btn btn-outline-dark btn-login w-100 h-100 inicio-btn-login border-white" id="btnIniciarSesion">
+                    INICIAR SESIÓN
+                </button>
             </div>
-          </div>
+          </article>
+          <article class="col-12 col-md-6 order-md-last inicio-content-txt-margin">
+            <div class="row">
+                <img
+                    src="./img/disney/disney-inicio-img.png"
+                    alt="Disney"
+                    class="col-12 inicio-img-size mb-4"
+                />
+                <h1 class="col-12 text-white fs-1 mb-4">
+                    Tus historias favoritas, todas en un mismo lugar.
+                </h1>
+                <div class="col-12 mb-3 inicio-btn-contratar-contenedor">
+                    <button type="button" class="btn btn-primary btn-contratar-bg-color inicio-btn-contratar-size">
+                        CONTRATÁ LA OFERTA COMBO+
+                    </button>
+                </div>
+                <a href="./pages/Error404.html" class="col-12 text-white fs-6 mb-2">
+                    Suscribirme solo a Disney+
+                </a>
+            </div>
+        </article>
         </div>
-      </section>
+    </section>
       <section>
         <h2 class="text-white text-center">Elegí tu plan</h2>
         <p class="text-secondary fw-bold fs-size-txt text-center">Podés cancelar en cualquier momento</p>
       </section>
-      <section class="container dispositivos">
+      <section class="container dispositivos my-5">
         <div class="row">
-          <div class="col-6 dispositivos-txt-margin">
-            <h2 class="text-white">Cuando quieras, donde quieras</h2>
-            <p class="text-secondary fw-bold fs-size-txt">
+          <div class="col-12 col-md-6 dispositivos-txt-margin">
+            <h2 class="text-white text-center text-md-start">Cuando quieras, donde quieras</h2>
+            <p class="text-secondary fw-bold fs-size-txt  text-center text-md-start">
               Disfrutalo en tu pantalla favorita, ya sea tu TV, tableta,
               computadora, teléfono y otros. Viví una experiencia única con una
               amplia selección de títulos en 4K. Además, podés ver en cuatro
               pantallas en simultáneo para que nadie se quede afuera.
             </p>
           </div>
-          <div class="col-5 container-img">
+          <div class="col-12 col-md-5 container-img d-flex justify-content-center">
             <img
               src="./img/disney/original.png"
               alt="Disney+ en cualquier dispositivo"
-              class="img-size"
+              class="img-size ms-5"
             />
           </div>
         </div>
       </section>
-      <section class="container">
+      <section class="container mt-4">
         <div class="row">
           <h2 class="col-12 text-center text-white">
             Originales Disney+ exclusivos
@@ -292,6 +292,6 @@
         </div>
       </section>
     </main>
-    <script src="./js/login/app.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

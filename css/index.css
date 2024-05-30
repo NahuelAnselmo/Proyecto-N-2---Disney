@@ -76,7 +76,7 @@ margin-top:140px;
 
 .img-size{
     width: 500px;
-
+    object-fit: cover;
 }
 
 .ourservices-content-img{
