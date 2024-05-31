@@ -1,6 +1,6 @@
 import { obtenerCategoriasDeLS } from '../utils.js';
-import { Categoria } from './Categoria.js';
-import { agregarCategoriasALS, cargarTabla, existeCategoria} from './utils.js';
+import { Categoria } from '../admin/peliculaSeries.js';
+import { agregarCategoriasALS, cargarTabla} from './utils.js';
 
 
 export const agregarCategoria = (nombre, descripcion) => {

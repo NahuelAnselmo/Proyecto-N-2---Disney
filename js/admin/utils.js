@@ -2,7 +2,6 @@ import { obtenerPeliculaSerieDeLs } from '../utils.js';
 import { eliminarPelicula } from './abm.js';
 import { destacarPelicula } from './abm.js';
 
-
 export const agregarPeliculaALS = (pelicula) => {
     const peliculas = obtenerPeliculaSerieDeLs();
     peliculas.push(pelicula);

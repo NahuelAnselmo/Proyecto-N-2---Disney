@@ -1,8 +1,17 @@
 import { agregarPelicula, editarPelicula, mostrarPeliculasDestacadas } from "./abm.js";
 import { cargarTabla, estaEditando } from "./utils.js";
 import { validateName, validateUrl } from './validators.js';
-import { cargarCategorias } from './categorias.js';
+import { obtenerCategoriasDeLS } from '../utils.js';
 
+const $select = document.getElementById('input-categoria');
+const categoria = obtenerCategoriasDeLS();
+
+categoria.forEach((categoria) => {
+    const $option = document.createElement('option');
+    $option.value = categoria.nombre;
+    $option.innerText = categoria.nombre;
+    $select.appendChild($option);
+});
 
   cargarTabla();
 
@@ -15,10 +24,6 @@ import { cargarCategorias } from './categorias.js';
   const $inputDescripcion = document.getElementById('input-descripcion');
   const $inputPublicada = document.getElementById('input-publicada');
 
-  // Cargar categorías dinámicamente
-  cargarCategorias($inputCategoria);
-  mostrarPeliculasDestacadas();
-  
 
     $inputTitulo.addEventListener('blur', () => {
       validateName($inputTitulo);
