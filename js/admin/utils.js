@@ -125,8 +125,8 @@ export const prepararEdicionPelicula = (pelicula) => {
       icon: 'question',
       showConfirmButton: true,
       showCancelButton: true,
-      confirmButtonText: 'Sí, eliminar',
-      cancelButtonText: 'No, cancelar',
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No',
     })
 };
 
