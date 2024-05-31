@@ -1,4 +1,4 @@
-import { obtenerCategoriasDeLS } from '../utils.js';
+import { obtenerCategoriasDeLS, obtenerPeliculaSerieDeLs } from '../utils.js';
 import { Categoria } from './Categoria.js';
 import { agregarCategoriasALS, cargarTabla, existeCategoria} from './utils.js';
 
@@ -32,8 +32,6 @@ export const editarCategoria = (nombreCategoria, descripcionCategoria) => {
     sessionStorage.removeItem('codigoCategoria');
     return;
   }
-
-  
     const nuevaCategoria = new Categoria(nombreCategoria, descripcionCategoria);
 
     categorias.splice(posicionCategoria, 1, nuevaCategoria);
@@ -70,14 +68,22 @@ export const eliminarCategoria = (idCategoria, nombreCategoria) => {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        //PRIMERO OBTENGO PELICULAS ASOCIADAS A ESA CATEGORIA Y CAMBIO EL NOMBRE DE LA CATEGORIA POR EL NOMBRE MIX
+        const peliculas = obtenerPeliculaSerieDeLs();
+        
         const categorias = obtenerCategoriasDeLS();
 
         const nuevasCategorias = categorias.filter((categoria) => {
           return categoria.id !== idCategoria;
         });
 
+        peliculas.forEach((pelicula) => {
+          if (pelicula.categoria === nombreCategoria) {
+            pelicula.categoria = "MIX";
+          }
+        });
+
         localStorage.setItem('categorias', JSON.stringify(nuevasCategorias));
+        localStorage.setItem('peliculas', JSON.stringify(peliculas));
 
         cargarTabla();
 

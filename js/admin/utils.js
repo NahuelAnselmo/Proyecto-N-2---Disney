@@ -1,4 +1,4 @@
-import { obtenerPeliculaSerieDeLs } from '../utils.js';
+import { obtenerPeliculaSerieDeLs, obtenerCategoriasDeLS } from '../utils.js';
 import { eliminarPelicula } from './abm.js';
 import { destacarPelicula } from './abm.js';
 
@@ -48,6 +48,7 @@ const cargarFilaTabla = (pelicula, indice) =>{
 
     const $tdCategoria = document.createElement('td');
     $tdCategoria.textContent = pelicula.categoria;
+    console.log($tdCategoria);
     $tr.appendChild($tdCategoria);
 
     const $tdDescripcion = document.createElement('td');
@@ -133,3 +134,21 @@ export const prepararEdicionPelicula = (pelicula) => {
 export const estaEditando = () => {
     return !!sessionStorage.getItem('codigoPelicula');
 }
+
+export function cargarCategoriasEnSelect($selectCategoria) {
+    const categorias = obtenerCategoriasDeLS();
+
+  $selectCategoria.innerHTML = '';
+
+  const $defaultOption = document.createElement('option');
+  $defaultOption.value = '';
+  $defaultOption.textContent = 'Seleccione una categoría';
+  $selectCategoria.appendChild($defaultOption);
+
+  categorias.forEach(categoria => {
+    let $option = document.createElement('option');
+    $option.value = categoria.id;
+    $option.textContent = categoria.nombre;
+    $selectCategoria.appendChild($option);
+  });
+  }

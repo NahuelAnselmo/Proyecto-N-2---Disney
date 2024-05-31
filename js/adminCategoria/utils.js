@@ -1,5 +1,6 @@
 import { obtenerCategoriasDeLS } from '../utils.js';
 import { eliminarCategoria } from './abmCategoria.js';
+import {Categoria} from './Categoria.js';
 
 const $btnAgregarCategoria=document.getElementById("btnAgregarCategoria");
 const $inputNombreCategoria=document.getElementById("inputNombreCategoria");
@@ -7,9 +8,18 @@ const $inputDescripcionCategoria=document.getElementById("inputDescripcionCatego
 const $btnCancelarCategoria=document.getElementById("btnCancelarCategoria");
 const $modalAgregarCategoria=document.getElementById("modalAgregarCategoria");
 
-export const agregarCategoriasALS = (categoria) => {
+export const iniciarCategoriaMix = () => {
   const categorias = obtenerCategoriasDeLS();
-  categorias.push(categoria);
+  if (!categorias || categorias.length === 0) {
+    const categoriaMix = new Categoria('MIX', 'Categoría por defecto');
+    agregarCategoriasALS(categoriaMix); 
+  }
+};
+
+
+export const agregarCategoriasALS = (categoria) => {
+  let categorias = obtenerCategoriasDeLS();
+  categorias.push(categoria); // Agregar la nueva categoría a la lista de categorías
   localStorage.setItem('categorias', JSON.stringify(categorias));
 };
 
@@ -34,21 +44,26 @@ const cargarFilaTabla = (categoria, indice) => {
   $tr.appendChild($tdDescripcion);
 
   const $tdAcciones = document.createElement('td');
-  const $btnEditar = document.createElement('button');
-  const $btnEliminar = document.createElement('button');
-  $btnEditar.classList.add('btn', 'btn-sm', 'btn-warning','mb-1','me-2','col-12', 'col-md-5');
-  $btnEliminar.classList.add('btn', 'btn-sm', 'btn-danger', 'mb-1','col-12','col-md-5');
-  $btnEditar.innerHTML = 'Editar <i class="fas fa-pencil-alt"></i>'; 
-  $btnEliminar.innerHTML = 'Eliminar <i class="fas fa-trash"></i>'; 
-  $btnEditar.onclick = () => {
-    mostrarModal();
-    prepararEdicionCategoria(categoria);
-  };
-  $btnEliminar.onclick = () => {
-    eliminarCategoria(categoria.id, categoria.nombre);
-  };
-  $tdAcciones.appendChild($btnEditar);
-  $tdAcciones.appendChild($btnEliminar);
+  if (categoria.nombre !== "MIX") {
+    const $btnEditar = document.createElement('button');
+    const $btnEliminar = document.createElement('button');
+    $btnEditar.classList.add('btn', 'btn-sm', 'btn-warning','mb-1','me-2','col-12', 'col-md-5');
+    $btnEliminar.classList.add('btn', 'btn-sm', 'btn-danger', 'mb-1','col-12','col-md-5');
+    $btnEditar.innerHTML = 'Editar <i class="fas fa-pencil-alt"></i>'; 
+    $btnEliminar.innerHTML = 'Eliminar <i class="fas fa-trash"></i>'; 
+    $btnEditar.onclick = () => {
+      mostrarModal();
+      prepararEdicionCategoria(categoria);
+    };
+    $btnEliminar.onclick = () => {
+      eliminarCategoria(categoria.id, categoria.nombre);
+    };
+    $tdAcciones.appendChild($btnEditar);
+    $tdAcciones.appendChild($btnEliminar);
+  } else{
+    $tdAcciones.classList.add('text-white', 'text-center', 'fw-bold');
+    $tdAcciones.textContent = 'No se puede eliminar ni editar';
+  }
   $tr.appendChild($tdAcciones);
   $tbody.appendChild($tr);
 
@@ -56,7 +71,6 @@ const cargarFilaTabla = (categoria, indice) => {
 
 export const cargarTabla = () => {
   const categorias = obtenerCategoriasDeLS();
-
   const $tbody = document.getElementById('tbody-categoria');
   $tbody.innerHTML = '';
 
@@ -113,6 +127,8 @@ export function btnCancelarCategoria(){
     }
     $inputNombreCategoria.value = '';
     $inputDescripcionCategoria.value = '';
+    const $spanCategoria = document.getElementById('alert-edicion-categoria');
+    $spanCategoria.classList.add('d-none');
     const modalInstance = bootstrap.Modal.getInstance($modalAgregarCategoria);
     modalInstance.hide();
 }
