@@ -1,0 +1,191 @@
+.index-bg-color{
+    background-color: #050714;
+}
+
+.inicio {
+  width: 100%;
+  height: 100vh;
+  background: url('../img/disney/bg-inicio.png') no-repeat right;
+  background-size: 60% 80%;
+}
+
+.inicio-content-txt-margin{
+  margin-top: 120px;
+  margin-left: 80px;
+}
+
+.inicio-img-size{
+  max-height: 180px;
+  max-width: 210px;
+  object-fit: cover;
+}
+
+.inicio-btn-contratar-contenedor{
+  height: 70px;
+  width:600px;
+}
+
+.btn-contratar-bg-color{
+    border-color: #6421ff;
+    background-color: #6421ff;
+}
+
+
+.inicio-btn-contratar-size{
+  width: 100%;
+  height: 100%;
+}
+
+.inicio-btn-login-contenedor{
+  height: 50px;
+  max-width:170px;
+}
+
+.inicio-btn-login{
+background-color: #010104;
+color:#fff;
+}
+
+.inicio-btn-login:hover {
+  background-color: #fff;
+  color: #010104;
+}
+
+.fs-size-txt{
+    font-size:18px;
+}
+
+.inicio-content-img{
+max-width:300px;
+}
+.img-inicio{
+    width: 100%;
+}
+
+
+.dispositivos{
+    width: 100%;
+}
+
+.dispositivos-txt-margin{
+margin-top:140px;
+}
+.container-img{
+    max-width:50%;
+}
+
+.img-size{
+    max-width: 500px;
+}
+
+.table.tabla-plan {
+  overflow: hidden;
+  background-color: transparent;
+  max-width: 100%;
+}
+
+.table.tabla-plan th,
+.table.tabla-plan td {
+  border: none;
+  background-color: transparent;
+  width: 200px;
+}
+
+.table.tabla-plan thead th {
+  border-bottom: 2px solid white; 
+}
+
+.table.tabla-plan tbody tr td {
+  border-bottom: 1px solid #6c757d;
+}
+
+.table.tabla-plan tr {
+  height: 110px;
+}
+
+.tabla-contenedor-img {
+  width: 100%;
+}
+
+.tabla-img{
+  width: 120px;
+  height: 55px;
+  object-fit: cover;
+}
+
+.tabla-btn{
+  height: 50px;
+}
+
+.borde-superior{
+  border-top: 1px solid #6c757d;
+}
+
+.ourservices-content-img{
+max-width:350px;
+max-height: 300px;
+}
+
+.ourservices-img-border{
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+.answer{
+  margin-top: 130px;
+}
+.accordion-custom .accordion-button {
+  background-color: #13151d;
+  color: #fff;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  position: relative; 
+}
+
+.accordion-custom .accordion-button::after {
+  content: '+';
+  font-size: 1.6em; 
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  right: 1em;
+  top: 50%; 
+  transform: translateY(-50%); 
+  line-height: 1; 
+  background: none; 
+  border: none; 
+  box-shadow: none; 
+}
+
+.accordion-custom .accordion-button:not(.collapsed)::after {
+  content: '-';
+  font-size: 1.5em; 
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  right: 1em;
+  top: 50%; 
+  transform: translateY(-50%); 
+  line-height: 1; 
+}
+
+.accordion-custom .accordion-body {
+  background-color: #13151d;
+  color: #fff;
+  border-top: none;
+}
+
+.accordion-custom .accordion-item {
+  border: none;
+}
+
+.accordion-custom .accordion-button:focus {
+  box-shadow: none;
+}
+
+
+  .accordion-body {
+    padding-top: 3px; 
+  }
