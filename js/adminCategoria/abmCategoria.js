@@ -32,26 +32,25 @@ export const editarCategoria = (nombreCategoria, descripcionCategoria) => {
     sessionStorage.removeItem('codigoCategoria');
     return;
   }
-    const nuevaCategoria = new Categoria(nombreCategoria, descripcionCategoria);
 
-    categorias.splice(posicionCategoria, 1, nuevaCategoria);
-    
-    localStorage.setItem('categorias', JSON.stringify(categorias));
-    
-    const mensaje = `Categoria ${nombreCategoria} editada`;
-    swal.fire({
-      title: 'Exito',
-      text: mensaje,
-      icon: 'success',
-      showConfirmButton: true,
-      showCancelButton: false,
-      confirmButtonText: '¡OK!',
-    });
-    sessionStorage.removeItem('codigoCategoria');
-    const $alert = document.getElementById('alert-edicion-categoria');
-    $alert.classList.add('d-none');
-  
- 
+  categorias[posicionCategoria].nombre = nombreCategoria;
+  categorias[posicionCategoria].descripcion = descripcionCategoria;
+
+  localStorage.setItem('categorias', JSON.stringify(categorias));
+
+  const mensaje = `Categoría ${nombreCategoria} editada`;
+  swal.fire({
+    title: 'Exito',
+    text: mensaje,
+    icon: 'success',
+    showConfirmButton: true,
+    showCancelButton: false,
+    confirmButtonText: '¡OK!',
+  });
+
+  sessionStorage.removeItem('codigoCategoria');
+  const $alert = document.getElementById('alert-edicion-categoria');
+  $alert.classList.add('d-none');
 };
 
 

@@ -60,8 +60,8 @@ import { validateName, validateUrl } from './validators.js';
 
       const titulo = $inputTitulo.value;
       const tipo = $inputTipo.value;
-      const categoriaSelect = $inputCategoria.selectedOptions[0]; // Obtener la opción seleccionada
-      const categoria = categoriaSelect ? categoriaSelect.textContent : '';
+      const categoriaSelect = $inputCategoria.selectedOptions[0]; 
+      const categoria = categoriaSelect ? categoriaSelect.value : '';
       const caratula = $inputCaratula.value;
       const trailer = $inputTrailer.value;
       const descripcion = $inputDescripcion.value;

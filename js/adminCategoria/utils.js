@@ -70,10 +70,10 @@ const cargarFilaTabla = (categoria, indice) => {
 };
 
 export const cargarTabla = () => {
+  iniciarCategoriaMix();
   const categorias = obtenerCategoriasDeLS();
   const $tbody = document.getElementById('tbody-categoria');
   $tbody.innerHTML = '';
-
   categorias.forEach((categoria, indice) => {
     cargarFilaTabla(categoria, indice + 1);
   });

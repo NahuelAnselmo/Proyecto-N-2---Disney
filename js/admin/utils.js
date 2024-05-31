@@ -10,6 +10,7 @@ export const agregarPeliculaALS = (pelicula) => {
 };
 
 const cargarFilaTabla = (pelicula, indice) =>{
+   
     const $tbody = document.getElementById('tbody-peliculas');
 
     const $tr = document.createElement('tr');
@@ -47,8 +48,12 @@ const cargarFilaTabla = (pelicula, indice) =>{
     $tr.appendChild($tdCaratula);
 
     const $tdCategoria = document.createElement('td');
-    $tdCategoria.textContent = pelicula.categoria;
-    console.log($tdCategoria);
+    const categorias = obtenerCategoriasDeLS();
+    const categoria = categorias.find((categoria) => {
+        return categoria.id === pelicula.categoria;
+    });
+    const nombreCategoria = categoria ? categoria.nombre : 'Sin categoría';
+    $tdCategoria.textContent = nombreCategoria;
     $tr.appendChild($tdCategoria);
 
     const $tdDescripcion = document.createElement('td');
