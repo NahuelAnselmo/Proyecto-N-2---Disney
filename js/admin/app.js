@@ -1,10 +1,8 @@
 import { agregarPelicula, editarPelicula, mostrarPeliculasDestacadas } from "./abm.js";
-import { cargarTabla, estaEditando } from "./utils.js";
+import { cargarTabla, estaEditando, cargarCategoriasEnSelect } from "./utils.js";
 import { validateName, validateUrl } from './validators.js';
-import { cargarCategorias } from './categorias.js';
 
 
-  cargarTabla();
 
   const $form = document.getElementById('form-pelicula');
   const $inputTitulo = document.getElementById('input-titulo');
@@ -14,9 +12,9 @@ import { cargarCategorias } from './categorias.js';
   const $inputTrailer = document.getElementById('input-trailer');
   const $inputDescripcion = document.getElementById('input-descripcion');
   const $inputPublicada = document.getElementById('input-publicada');
+  cargarCategoriasEnSelect($inputCategoria);
+  cargarTabla();
 
-  // Cargar categorías dinámicamente
-  cargarCategorias($inputCategoria);
   mostrarPeliculasDestacadas();
   
 
@@ -29,9 +27,7 @@ import { cargarCategorias } from './categorias.js';
       validateName($inputTipo);
       });
 
-    $inputCategoria.addEventListener('blur', () => {
-      validateName($inputCategoria);
-    });
+    
 
     $inputCaratula.addEventListener('blur', () => {
       validateUrl($inputCaratula);
@@ -64,7 +60,8 @@ import { cargarCategorias } from './categorias.js';
 
       const titulo = $inputTitulo.value;
       const tipo = $inputTipo.value;
-      const categoria = $inputCategoria.value;
+      const categoriaSelect = $inputCategoria.selectedOptions[0]; // Obtener la opción seleccionada
+      const categoria = categoriaSelect ? categoriaSelect.textContent : '';
       const caratula = $inputCaratula.value;
       const trailer = $inputTrailer.value;
       const descripcion = $inputDescripcion.value;

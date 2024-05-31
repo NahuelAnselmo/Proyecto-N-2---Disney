@@ -1,7 +1,9 @@
   import { validateCategoria } from "../validators.js";
   import { agregarCategoria, editarCategoria } from "./abmCategoria.js";
-  import { cargarTabla, existeCategoria, estaEditando, btnCancelarCategoria } from "./utils.js";
+  import { cargarTabla, existeCategoria, estaEditando, btnCancelarCategoria, iniciarCategoriaMix} from "./utils.js";
 
+  
+  iniciarCategoriaMix();
   cargarTabla();
 
   const $btnAgregarCategoria=document.getElementById("btnAgregarCategoria");
