@@ -56,7 +56,7 @@ color:#fff;
 }
 
 .inicio-content-img{
-width:300px;
+max-width:300px;
 }
 .img-inicio{
     width: 100%;
@@ -64,9 +64,9 @@ width:300px;
 
 
 .dispositivos{
-    height: 520px;
     width: 100%;
 }
+
 .dispositivos-txt-margin{
 margin-top:140px;
 }
@@ -75,8 +75,7 @@ margin-top:140px;
 }
 
 .img-size{
-    width: 500px;
-    object-fit: cover;
+    max-width: 500px;
 }
 
 .table.tabla-plan {
