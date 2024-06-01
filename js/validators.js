@@ -117,5 +117,13 @@ export const validateName = ($field) => {
     $field.classList.add('is-valid');
     return true;
   };
+  export const validatePassword = ($field) => {
+    if (!$field || !$field.value.trim()) {
+      $field.classList.add('is-invalid');
+      return false;
+    }
+    $field.classList.remove('is-invalid');
+  return true;
+};
 
  

@@ -28,19 +28,19 @@
   </head>
   <body class="index-bg-color">
     <main>
-      <section class="inicio p-0 container">
-        <div class="row">
-          <article class="col-12 mt-2 d-flex justify-content-end p-0">
+      <section class="inicio p-0">
+        <div class="row no-gutters">
+          <article class="col-12 mt-2 d-flex justify-content-end">
             <div class="inicio-btn-login-contenedor">
-                <button type="button" class="btn btn-outline-dark btn-login w-100 h-100 inicio-btn-login border-white" id="btnIniciarSesion">
+                <button type="button" class="btn btn-outline-dark btn-login h-100 inicio-btn-login border-white" id="btnIniciarSesion">
                     INICIAR SESIÓN
                 </button>
             </div>
           </article>
-          <article class="col-12 col-md-6 order-md-last inicio-content-txt-margin">
-            <div class="row">
+          <article class="col-12 col-md-6 inicio-content-txt-margin">
+            <div class="row no-gutters">
                 <img
-                    src="./img/disney/disney-inicio-img.png"
+                    src="./img/disney/disney-inicio-logo.png"
                     alt="Disney"
                     class="col-12 inicio-img-size mb-4"
                 />
@@ -59,138 +59,145 @@
         </article>
         </div>
     </section>
-      <section>
-        <h2 class="text-white text-center">Elegí tu plan</h2>
-        <p class="text-secondary fw-bold fs-size-txt text-center">Podés cancelar en cualquier momento</p>
-        <div class="container tabla-contenedor">
-          <table class="table tabla-plan mt-3">
-            <thead>
-              <tr>
-                <th class="text-white text-center"></th>
-                <th class="text-white text-center borde-superior">
-                  <div class="text-center">
-                    <p>Disney+</p>
-                  </div>
-                  <div class="tabla-contenedor-img my-4">
-                    <img src="./img/disney/disney-inicio-img.png" alt="Disney" class="tabla-img">
-                  </div>
-                  <div class="text-center w-100">
-                    <button type="button" class="btn btn-info tabla-btn mx-2">ARS 3.999/MES (FINAL)*</button>
-                  </div>
-                </th>
-                <th class="bg-dark text-white text-center borde-superior">
-                  <div class="text-center">
-                    <p>Combo+</p>
-                  </div>
-                  <div class="tabla-contenedor-img my-4">
-                    <img src="./img/disney/combo+.png" alt="Combo+" class="tabla-img">
-                  </div>
-                  <div class="text-center w-100">
-                    <button type="button" class="btn btn-contratar-bg-color tabla-btn mx-2">ARS 6.999/MES (FINAL)*</button>
-                  </div>
-                </th>
-              </tr>
+    <section class="tabla my-5">
+      <h2 class="text-white text-center">Elegí tu plan</h2>
+      <p class="text-secondary fw-bold fs-size-txt text-center">Podés cancelar en cualquier momento</p>
+      <div class="table-container mx-5">
+        <table class="table tabla-plan mt-3">
+            <thead class="sticky-header">
+                <tr>
+                    <th class="text-white text-center"></th>
+                    <th class="text-white text-center borde-superior">
+                        <div class="text-center">
+                            <p>Disney+</p>
+                        </div>
+                        <div class="tabla-contenedor-img my-4">
+                            <img src="./img/disney/disney-inicio-img.png" alt="Disney" class="tabla-img">
+                        </div>
+                        <div class="text-center w-100 tabla-contenedor-btn">
+                            <button type="button" class="btn btn-info tabla-btn mx-2 h-100">ARS 3.999/MES (FINAL)*</button>
+                        </div>
+                    </th>
+                    <th class="bg-dark text-white text-center borde-superior">
+                        <div class="text-center">
+                            <p>Combo+</p>
+                        </div>
+                        <div class="tabla-contenedor-img my-4">
+                            <img src="./img/disney/combo+.png" alt="Combo+" class="tabla-img">
+                        </div>
+                        <div class="text-center w-100 tabla-contenedor-btn">
+                            <button type="button" class="btn btn-contratar-bg-color tabla-btn mx-2 h-100">ARS 6.999/MES (FINAL)*</button>
+                        </div>
+                    </th>
+                </tr>
             </thead>
             <tbody id="tbody-plan">
-              <tr>
-                <td class="text-secondary  align-middle">Precio anual</td>
-                <td class="text-white text-center">
-                  <p>¡12 meses al precio de 9!</p>
-                  <div>
-                    <button type="button" class="btn btn-info tabla-btn mx-2">ARS 35.899/AÑO (FINAL)*</button>
-                  </div>
-                </td>
-                <td class="bg-dark text-white text-center">
-                  <i class="fas fa-minus"></i>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-secondary  align-middle">Estrenos de películas, series originales y clásicos de Disney, Pixar, Marvel, Star Wars y National Geographic</td>
-                <td class="text-white text-center align-middle">
-                  <i class="fas fa-check"></i>
-                </td>
-                <td class="bg-dark text-white text-center align-middle">
-                  <i class="fas fa-check"></i>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-secondary  align-middle">Deportes en vivo de las mejores ligas del mundo y los torneos más importantes de ESPN</td>
-                <td class="text-white text-center align-middle">
-                  <i class="fas fa-minus"></i>
-                </td>
-                <td class="bg-dark text-white text-center align-middle">
-                  <i class="fas fa-check"></i>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-secondary  align-middle">Producciones locales y películas, series y programas de TV premiados exclusivos de Star+</td>
-                <td class="text-white text-center align-middle">
-                  <i class="fas fa-minus"></i>
-                </td>
-                <td class="bg-dark text-white text-center align-middle">
-                  <i class="fas fa-check"></i>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-secondary  align-middle">Dispositivos para ver en simultáneo</td>
-                <td class="text-white text-center align-middle">
-                  4
-                </td>
-                <td class="bg-dark text-secondary text-center align-middle">
-                  4+4
-                </td>
-              </tr>
-              <tr>
-                <td class="text-secondary  align-middle">Descargas para ver tus favoritos sin conexión ni demoras</td>
-                <td class="text-white text-center align-middle">
-                  <i class="fas fa-check"></i>
-                </td>
-                <td class="bg-dark text-white text-center align-middle">
-                  <i class="fas fa-check"></i>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-secondary  align-middle">Dispositivos para ver en simultáneo</td>
-                <td class="text-white text-center align-middle">
-                  7
-                </td>
-                <td class="bg-dark text-secondary text-center align-middle">
-                  7+7
-                </td>
-              </tr>
-              <tr>
-                <td class="text-secondary  align-middle">Controles parentales para proteger a tu familia</td>
-                <td class="text-white text-center align-middle">
-                  <i class="fas fa-check"></i>
-                </td>
-                <td class="bg-dark text-white text-center align-middle">
-                  <i class="fas fa-check"></i>
-                </td>
-              </tr>
+                <tr>
+                    <td class="text-secondary align-middle">Precio anual</td>
+                    <td class="text-white text-center">
+                        <p>¡12 meses al precio de 9!</p>
+                        <div class="tabla-contenedor-img">
+                            <button type="button" class="btn btn-info tabla-btn mx-2 h-100">ARS 35.899/AÑO (FINAL)*</button>
+                        </div>
+                    </td>
+                    <td class="bg-dark text-white text-center">
+                        <i class="fas fa-minus"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-secondary align-middle">Estrenos de películas, series originales y clásicos de Disney, Pixar, Marvel, Star Wars y National Geographic</td>
+                    <td class="text-white text-center align-middle">
+                        <i class="fas fa-check"></i>
+                    </td>
+                    <td class="bg-dark text-white text-center align-middle">
+                        <i class="fas fa-check"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-secondary align-middle">Deportes en vivo de las mejores ligas del mundo y los torneos más importantes de ESPN</td>
+                    <td class="text-white text-center align-middle">
+                        <i class="fas fa-minus"></i>
+                    </td>
+                    <td class="bg-dark text-white text-center align-middle">
+                        <i class="fas fa-check"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-secondary align-middle">Producciones locales y películas, series y programas de TV premiados exclusivos de Star+</td>
+                    <td class="text-white text-center align-middle">
+                        <i class="fas fa-minus"></i>
+                    </td>
+                    <td class="bg-dark text-white text-center align-middle">
+                        <i class="fas fa-check"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-secondary align-middle">Dispositivos para ver en simultáneo</td>
+                    <td class="text-white text-center align-middle">
+                        4
+                    </td>
+                    <td class="bg-dark text-secondary text-center align-middle">
+                        4+4
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-secondary align-middle">Descargas para ver tus favoritos sin conexión ni demoras</td>
+                    <td class="text-white text-center align-middle">
+                        <i class="fas fa-check"></i>
+                    </td>
+                    <td class="bg-dark text-white text-center align-middle">
+                        <i class="fas fa-check"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-secondary align-middle">Dispositivos para ver en simultáneo</td>
+                    <td class="text-white text-center align-middle">
+                        7
+                    </td>
+                    <td class="bg-dark text-secondary text-center align-middle">
+                        7+7
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-secondary align-middle">Controles parentales para proteger a tu familia</td>
+                    <td class="text-white text-center align-middle">
+                        <i class="fas fa-check"></i>
+                    </td>
+                    <td class="bg-dark text-white text-center align-middle">
+                        <i class="fas fa-check"></i>
+                    </td>
+                </tr>
             </tbody>
-          </table>
+        </table>
       </div>
-      </section>
-      <section class="container dispositivos my-5">
-        <div class="row">
-          <div class="col-12 col-md-6 dispositivos-txt-margin">
-            <h2 class="text-white text-center text-md-start">Cuando quieras, donde quieras</h2>
-            <p class="text-secondary fw-bold fs-size-txt  text-center text-md-start">
-              Disfrutalo en tu pantalla favorita, ya sea tu TV, tableta,
-              computadora, teléfono y otros. Viví una experiencia única con una
-              amplia selección de títulos en 4K. Además, podés ver en cuatro
-              pantallas en simultáneo para que nadie se quede afuera.
-            </p>
-          </div>
-          <div class="col-12 col-md-6 container-img d-flex justify-content-center">
-            <img
+    </section>
+    <section class="dispositivos">
+      <div class="row">
+        <div class="col-12 d-md-none d-flex justify-content-center mb-0">
+          <img
               src="./img/disney/original.png"
               alt="Disney+ en cualquier dispositivo"
               class="img-size img-fluid"
-            />
-          </div>
+          />
         </div>
-      </section>
+          <div class="col-12 col-md-6 dispositivos-txt-margin">
+              <h2 class="text-white text-center text-md-start">Cuando quieras, donde quieras</h2>
+              <p class="text-secondary fw-bold fs-size-txt text-center text-md-start">
+                  Disfrútalo en tu pantalla favorita, ya sea tu TV, tableta,
+                  computadora, teléfono y otros. Vive una experiencia única con una
+                  amplia selección de títulos en 4K. Además, puedes ver en cuatro
+                  pantallas simultáneamente para que nadie se quede afuera.
+              </p>
+          </div>
+          <div class="col-12 col-md-6 d-none d-md-block">
+              <img
+                  src="./img/disney/original.png"
+                  alt="Disney+ en cualquier dispositivo"
+                  class="img-size img-fluid"
+              />
+          </div>
+      </div>
+  </section>
       <section class="container mt-4">
         <div class="row">
           <h2 class="col-12 text-center text-white">
