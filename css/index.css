@@ -2,15 +2,20 @@
     background-color: #050714;
 }
 
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
 .inicio {
   width: 100%;
-  height: 100vh;
+  height: auto; 
   background: url('../img/disney/bg-inicio.png') no-repeat right;
   background-size: 60% 80%;
 }
 
 .inicio-content-txt-margin{
-  margin-top: 120px;
+  margin-top: 100px;
   margin-left: 80px;
 }
 
@@ -21,8 +26,7 @@
 }
 
 .inicio-btn-contratar-contenedor{
-  height: 70px;
-  width:600px;
+  max-width: 100%; 
 }
 
 .btn-contratar-bg-color{
@@ -36,9 +40,9 @@
   height: 100%;
 }
 
-.inicio-btn-login-contenedor{
-  height: 50px;
-  max-width:170px;
+.inicio-btn-login-contenedor {
+  height: 50px; 
+  max-width: 150px; 
 }
 
 .inicio-btn-login{
@@ -62,61 +66,77 @@ max-width:300px;
     width: 100%;
 }
 
-
-.dispositivos{
-    width: 100%;
+.dispositivos {
+  width: 100%;
+  padding-left: 60px;
+  padding-right: 60px; 
+  padding-bottom: 100px;
 }
 
-.dispositivos-txt-margin{
-margin-top:140px;
-}
-.container-img{
-    max-width:50%;
+.dispositivos-txt-margin {
+  margin-top: 140px;
+  margin-bottom: 20px; 
 }
 
-.img-size{
-    max-width: 500px;
+.dispositivos-txt-size-titulo{
+  font-size: 2.5rem; 
+
+}
+.container-img {
+  max-width: 50%;
 }
 
+.img-size {
+  max-width: 100%;
+  height: auto; 
+}
+
+.tabla {
+  max-height: 2300px;
+}
+.table-container {
+  height: 100%;
+  position: relative;
+  overflow: auto; /* Permite el desplazamiento dentro del contenedor */
+}
+.sticky-header th {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #343a40; /* Color de fondo del thead */
+}
 .table.tabla-plan {
   overflow: hidden;
   background-color: transparent;
   max-width: 100%;
+  width: 100%;
 }
-
 .table.tabla-plan th,
 .table.tabla-plan td {
   border: none;
   background-color: transparent;
-  width: 200px;
+  max-width: 200px;
 }
-
 .table.tabla-plan thead th {
   border-bottom: 2px solid white; 
 }
-
 .table.tabla-plan tbody tr td {
   border-bottom: 1px solid #6c757d;
 }
-
 .table.tabla-plan tr {
   height: 110px;
 }
-
 .tabla-contenedor-img {
   width: 100%;
 }
-
-.tabla-img{
+.tabla-img {
   width: 120px;
   height: 55px;
   object-fit: cover;
 }
-
-.tabla-btn{
-  height: 50px;
+.tabla-contenedor-btn {
+  max-height: 80px;
 }
-
 .borde-superior{
   border-top: 1px solid #6c757d;
 }
