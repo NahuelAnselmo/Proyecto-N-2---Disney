@@ -42,3 +42,7 @@ function imageExists(url, callback) {
   img.onerror = () => callback(false);
   img.src = url;
 }
+
+export const obtenerUsuariosDeLS = () => {
+  return ordenarLista(JSON.parse(localStorage.getItem('usuarios')) || []);
+};
