@@ -32,8 +32,11 @@
       <div
         class="container d-flex flex-column justify-content-center align-items-center vh-100"
       >
-        <form class="login-form shadow">
+        <form id="login-form" class="login-form shadow">
           <div class="form-contenedor-contenidos container">
+            <div class="alert alert-warning d-none" id="alert-login">
+              Las credenciales no coinciden con nuestros registros.
+            </div>
             <svg
               aria-hidden="true"
               class="branded-logo login-svg"
@@ -93,6 +96,7 @@
                 placeholder="Correo electrónico"
                 required
               />
+              <div class="invalid-feedback">Ingrese un usuario valido</div>
             </div>
             <div class="form-group mt-3">
               <input
@@ -103,8 +107,9 @@
                 placeholder="Contraseña"
                 required
               />
+              <div class="invalid-feedback">Ingrese una contraseña valida</div>
             </div>
-            <button id="btn-confirmar" class="custom-button mt-4 mb-3 w-100">Continuar</button>
+            <button id="btn-confirmar" class="custom-button mt-4 mb-3 w-100" type="submit">Continuar</button>
             <hr />
             <div id="formulario-footer">
               <p class="fw-bold d-block">

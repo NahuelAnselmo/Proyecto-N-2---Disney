@@ -12,16 +12,17 @@
   height: auto; 
   background: url('../img/disney/bg-inicio.png') no-repeat right;
   background-size: 60% 80%;
+ 
 }
 
 .inicio-content-txt-margin{
   margin-top: 100px;
-  margin-left: 80px;
+  margin-left:40px;
 }
 
 .inicio-img-size{
-  max-height: 180px;
-  max-width: 210px;
+  max-height: 190px;
+  max-width: 220px;
   object-fit: cover;
 }
 

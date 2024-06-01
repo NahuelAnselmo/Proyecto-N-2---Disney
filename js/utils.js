@@ -2,9 +2,9 @@ export const obtenerCategoriasDeLS = () => {
     return ordenarLista(JSON.parse(localStorage.getItem('categorias')) || []);
   };
   
- /* export const estaLogueado = () => {
-    return sessionStorage.getItem('estaLogueado');
-  };*/
+export const estaLogueado = () => {
+  return sessionStorage.getItem('estaLogueado');
+};
   
   export const ordenarLista = (lista) => {
     return lista.sort((a, b) => {
