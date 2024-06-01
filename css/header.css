@@ -1,4 +1,4 @@
-@import url(font.css);
+ @import url(font.css);
 * {
   margin: 0;
   padding: 0;
@@ -31,11 +31,11 @@ a {
 /* Header */
 .header {
   display: flex;
-  padding: 20px 35px;
+  padding: 10px 25px;
   justify-content: space-between;
   align-items: center;
   font-weight: 400;
-  background: black;
+  background: rgb(0, 0, 0);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -75,7 +75,6 @@ a {
 }
 .nav-links p:after {
   bottom: -5px;
-  /* bottom: 0; */
   content: "";
   display: block;
   border-radius: 10px;
@@ -142,7 +141,8 @@ a {
     height: 35px !important;
   }
 }
-@media screen and (min-width: 1224px) {
+@media screen and (min-width: 1080px) {
+
   .name-user {
     display: inline;
   }
