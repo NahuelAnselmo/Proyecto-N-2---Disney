@@ -29,12 +29,12 @@ export const agregarPeliculaALS = (pelicula) => {
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
 };
 export function obtenerPeliculasDestacadas() {
-    const peliculas = JSON.parse(localStorage.getItem('peliculas')) || [];
-    return peliculas.filter(pelicula => pelicula.destacada);
+    const pelicula = JSON.parse(localStorage.getItem('pelicula')) || [];
+    return pelicula.filter(pelicula => pelicula.destacada);
 }
 
 
-function imageExists(url, callback) {
+export function imageExists(url, callback) {
   const img = new Image();
   img.onload = () => callback(true);
   img.onerror = () => callback(false);
