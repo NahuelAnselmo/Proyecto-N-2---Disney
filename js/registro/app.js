@@ -1,26 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
+
+    import { agregarUsuario } from "./alta.js";
     const form = document.getElementById('registrationForm');
     const errorMessage = document.getElementById('error-message');
+    const $inputNombre=document.getElementById("name");
+  const $inputPassword=document.getElementById("password");
+  const $inputEmail=document.getElementById("email");
+  const $inputConfirmPassword=document.getElementById("confirmPassword");
+
+  const usuarioAdmin = new Usuario('admin@gmail.com','admin',true);
+  agregarUsuario("admin", "admin@gmail.com", "admin"),
+ 
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirmPassword').value;
-
+        
+        
+        
         if (password !== confirmPassword) {
             showError("Las contraseñas no coinciden.");
             return;
         }
-
-        const user = {
-            name: name,
-            email: email,
-            password: password
-        };
-
        
 
         sendEmailToAdmin(user)
@@ -60,4 +59,4 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1000);
         });
     }
-});
+
