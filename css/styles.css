@@ -2,3 +2,36 @@
     max-width: 500px;
     margin-top: 50px;
 }
+
+.formRegistro {
+    width: 550px;
+    max-height: 700px;
+    border-radius: 25px;
+}
+
+body {
+    background: linear-gradient(to bottom, #053d4c, #055565, #054756);
+}
+
+input{
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    font-size: 16px;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
+.btn {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover{
+    background-color: #333;
+}

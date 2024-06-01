@@ -21,12 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
             password: password
         };
 
-        localStorage.setItem('user', JSON.stringify(user));
-        sessionStorage.setItem('user', JSON.stringify(user));
+       
 
         sendEmailToAdmin(user)
             .then(() => {
-                alert('Usuario registrado con exito');
+                Swal.fire({
+                    title: "Usuario registrado con exito",
+                    icon: "success",
+                    timer: 1500,
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    timerProgressBar: true,
+                  });
                 form.reset();
             })
             .catch(() => {
