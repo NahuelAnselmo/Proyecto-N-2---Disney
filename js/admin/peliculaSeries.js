@@ -1,5 +1,5 @@
 export class Pelicula {
-  constructor(titulo, tipo, categoria, caratula, trailer, descripcion, publicada) {
+  constructor(titulo, tipo, categoria, caratula, trailer, descripcion, publicada, destacada) {
     this.codigo = window.self.crypto.randomUUID();
     this.titulo = titulo;
     this.tipo = tipo;
@@ -8,5 +8,6 @@ export class Pelicula {
     this.trailer = trailer;
     this.descripcion = descripcion;
     this.publicada = publicada;
+    this.destacada = destacada;
   };
 };  

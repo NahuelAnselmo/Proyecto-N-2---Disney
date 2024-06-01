@@ -1,7 +1,7 @@
-import { obtenerPeliculaSerieDeLs } from "../utils.js";
+import { obtenerPeliculaSerieDeLs, agregarPeliculaALS, } from "../utils.js";
 import { Pelicula } from './peliculaSeries.js';
-import { agregarPeliculaALS} from './utils.js';
 import { cargarTabla } from "./utils.js";
+
 
 export const agregarPelicula = (titulo, tipo, categoria, caratula, trailer, descripcion, publicada) => {
   const pelicula = new Pelicula(titulo, tipo, categoria, caratula, trailer, descripcion, publicada);
@@ -14,7 +14,7 @@ export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descr
   const peliculas = obtenerPeliculaSerieDeLs();
   const codigoPelicula = sessionStorage.getItem("codigoPelicula");
 
-   const posicionPelicula = peliculas.findIndex((pelicula) => {
+  const posicionPelicula = peliculas.findIndex((pelicula) => {
     return pelicula.codigo === codigoPelicula;
   });
 
@@ -24,17 +24,30 @@ export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descr
     return;
   }
 
-  const nuevaPelicula = new Pelicula(titulo, tipo, categoria, caratula, trailer, descripcion, publicada);
-
-  peliculas.splice(posicionPelicula, 1, nuevaPelicula);
+  // Actualizar los valores de la película existente
+  peliculas[posicionPelicula].titulo = titulo;
+  peliculas[posicionPelicula].tipo = tipo;
+  peliculas[posicionPelicula].categoria = categoria;
+  peliculas[posicionPelicula].caratula = caratula;
+  peliculas[posicionPelicula].trailer = trailer;
+  peliculas[posicionPelicula].descripcion = descripcion;
+  peliculas[posicionPelicula].publicada = publicada;
+  peliculas[posicionPelicula].destacada = destacada;
 
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
 
   sessionStorage.removeItem("codigoPelicula");
 
-  const $alert = document.getElementById("alert-edicion-pelicula").classList.add("d-none");
+  Swal.fire({
+    title: 'Éxito',
+    text: `Película ${titulo} editada exitosamente`,
+    icon: 'success',
+    showConfirmButton: true,
+    confirmButtonText: '¡OK!',
+  });
 
-  const $button = document.getElementById("button-cancelar").classList.add("d-none");
+  document.getElementById("alert-edicion-pelicula").classList.add("d-none");
+  document.getElementById("button-cancelar").classList.add("d-none");
 };
 
 export const eliminarPelicula = (idPelicula, nombrePelicula) => {
@@ -84,13 +97,10 @@ export const destacarPelicula = (codigoPelicula) => {
   const posicionPelicula = peliculas.findIndex((pelicula) => pelicula.codigo === codigoPelicula);
 
   if (posicionPelicula !== -1) {
-    // Marcamos la película como destacada
     peliculas[posicionPelicula].destacada = true;
 
-    // Guardamos la lista actualizada en localStorage
     localStorage.setItem('peliculas', JSON.stringify(peliculas));
 
-    // Notificamos al usuario
     swal.fire({
       title: 'Éxito',
       text: `Película ${peliculas[posicionPelicula].titulo} destacada correctamente`,
@@ -100,9 +110,7 @@ export const destacarPelicula = (codigoPelicula) => {
       confirmButtonText: 'Aceptar',
     });
 
-    // Actualizar la tabla
     cargarTabla();
-
   } else {
     swal.fire({
       title: 'Error',
@@ -114,31 +122,3 @@ export const destacarPelicula = (codigoPelicula) => {
     });
   }
 };
-
-export const mostrarPeliculasDestacadas = () => {
-  const peliculas = obtenerPeliculaSerieDeLs();
-  const contenedorDestacadas = document.getElementById('peliculas-destacadas');
-
-  if (!contenedorDestacadas) {
-    console.error('Elemento con ID "peliculas-destacadas" no encontrado en el DOM.');
-    return;
-  }
-
-  contenedorDestacadas.innerHTML = ''; // Limpia el contenedor antes de llenarlo
-
-  const peliculasDestacadas = peliculas.filter((pelicula) => pelicula.destacada);
-
-  peliculasDestacadas.forEach((pelicula) => {
-    const peliculaElemento = document.createElement('div');
-    peliculaElemento.classList.add('pelicula-destacada');
-    peliculaElemento.innerHTML = `
-      <h3>${pelicula.titulo}</h3>
-      <img src="${pelicula.caratula}" alt="${pelicula.titulo}">
-      <p>${pelicula.descripcion}</p>
-      <a href="${pelicula.trailer}" target="_blank">Ver Trailer</a>
-    `;
-    contenedorDestacadas.appendChild(peliculaElemento);
-  });
-};
-
-
