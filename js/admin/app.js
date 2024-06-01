@@ -1,12 +1,5 @@
-import {
-  agregarPelicula,
-  editarPelicula,
-} from "./abm.js";
-import {
-  cargarTabla,
-  estaEditando,
-  cargarCategoriasEnSelect,
-} from "./utils.js";
+import {  agregarPelicula,editarPelicula,} from "./abm.js";
+import {  cargarTabla, estaEditando, cargarCategoriasEnSelect,} from "./utils.js";
 import { validateName, validateUrl } from "./validators.js";
 
 const $form = document.getElementById("form-pelicula");
@@ -69,23 +62,11 @@ $form.addEventListener("submit", (event) => {
 
   if (estaEditando()) {
     editarPelicula(
-      titulo,
-      tipo,
-      categoria,
-      caratula,
-      trailer,
-      descripcion,
-      publicada
+      titulo, tipo, categoria, caratula, trailer, descripcion, publicada
     );
   } else {
     agregarPelicula(
-      titulo,
-      tipo,
-      categoria,
-      caratula,
-      trailer,
-      descripcion,
-      publicada
+      titulo, tipo, categoria, caratula, trailer, descripcion, publicada
     );
   }
 

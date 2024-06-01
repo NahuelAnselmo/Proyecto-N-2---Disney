@@ -28,11 +28,11 @@ export const agregarPeliculaALS = (pelicula) => {
   peliculas.push(pelicula);
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
 };
+export function obtenerPeliculasDestacadas() {
+    const peliculas = JSON.parse(localStorage.getItem('peliculas')) || [];
+    return peliculas.filter(pelicula => pelicula.destacada);
+}
 
-export const obtenerPeliculasDestacadas = () => {
-  const peliculas = obtenerPeliculaSerieDeLs();
-  return peliculas.filter(pelicula => pelicula.destacada);
-};
 
 function imageExists(url, callback) {
   const img = new Image();

@@ -1,55 +1,47 @@
-import { obtenerPeliculasDestacadas, imageExists } from './utils.js';
-import { destacarPelicula } from './admin.js'; // Importar la función para destacar una película
+import { obtenerPeliculasDestacadas, imageExists } from '../utils.js';
 
-function cargarPeliculasDestacadasEnCarrusel() {
-    const carouselInner = document.getElementById("carousel-inner");
-    const carouselIndicators = document.getElementById("carousel-indicators");
+function cargarPeliculasDestacadasEnSlider() {
+    const sliderFilms = document.querySelector(".slider-films .slider");
 
+    // Obtener las películas destacadas
     const peliculasDestacadas = obtenerPeliculasDestacadas();
 
-    carouselInner.innerHTML = '';
-    carouselIndicators.innerHTML = '';
+    // Limpiar el contenido actual del slider
+    sliderFilms.innerHTML = '';
 
-    peliculasDestacadas.forEach((pelicula, index) => {
-        const isActive = index === 0 ? "active" : "";
-
+    // Iterar sobre las películas destacadas y agregarlas al slider
+    peliculasDestacadas.forEach((pelicula) => {
+        // Verificar si la imagen existe
         imageExists(pelicula.caratula, (exists) => {
             const caratula = exists ? pelicula.caratula : 'img/default.jpg';
+
+            // Construir el HTML del slide
             const slideHTML = `
-                <div class="carousel-item ${isActive}">
-                    <img src="${caratula}" class="d-block w-100" alt="${pelicula.titulo}">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>${pelicula.titulo}</h5>
-                        <p>${pelicula.descripcion}</p>
-                        <a class="btn link-reproducir" href="${pelicula.trailer}" target="_blank">
-                            <i class="fa-regular fa-circle-play"></i> REPRODUCIR
-                        </a>
-                        <a class="btn link-ver-mas" href="./detalle.html?peliculaIndex=${index}">VER MÁS...</a>
+                <div class="slide">
+                    <div class="cl">
+                        <img src="${caratula}" alt="${pelicula.titulo}">
                     </div>
                 </div>
             `;
 
-            carouselInner.innerHTML += slideHTML;
+            // Agregar el slide al slider
+            sliderFilms.innerHTML += slideHTML;
 
-            const indicatorHTML = `
-                <button
-                    type="button"
-                    data-bs-target="#carousel-inicio"
-                    data-bs-slide-to="${index}"
-                    class="${isActive}"
-                    aria-label="Slide ${index + 1}"
-                ></button>
-            `;
-
-            carouselIndicators.innerHTML += indicatorHTML;
+            // Inicializar el slider después de agregar los slides
+            $(document).ready(function(){
+                $('.slider').slick({
+                    infinite: true,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    variableWidth: true
+                });
+            });
         });
     });
-
-    const myCarousel = document.getElementById('carousel-inicio');
-    const carousel = new bootstrap.Carousel(myCarousel);
 }
 
+// Llamar a la función para cargar las películas destacadas en el slider cuando se cargue la página
 window.addEventListener("load", () => {
-    cargarPeliculasDestacadasEnCarrusel();
-    cargarTabla();
+    cargarPeliculasDestacadasEnSlider();
 });

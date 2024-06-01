@@ -87,6 +87,7 @@ export const cargarTabla = () => {
   });
 };
 
+
 export const prepararEdicionPelicula = (pelicula) => {
   swal
     .fire({
@@ -115,6 +116,7 @@ export const prepararEdicionPelicula = (pelicula) => {
         $inputTrailer.value = pelicula.trailer;
         $inputDescripcion.value = pelicula.descripcion;
         $inputPublicada.value = pelicula.publicada;
+        $inputDestacada.value = pelicula.destacada;
 
         sessionStorage.setItem("codigoPelicula", pelicula.codigo);
 

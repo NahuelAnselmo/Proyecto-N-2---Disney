@@ -1,6 +1,7 @@
-import { obtenerPeliculaSerieDeLs, agregarPeliculaALS } from "../utils.js";
+import { obtenerPeliculaSerieDeLs, agregarPeliculaALS, } from "../utils.js";
 import { Pelicula } from './peliculaSeries.js';
 import { cargarTabla } from "./utils.js";
+
 
 export const agregarPelicula = (titulo, tipo, categoria, caratula, trailer, descripcion, publicada) => {
   const pelicula = new Pelicula(titulo, tipo, categoria, caratula, trailer, descripcion, publicada);
@@ -31,6 +32,7 @@ export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descr
   peliculas[posicionPelicula].trailer = trailer;
   peliculas[posicionPelicula].descripcion = descripcion;
   peliculas[posicionPelicula].publicada = publicada;
+  peliculas[posicionPelicula].destacada = destacada;
 
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
 
@@ -120,5 +122,3 @@ export const destacarPelicula = (codigoPelicula) => {
     });
   }
 };
-
-
