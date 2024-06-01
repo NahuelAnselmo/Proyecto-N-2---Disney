@@ -12,7 +12,7 @@ const cargarFilaTabla = (pelicula, indice) => {
   $btnDestacar.classList.add("btn", "btn-sm", "btn-info", "me-2", "bg-warning");
   $btnDestacar.innerHTML = '<i class="fa-regular fa-star"></i>';
   $btnDestacar.onclick = () => {
-    destacarPelicula(pelicula.codigo, pelicula.titulo);
+    destacarPelicula(pelicula.codigo);
     cargarTabla();
   };
   $tdDestacar.appendChild($btnDestacar);

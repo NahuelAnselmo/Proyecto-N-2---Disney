@@ -90,35 +90,3 @@ export const eliminarPelicula = (idPelicula, nombrePelicula) => {
       }
     });
 };
-
-export const destacarPelicula = (codigoPelicula) => {
-  const peliculas = obtenerPeliculaSerieDeLs();
-
-  const posicionPelicula = peliculas.findIndex((pelicula) => pelicula.codigo === codigoPelicula);
-
-  if (posicionPelicula !== -1) {
-    peliculas[posicionPelicula].destacada = true;
-
-    localStorage.setItem('peliculas', JSON.stringify(peliculas));
-
-    swal.fire({
-      title: 'Éxito',
-      text: `Película ${peliculas[posicionPelicula].titulo} destacada correctamente`,
-      icon: 'success',
-      showConfirmButton: true,
-      showCancelButton: false,
-      confirmButtonText: 'Aceptar',
-    });
-
-    cargarTabla();
-  } else {
-    swal.fire({
-      title: 'Error',
-      text: 'La película no se encontró',
-      icon: 'error',
-      showConfirmButton: true,
-      showCancelButton: false,
-      confirmButtonText: 'Aceptar',
-    });
-  }
-};

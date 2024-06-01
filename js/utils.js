@@ -29,8 +29,9 @@ export const agregarPeliculaALS = (pelicula) => {
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
 };
 export function obtenerPeliculasDestacadas() {
-    const peliculas = JSON.parse(localStorage.getItem('peliculas')) || [];
-    return peliculas.filter(pelicula => pelicula.destacada);
+  const peliculas = JSON.parse(localStorage.getItem('peliculas')) || [];
+  console.log(peliculas);
+  return peliculas.filter(pelicula => pelicula.destacada === true);
 }
 
 
