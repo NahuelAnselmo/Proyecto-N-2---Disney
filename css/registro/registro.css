@@ -1,64 +1,28 @@
-.login-bg-color {
-    background: linear-gradient(to bottom, #053d4c, #055565, #054756);
-    height: 800px;
+.container {
+    max-width: 500px;
+    margin-top: 50px;
 }
 
-.login-icono {
-    width: 150px;
-    height: auto;
-}
-
-.login-form {
-    max-width: 550px;
-    max-height: 900px;
-    background-color: white;
+.formRegistro {
+    max-height: 700px;
     border-radius: 25px;
 }
 
-.form-contenedor-contenidos {
-    width: 100%;
-    max-height: 100%;
-    padding: 40px;
+body {
+    background: linear-gradient(to bottom, #053d4c, #055565, #054756);
 }
 
-.login-svg {
-    width: 100px;
-}
-
-.input-email, .input-password {
-    height: 60px;
+input{
+    height: 40px;
     background-color: white;
     border: none;
     border-radius: 8px;
-    padding: 10px;
+    padding: 5px;
     font-size: 16px;
     box-shadow: none;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
 }
-
-.input-email:focus::placeholder, .input-password:focus::placeholder {
-    transform: translateY(-100%);
-}
-
-.input-email:not(:placeholder-shown)::placeholder, .input-password:not(:placeholder-shown)::placeholder {
-    transform: translateY(-100%);
-}
-
-.input-email:hover, .input-password:hover {
-    box-shadow: 0 0 10px 2px black;
-}
-
-.input-email:focus, .input-password:focus {
-    box-shadow: 0 0 10px 2px #444444;
-    outline: none; 
-}
-
-.input-email:active, .input-password:active {
-    box-shadow: 0 0 10px 2px #444444;
-    outline: none;
-}
-
-.custom-button {
+.btn {
     background-color: black;
     color: white;
     border: none;
@@ -67,8 +31,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-.custom-button:hover {
+.btn:hover{
     background-color: #333;
 }
 
@@ -85,7 +48,6 @@
     font-size: 14px;
     color: #717377;
 }
-
 .footer-links {
     display: flex;
     flex-wrap: wrap;

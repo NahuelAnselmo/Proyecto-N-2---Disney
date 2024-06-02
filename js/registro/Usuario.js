@@ -1,6 +1,7 @@
 export class Usuario {
-    constructor(email, contraseña) {
+    constructor(nombre, email, contraseña) {
       this.id = window.self.crypto.randomUUID();
+      this.nombre=nombre;
       this.email = email;
       this.contraseña = contraseña;
     }

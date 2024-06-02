@@ -1,4 +1,4 @@
-import { obtenerPeliculaSerieDeLs, obtenerCategoriasDeLS } from "../utils.js";
+import { obtenerPeliculaSerieDeLs, obtenerCategoriasDeLS, obtenerPeliculasDestacadas } from "../utils.js";
 import { eliminarPelicula } from "./abm.js";
 import { destacarPelicula } from "./abm.js";
 
@@ -167,7 +167,7 @@ export function cargarCategoriasEnSelect($selectCategoria) {
 
 export function existePelicula(tituloPelicula) {
   tituloPelicula = tituloPelicula.toUpperCase();
-  const peliculas = obtenerPeliculasDeLs();
+  const peliculas = obtenerPeliculaSerieDeLs();
   for (const pelicula of peliculas) {
     if (pelicula.titulo.toUpperCase() === tituloPelicula) {
       const mensaje = `Esa película ya existe, por favor, intente de nuevo`;
@@ -183,4 +183,48 @@ export function existePelicula(tituloPelicula) {
     }
   }
   return false;
+}
+export function cargarCarousel() {
+  const peliculasDestacadas = obtenerPeliculasDestacadas();
+  const $carouselInner = document.getElementById("carousel-inner");
+
+  $carouselInner.innerHTML = "";
+
+  peliculasDestacadas.forEach((pelicula) => {
+    cargarItemsDeCarousel(pelicula);
+  });
+
+  const prevButton = document.getElementById("prev-btn");
+  const nextButton = document.getElementById("next-btn");
+
+  let position = 0;
+
+  nextButton.addEventListener("click", () => {
+    position -= 100;
+    if (position < -(peliculasDestacadas.length - 1) * 100) {
+      position = 0;
+    }
+    $carouselInner.style.transform = `translateX(${position}%)`;
+  });
+
+  prevButton.addEventListener("click", () => {
+    position += 100;
+    if (position > 0) {
+      position = -(peliculasDestacadas.length - 1) * 100;
+    }
+    $carouselInner.style.transform = `translateX(${position}%)`;
+  });
+}
+
+function cargarItemsDeCarousel(pelicula) {
+  const $carouselInner = document.getElementById("carousel-inner");
+  const $itemCarousel = document.createElement("div");
+  $itemCarousel.classList.add("carousel-item");
+
+  const $imagen = document.createElement("img");
+  $imagen.src = pelicula.caratula;
+  $imagen.alt = pelicula.titulo;
+
+  $itemCarousel.appendChild($imagen);
+  $carouselInner.appendChild($itemCarousel);
 }

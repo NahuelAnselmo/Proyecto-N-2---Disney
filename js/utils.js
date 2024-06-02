@@ -29,8 +29,10 @@ export const agregarPeliculaALS = (pelicula) => {
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
 };
 export function obtenerPeliculasDestacadas() {
-    const peliculas = JSON.parse(localStorage.getItem('peliculas')) || [];
-    return peliculas.filter(pelicula => pelicula.destacada);
+  const peliculas = obtenerPeliculaSerieDeLs();
+  const peliculasDestacadas = peliculas.filter(pelicula => pelicula.destacada === true);
+  console.log(peliculasDestacadas); // Mueve el console.log aquí
+  return peliculasDestacadas;
 }
 
 
@@ -40,3 +42,7 @@ function imageExists(url, callback) {
   img.onerror = () => callback(false);
   img.src = url;
 }
+
+export const obtenerUsuariosDeLS = () => {
+  return ordenarLista(JSON.parse(localStorage.getItem('usuarios')) || []);
+};

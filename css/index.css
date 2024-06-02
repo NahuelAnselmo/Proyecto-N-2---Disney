@@ -9,15 +9,21 @@
 
 .inicio {
   width: 100%;
-  height: auto; 
-  background: url('../img/disney/bg-inicio.png') no-repeat right;
-  background-size: 60% 80%;
- 
+  height: 100vh;
+  background: url('../img/disney/bg-inicio.jpeg') no-repeat right;
+  background-size: 60%;
+  background-origin: content-box;
+}
+
+@media (max-width: 767.98px) { /* Bootstrap's breakpoint for 'md' is 768px */
+  .inicio {
+    background-size: 100% 75%; /* Ocupa todo el ancho y el 75% del alto */
+    background-position: top center; /* Centra la imagen horizontalmente y la posiciona desde arriba */
+  }
 }
 
 .inicio-content-txt-margin{
   margin-top: 100px;
-  margin-left:40px;
 }
 
 .inicio-img-size{
@@ -27,6 +33,7 @@
 }
 
 .inicio-btn-contratar-contenedor{
+  height: 60px;
   max-width: 100%; 
 }
 

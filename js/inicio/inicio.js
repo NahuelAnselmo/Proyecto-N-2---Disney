@@ -1,13 +1,10 @@
-import { obtenerPeliculasDestacadas, imageExists } from '../utils.js';
 
-function cargarPeliculasDestacadasEnSlider() {
-    const sliderFilms = document.querySelector(".slider-films .slider");
+import { obtenerPeliculasDestacadas } from '../utils.js';
+import { cargarCarousel } from '../admin/utils.js';
 
-    // Obtener las películas destacadas
-    const peliculasDestacadas = obtenerPeliculasDestacadas();
 
     // Limpiar el contenido actual del slider
-    sliderFilms.innerHTML = '';
+    /*sliderFilms.innerHTML = '';
 
     // Iterar sobre las películas destacadas y agregarlas al slider
     peliculasDestacadas.forEach((pelicula) => {
@@ -39,9 +36,11 @@ function cargarPeliculasDestacadasEnSlider() {
             });
         });
     });
-}
+
 
 // Llamar a la función para cargar las películas destacadas en el slider cuando se cargue la página
 window.addEventListener("load", () => {
     cargarPeliculasDestacadasEnSlider();
-});
+});*/
+obtenerPeliculasDestacadas();
+cargarCarousel();
