@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Julieta, Ivan Balceda, Ignacio Sal Paz, Nahuel Anselmo"/>
+  <meta name="author" content="Grupo N°4" />
   <meta name="description" content="Esta es una abm de películas y series super divertida" />
   <meta name="keywords" content="agenda,películas,series,js" />
+  <title>Detalle | Disney+</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"
     crossorigin="anonymous" />
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://kit.fontawesome.com/a253e5d80f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <link rel="shortcut icon" href="../img/icons/logo.svg" type="imgage/x-con">
-  <link rel="stylesheet" href="../css/inicio/home.css">
-  <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/header.css">
   <link rel="shortcut icon" href="img/icons/logo.svg" type="imgage/x-con">
-  <link rel="stylesheet" href="../css/inicio/disney.css">
-  <title>Inicio | Disney+</title>
+  <link rel="stylesheet" href="../css/detalle/detalle.css">
 </head>
 
 <body>
@@ -68,7 +67,7 @@
                   d="M18.84 11.965h6.722a4 4 0 0 1 4 4V26a4 4 0 0 1-4 4H10.375a4 4 0 0 1-4-4V15.965a4 4 0 0 1 4-4h6.211l-3.981-3.981a1.162 1.162 0 1 1 1.643-1.644l3.465 3.465 3.464-3.465a1.162 1.162 0 0 1 1.644 1.644l-3.982 3.981zm6.428 7.73a1.718 1.718 0 1 0 0-3.436 1.718 1.718 0 0 0 0 3.436zm0 6.011a1.718 1.718 0 1 0 0-3.435 1.718 1.718 0 0 0 0 3.435z">
                 </path>
               </svg></span>
-            <p class="name-tag mt-4">Series</p>
+            <p class="name-tag mt-4">series</p>
           </a></li></a></li>
         <li class="acort-menu">
           <a href="#">
@@ -142,163 +141,73 @@
     </div>
   </header>
 
-  <main>
-    <div class="container-general">
-      <div class="slider-films">
-          <div class="slider center">
-              <!-- Las películas destacadas se cargarán aquí dinámicamente -->
-          </div>
-      </div>
-  </div>
-      <!--section Disney-->
-      <div class="main disney rows mt-5 mb-5">
-        <div class="grid">
-          <div class="card-disney">
-            <div class="item-border">
-              <img src="../img/disney/disney-txt.png" alt="" class="item-image">
-              <img src="../img/disney/disney.gif" alt="" class="item-image hover image">
-            </div>
-          </div>
-          <div class="card-disney">
-            <div class="item-border">
-              <img src="../img/disney/pixar-txt.png" alt="" class="item-image">
-              <img src="../img/disney/pixar.gif" alt="" class="item-image hover image">
-            </div>
-          </div>
-          <div class="card-disney">
-            <div class="item-border">
-              <img src="../img/disney/marvel-txt.png" alt="" class="item-image">
-              <img src="../img/disney/marvel.gif" alt="" class="item-image hover image">
-            </div>
-          </div>
-          <div class="card-disney">
-            <div class="item-border">
-              <img src="../img/disney/star-txt.png" alt="" class="item-image">
-              <img src="../img/disney/starwars.gif" alt="" class="item-image hover image">
-            </div>
-          </div>
-          <div class="card-disney">
-            <div class="item-border">
-              <img src="../img/disney/national-txt.png" alt="" class="item-image">
-              <img src="../img/disney/national.gif" alt="" class="item-image hover image">
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--film-->
-      <div class="main movies-rows">
-        <h3 class="list-title">Recomendaciones Para ti</h3>
-        <div class="slider responsive">
-          <div class="card">
-            <h3><img src="img/portadas/recommed/img1.jpg" alt=""></h3>
-          </div>
-          <div class="card">
-            <h3><img src="img/portadas/recommed/img2.jpg" alt=""></h3>
-          </div>
-          <div class="card">
-            <h3><img src="img/portadas/recommed/img3.jpg" alt=""></h3>
-          </div>
-          <div class="card">
-            <h3><img src="img/portadas/recommed/img4.jpg" alt=""></h3>
-          </div>
-          <div class="card">
-            <h3><img src="img/portadas/recommed/img5.jpg" alt=""></h3>
-          </div>
-          <div class="card">
-            <h3><img src="img/portadas/recommed/img6.jpg" alt=""></h3>
-          </div>
-        </div>
+<main>
+  <div class="detail">
+    <div class="detailBgImg">
+      <img id="bgImg" alt="" src="" />
     </div>
-  
-    <div class="recommends">
-        <h4>New to Disney+</h4>
-        <div class="recommendedContent">
-            <div class="recWrap">
-                <a href="detalle.html">
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/B983FF22BA64B6E19E0D3267280819B26758CFB765E8BED1099D11E320612953/scale?width=400&aspectRatio=1.78&format=jpeg" alt="A tail of two kitties" />
-                </a>
-            </div>
-            <div class="recWrap">
-                <a href="detalle.html">
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/1E0501AFBAFCA1ABB5D31DBA7D1A913B2A35D70FD3DFD804939B71901577161D/scale?width=400&aspectRatio=1.78&format=jpeg" alt="Raya" />
-                </a>
-            </div>
-            <div class="recWrap">
-                <a href="detalle.html">
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/341AE85B6C1423B9042B5F2E786645EE551B9D546C3D263B220A4727617FD2B8/badging?width=400&aspectRatio=1.78&format=jpeg&label=originals" alt="The falcon and the winter soldier" />
-                </a>
-            </div>
-            <div class="recWrap">
-                <a href="detalle.html">
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/4B32D8CB7C0C358E9FF348FB0338AD13F9A5836808E9EF5FADD9DBDE52FC3CAD/scale?width=400&aspectRatio=1.78&format=jpeg" alt="My music story" />
-                </a>
-            </div>
-        </div>
-    </div>
-  
-    <div class="recommends">
-        <h4>Originals</h4>
-        <div class="recommendedContent">
-            <div class="recWrap">
-                <a href="detalle.html">
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/E486A02FA7B60669E77958D4FAE567AA5C9C57344006E1D1ADFC080719545166/badging?width=400&aspectRatio=1.78&format=jpeg&label=originals" alt="Soul" />
-                </a>
-            </div>
-            <div class="recWrap">
-                <a href="detalle.html">
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/CC08686E87BDB2D83A46C9608CB2F43018381A82608C380649351A00ED0D2919/badging?width=400&aspectRatio=1.78&format=jpeg&label=originals" alt="Assembled" />
-                </a>
-            </div>
-            <div class="recWrap">
-                <a href="detalle.html">
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/A13BEC78ACF76FC91A94A1595A62A42CC26DFC6259332C74E061ADA379024E5C/badging?width=400&aspectRatio=1.78&format=jpeg&label=originals" alt="Burrow" />
-                </a>
-            </div>
-            <div class="recWrap">
-                <a href="detalle.html">
-                    <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F8D1A6FD00ED479CC5E2E5C3E85F10EB05550748BD3C0FE76756614071968541/badging?width=400&aspectRatio=1.78&format=jpeg&label=originals" alt="Legends" />
-                </a>
-            </div>
-        </div>
-      </div>
-    </div>
-  
-    </section>
-   
-  </main>
 
-  <footer class="py-3 mt-5">
-    <div class="d-flex justify-content-between px-5">
-      <a href="https://privacy.thewaltdisneycompany.com/es/politica-de-privacidad/"
-        class="footer-navegacion-txt text-decoration-none">Política de privacidad</a>
-      <a href="https://disneytermsofuse.com/spanish-latin-american/"
-        class="footer-navegacion-txt text-decoration-none">Términos de uso de Disney</a>
-      <a href="https://privacy.thewaltdisneycompany.com/es-es/politica-de-privacidad/que-son-las-cookies/"
-        class="footer-navegacion-txt text-decoration-none">Política de cookies</a>
-      <a href="https://www.disneyplus.com/es-419/legal/acuerdo-de-suscripci%C3%B3n"
-        class="footer-navegacion-txt text-decoration-none">Acuerdo de suscripción</a>
-      <a href="https://help.disneyplus.com/es-AR/" class="footer-navegacion-txt text-decoration-none">Ayuda</a>
-      <a href="https://help.disneyplus.com/es-AR/article/disneyplus-devices-supported"
-        class="footer-navegacion-txt text-decoration-none">Dispositivos compatibles</a>
-      <a href="https://help.disneyplus.com/es-AR/article/disneyplus-introduction"
-        class="footer-navegacion-txt text-decoration-none">Acerca de Disney+</a>
-      <a href="https://preferences-mgr.trustarc.com/?pid=disney01&aid=disneyplusemea01&type=disneyplusemea"
-        class="footer-navegacion-txt text-decoration-none">Publicidad personalizada</a>
+    <div class="detailImgTitle">
+      <img id="imgTitle" alt="" src="" />
     </div>
-    <div class="text-center mt-3 px-4">
-      <p class="footer-txt">
-        Disney+ es un servicio por suscripción de pago, su contenido está
-        sujeto a disponibilidad. El servicio Disney+ es comercializado por The
-        Walt Disney Company (Argentina) S.A., Tucumán 1, Piso 4º (C1049AAA)
-        Ciudad Autónoma de Buenos Aires, Argentina y número de CUIT
-        30-63984459-1.
-      </p>
+    <div class="contentMeta">
+      <div class="controls">
+        <button class="player">
+          <img src="../img/imgDetalle/play-icon-black.png" alt="" />
+          <span>Play</span>
+        </button>
+        <button class="trailer">
+          <img src="../img/imgDetalle/play-icon-white.png" alt="" />
+          <span>Trailer</span>
+        </button>
+        <div class="addList">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="groupWatch">
+          <div>
+            <img src="../img/imgDetalle/group-icon.png" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="subTitle"></div>
+      <div class="description"></div>
     </div>
-    <p class="text-center px-5 footer-txt">
-      © Disney. Todos los derechos reservados.
+  </div>
+</main>
+
+<footer class="py-3 mt-5">
+  <div class="d-flex justify-content-between px-5">
+    <a href="https://privacy.thewaltdisneycompany.com/es/politica-de-privacidad/"
+      class="footer-navegacion-txt text-decoration-none">Política de privacidad</a>
+    <a href="https://disneytermsofuse.com/spanish-latin-american/"
+      class="footer-navegacion-txt text-decoration-none">Términos de uso de Disney</a>
+    <a href="https://privacy.thewaltdisneycompany.com/es-es/politica-de-privacidad/que-son-las-cookies/"
+      class="footer-navegacion-txt text-decoration-none">Política de cookies</a>
+    <a href="https://www.disneyplus.com/es-419/legal/acuerdo-de-suscripci%C3%B3n"
+      class="footer-navegacion-txt text-decoration-none">Acuerdo de suscripción</a>
+    <a href="https://help.disneyplus.com/es-AR/" class="footer-navegacion-txt text-decoration-none">Ayuda</a>
+    <a href="https://help.disneyplus.com/es-AR/article/disneyplus-devices-supported"
+      class="footer-navegacion-txt text-decoration-none">Dispositivos compatibles</a>
+    <a href="https://help.disneyplus.com/es-AR/article/disneyplus-introduction"
+      class="footer-navegacion-txt text-decoration-none">Acerca de Disney+</a>
+    <a href="https://preferences-mgr.trustarc.com/?pid=disney01&aid=disneyplusemea01&type=disneyplusemea"
+      class="footer-navegacion-txt text-decoration-none">Publicidad personalizada</a>
+  </div>
+  <div class="text-center mt-3 px-4">
+    <p class="footer-txt">
+      Disney+ es un servicio por suscripción de pago, su contenido está
+      sujeto a disponibilidad. El servicio Disney+ es comercializado por The
+      Walt Disney Company (Argentina) S.A., Tucumán 1, Piso 4º (C1049AAA)
+      Ciudad Autónoma de Buenos Aires, Argentina y número de CUIT
+      30-63984459-1.
     </p>
-  </footer>
-  <script type="defer" src="../js/inicio/inicio.js"></script>
+  </div>
+  <p class="text-center px-5 footer-txt">
+    © Disney. Todos los derechos reservados.
+  </p>
+</footer>
+  <script src="../js/detalle/detalle.js"></script>
 </body>
 
 </html>
