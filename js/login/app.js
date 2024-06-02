@@ -31,13 +31,18 @@ $form.addEventListener('submit', (e) => {
     } else {
       swal.fire({
         title: 'Usuario inexistente',
+        text: '¿Deseas registrarte?',
         icon: 'error',
-        timer: 1500,
-        showCancelButton: false,
-        showConfirmButton: false,
-      }).then(() => {
-        $alertCredenciales.classList.remove('d-none');
-      });
+        showCancelButton: true,
+        confirmButtonText: 'Si, registrarme',
+        cancelButtonText: 'No, reintentar',
+    }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.assign('/pages/registro.html');
+        } else {
+            $alertCredenciales.classList.remove('d-none');
+        }
+    });
     }
   }
   $form.reset();

@@ -64,6 +64,12 @@ form.addEventListener('submit', (event) => {
           showCancelButton: false,
           confirmButtonText: '¡OK!',
         });
+
+        $inputNombre.classList.remove('is-valid', 'is-invalid');
+        $inputPassword.classList.remove('is-valid', 'is-invalid');
+        $inputConfirmPassword.classList.remove('is-valid', 'is-invalid');
+        $inputEmail.classList.remove('is-valid', 'is-invalid');
+
         form.reset();
 });
 
