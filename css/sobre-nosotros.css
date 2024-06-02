@@ -1,0 +1,108 @@
+
+.main {
+    position: relative;
+    color: #fff;
+    width: 100vw;
+    height: 100vh;
+}
+
+.image-wrapper {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+}
+
+.image-wrapper>.image {
+    background-image: url("../imagen/disney-fondo.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -100;
+}
+
+.image-wrapper>.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    opacity: .6;
+    z-index: -100;
+}
+
+.principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+}
+
+.boton-primario{
+    color: #fff;
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+}
+.boton-primario::before{
+    content: '';
+    width: 0;
+    height: 3em;
+    border-radius: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(135deg, #71b7e6, #9b59b6);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+.boton-primario:hover::before{
+    width: 9em;
+}
+
+.boton-instagram{
+    background: linear-gradient(210deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+    max-width: 50px;
+    max-height: 50px;
+    width: 100%;
+    height: 100%;
+    border-radius: 35%;
+}
+
+.img-instagram{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content{
+    color: cadetblue;
+    background: linear-gradient(15deg, #2a2d46, #535067);
+}
+
+.imagen-integrantes{
+    max-height: 400px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.modal-header,.modal-footer{
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,172 @@
+/* VARIABLES */
+:root {
+    --color-morado: #9755F6;
+    --color-azul-celeste: #3DB2E7;
+    --color-borgoña-rojo: #95162F;
+    --color-negro: #000000;
+    --color-blanco: #FFF;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* GENERAL */
+.main {
+    position: relative;
+    color: #fff;
+    font-family: var(--font-family);
+    width: 100%;
+    height: 100vh;
+}
+
+.image-wrapper {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+    filter: blur(5px);
+}
+
+.image-wrapper>.image {
+    background-image: url("../Images/Disney-Fondo.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -100;
+}
+
+.image-wrapper>.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    opacity: .8;
+    z-index: -100;
+}
+
+/* contacto */
+
+.content-form {
+    width: 80%;
+    height: 85%;
+    background-color: #00000088;
+    box-sizing: border-box;
+    border-top: 1px solid var(--color-morado);
+    border-radius: 5%;
+    border-bottom: 1px solid var(--color-morado);
+    
+}
+
+@media (min-width: 768px) {
+    .content-form {
+        width: 50%;
+        height: 85%;
+        border-radius: 5%;
+        box-sizing: border-box;
+    }
+  }
+
+.form {
+    width: 100%;
+    height: 70%;
+    padding: 0; 
+    
+}
+
+.content-logo {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    margin-top: 2rem;
+    width: 8rem;
+    height: 8rem;
+}
+
+.form-items {
+    margin: 0;
+    font-size: 12px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 3px solid var(--color-morado) ;
+    background-color: #ffffff00;
+    color: #fff;
+}
+
+.form-items:active {
+    margin: 0;
+    font-size: 12px;
+    border: 3px solid var(--color-morado) ;
+    background-color: #ffffff00!important;
+    color: #fff;
+}
+
+.form-items:hover {
+    margin: 0;
+    font-size: 12px;
+    border: 3px solid var(--color-morado) ;
+    background-color: #ffffff00!important;
+    color: #fff;
+}
+
+
+.form-items:focus {
+    margin: 0;
+    font-size: 12px;
+    border: 3px solid var(--color-morado) ;
+    background-color: #ffffff00!important;
+    color: #fff;
+}
+
+.form-items::placeholder {
+    color: #ffffff4c;
+}
+
+
+.button-form {
+    border: 1px solid var(--color-morado);
+    color: var(--color-morado);
+}
+
+.button-form:hover {
+    border: 1px solid var(--color-morado);
+    background-color: var(--color-morado);
+}
+
+.button-form:focus {
+    border: 1px solid var(--color-morado);
+    background-color: var(--color-morado);
+}
+
+.button-form:active {
+    border: 1px solid var(--color-morado)!important;
+    background-color: var(--color-morado)!important;
+}
+
+@media (min-width: 768px) {
+    .button-form {
+        width: 40%!important;
+        border: 1px solid var(--color-morado);
+        color: var(--color-morado);
+    }
+    
+    .button-form:hover {
+        border: 1px solid var(--color-morado);
+        background-color: var(--color-morado);
+    }
+
+    .button-form:focus {
+        border: 1px solid var(--color-morado);
+        background-color: var(--color-morado);
+    }
+
+    .button-form:active {
+        border: 1px solid var(--color-morado)!important;
+        background-color: var(--color-morado)!important;
+    }
+  }
+
