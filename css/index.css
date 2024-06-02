@@ -15,12 +15,33 @@
   background-origin: content-box;
 }
 
-@media (max-width: 767.98px) { /* Bootstrap's breakpoint for 'md' is 768px */
+@media (max-width: 767.98px) { 
   .inicio {
-    background-size: 100% 75%; /* Ocupa todo el ancho y el 75% del alto */
-    background-position: top center; /* Centra la imagen horizontalmente y la posiciona desde arriba */
+    background-size: 100% 75%;
+    background-position: top center; 
+    
   }
 }
+
+@media (min-width: 801px) {
+  .table-container {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+}
+
+@media (max-width: 800px) {
+  .table-container {
+    width: 100%;
+    margin: 0;
+    padding:0;
+  }
+
+  .table.tabla-plan {
+    width: 100%;
+  }
+}
+
 
 .inicio-content-txt-margin{
   margin-top: 100px;
@@ -105,13 +126,13 @@ max-width:300px;
 .table-container {
   height: 100%;
   position: relative;
-  overflow: auto; /* Permite el desplazamiento dentro del contenedor */
+  overflow: auto;
 }
 .sticky-header th {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #343a40; /* Color de fondo del thead */
+  background: #343a40; 
 }
 .table.tabla-plan {
   overflow: hidden;
