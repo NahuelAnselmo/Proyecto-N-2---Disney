@@ -9,8 +9,8 @@
 }
 
 .login-form {
-    width: 550px;
-    max-height: 700px;
+    max-width: 550px;
+    max-height: 900px;
     background-color: white;
     border-radius: 25px;
 }
@@ -50,12 +50,12 @@
 
 .input-email:focus, .input-password:focus {
     box-shadow: 0 0 10px 2px #444444;
-    outline: none; /* Optional: remove default outline */
+    outline: none; 
 }
 
 .input-email:active, .input-password:active {
     box-shadow: 0 0 10px 2px #444444;
-    outline: none; /* Optional: remove default outline */
+    outline: none;
 }
 
 .custom-button {
@@ -84,4 +84,43 @@
 .footer-txt {
     font-size: 14px;
     color: #717377;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.footer-links a {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1100.98px) {
+    .footer-navegacion-txt {
+        width: 33.33%;
+        max-width: 33.33%; 
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer-navegacion-txt {
+        width: 50%;
+        max-width: 50%; 
+    }
+}
+
+@media (max-width: 575.98px) {
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer-navegacion-txt {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }   
 }
