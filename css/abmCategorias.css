@@ -1,4 +1,6 @@
-
+h1{
+    margin-top: 80px;
+}
 .table.tabla-categorias {
     border: 2px solid white; 
     border-radius: 10px; 

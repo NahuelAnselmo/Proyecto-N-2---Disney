@@ -32,6 +32,10 @@ main::after {
     z-index: -1;
 }
 
+section{
+    margin-top: 150px;
+}
+
 .recommends {
     padding: 0 0 26px;
 }
