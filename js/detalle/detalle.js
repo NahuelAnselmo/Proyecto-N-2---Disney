@@ -4,7 +4,7 @@ const subtitle = document.querySelector(".subTitle");
 const description = document.querySelector(".description");
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const res = await fetch("../disneyPlusMoviesData.json");
+    const res = await fetch("../.vscode/disneyPlusMoviesData.json");
     const required = await res.json();
     const data = required.movies;
 

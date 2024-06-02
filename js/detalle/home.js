@@ -1,4 +1,4 @@
-const target = document.querySelector("main");
+const target = document.getElementById("mainDetalle");
 
 const goto = (e) => {
     const alt = e.target.alt;
