@@ -128,7 +128,7 @@ a {
 
 .acort-menu:hover .acort-links {
   position: fixed;
-  z-index: 1001; /* Asegurar que esté sobre el header */
+  z-index: 1001; 
   display: block;
   background: #131313;
 }
