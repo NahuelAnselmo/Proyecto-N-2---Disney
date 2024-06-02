@@ -20,6 +20,8 @@
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="shortcut icon" href="img/icons/logo.svg" type="imgage/x-con">
   <link rel="stylesheet" href="../css/inicio/disney.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <title>Inicio | Disney+</title>
 </head>
 
@@ -102,7 +104,6 @@
         </li>
       </ul>
     </nav>
-    <!--Perfiles-->
     <div class="profile">
       <div class="profile-selected">
         <p class="name-user mt-1">Mi Perfil</p>
@@ -143,13 +144,25 @@
   </header>
 
   <main>
-    <div class="container-general">
-      <div class="slider-films">
-          <div class="slider center">
-              <!-- Las películas destacadas se cargarán aquí dinámicamente -->
+    <div class="container carousel-contenedor mb-5">
+      <div class="container-general">
+        <div class="slider-films">
+          <div id="wrapper-cards" class="slider center">
+            <!-- Aquí se cargarán los elementos del carrusel -->
           </div>
+          <!-- Botones de navegación -->
+          <button class="carousel-control-prev" type="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
-  </div>
+    </div>
+   
       <!--section Disney-->
       <div class="main disney rows mt-5 mb-5">
         <div class="grid">
@@ -298,7 +311,7 @@
       © Disney. Todos los derechos reservados.
     </p>
   </footer>
-  <script type="defer" src="../js/inicio/inicio.js"></script>
+  <script type="module" src="../js/inicio/inicio.js"></script>
 </body>
 
 </html>
