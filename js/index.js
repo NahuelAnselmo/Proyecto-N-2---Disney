@@ -1,16 +1,19 @@
-$btnIniciarSesion=document.getElementById("btnIniciarSesion");
-$btnRedigirRegistrarme=document.querySelectorAll(".suscripcion");
+const btnIniciarSesion = document.getElementById("btnIniciarSesion");
+    const btnsRedirigirRegistrarme = document.querySelectorAll(".suscripcion");
 
-$btnIniciarSesion.addEventListener('click', navegarLogin);
+    if (btnIniciarSesion) {
+        btnIniciarSesion.addEventListener('click', navegarLogin);
+    }
 
+    btnsRedirigirRegistrarme.forEach(function(btn) {
+        btn.addEventListener('click', navegarRegistrarme);
+    });
 
-if($btnRedigirRegistrarme){
-    $btnRedigirRegistrarme.addEventListener('click', navegarRegistrarme);
-}
-function navegarLogin() {
-    window.location.href = '../pages/login.html';
-}
+    // Funciones de redirección
+    function navegarLogin() {
+        window.location.href = './pages/login.html';
+    }
 
-function navegarRegistrarme() {
-    window.location.href = '../pages/registro.html';
-}
+    function navegarRegistrarme() {
+        window.location.href = './pages/registro.html';
+    }
