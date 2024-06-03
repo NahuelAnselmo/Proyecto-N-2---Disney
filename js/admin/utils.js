@@ -47,6 +47,14 @@ const cargarFilaTabla = (pelicula, indice) => {
   $tdCategoria.textContent = nombreCategoria;
   $tr.appendChild($tdCategoria);
 
+  const $tdPortada = document.createElement("td");
+  const $portada = document.createElement("img");
+  $portada.src = pelicula.portada;
+  $portada.alt = pelicula.titulo;
+  $portada.classList.add("portada-tabla");
+  $tdPortada.appendChild($portada);
+  $tr.appendChild($tdPortada);
+
   const $tdDescripcion = document.createElement("td");
   $tdDescripcion.textContent = pelicula.descripcion;
   $tr.appendChild($tdDescripcion);
@@ -116,7 +124,6 @@ export const prepararEdicionPelicula = (pelicula) => {
         $inputTrailer.value = pelicula.trailer;
         $inputDescripcion.value = pelicula.descripcion;
         $inputPublicada.value = pelicula.publicada;
-        $inputDestacada.value = pelicula.destacada;
 
         sessionStorage.setItem("codigoPelicula", pelicula.codigo);
 
@@ -184,70 +191,69 @@ export function existePelicula(tituloPelicula) {
   }
   return false;
 }
-export function cargarCarousel() {
+
+export function cargarPeliculasDestacadas () {
   const peliculasDestacadas = obtenerPeliculasDestacadas();
-  const $swiperWrapper = document.getElementById("wrapper-cards");
+  const $swiperWrapper = document.querySelector(".swiper-wrapper");
   $swiperWrapper.innerHTML = "";
 
-  peliculasDestacadas.forEach((peliculaSerie) => {
-    const $slideCards = document.createElement("div");
-    $slideCards.classList.add("swiper-slide");
+  peliculasDestacadas.forEach((pelicula) => {
+    const $slide = document.createElement("div");
+    $slide.classList.add("swiper-slide");
 
-    const $card = document.createElement("div");
-    $card.classList.add("card");
+    const $img = document.createElement("img");
+    $img.src = pelicula.portada;
+    $img.alt = pelicula.titulo;
 
-    const $imgCard = document.createElement("img");
-    $imgCard.src = peliculaSerie.imagen;
-    $imgCard.alt = peliculaSerie.titulo;
+    const $overlay = document.createElement("div");
+    $overlay.classList.add("overlay");
 
-    const $overlayCard = document.createElement("div");
-    $overlayCard.classList.add("overlay-card");
-
-    const $text = document.createElement("div");
-    $text.classList.add("text");
-
-    const $title = document.createElement("h5");
-    $title.textContent = peliculaSerie.titulo;
+    const $title = document.createElement("h1");
+    $title.classList.add("title");
+    $title.textContent = pelicula.titulo;
 
     const $description = document.createElement("p");
-    $description.textContent = peliculaSerie.descripcion;
+    $description.classList.add("description");
+    $description.textContent = pelicula.descripcion;
 
-    $text.appendChild($title);
-    $text.appendChild($description);
-    $overlayCard.appendChild($text);
-    $card.appendChild($imgCard);
-    $card.appendChild($overlayCard);
-    $slideCards.appendChild($card);
-    $swiperWrapper.appendChild($slideCards);
+    const $buttons = document.createElement("div");
+    $buttons.classList.add("buttons");
+
+    const $playButton = document.createElement("a");
+    $playButton.href = ""; // Agrega la URL del trailer
+    $playButton.classList.add("btn", "btn-primary", "btn-lg", "btn-primary");
+    $playButton.innerHTML = '<i class="fa-regular fa-circle-play me-1"></i>Reproducir';
+
+    const $moreButton = document.createElement("a");
+    $moreButton.href = ""; // Agrega la URL para ver más detalles
+    $moreButton.classList.add("btn", "btn-outline-warning", "btn-secondary-outline", "btn-lg");
+    $moreButton.innerHTML = '<i class="ri-error-warning-line"></i>Ver Más';
+
+    $buttons.appendChild($playButton);
+    $buttons.appendChild($moreButton);
+
+    $overlay.appendChild($title);
+    $overlay.appendChild($description);
+    $overlay.appendChild($buttons);
+
+    $slide.appendChild($img);
+    $slide.appendChild($overlay);
+
+    $swiperWrapper.appendChild($slide);
   });
 
-  // Inicializar Swiper después de cargar los elementos
-  /*const swiper = new Swiper('slider-films', {
-    // Configuración de Swiper
-    slidesPerView: 3,
-    spaceBetween: 30,
+  // Inicializar Swiper
+  const swiper = new Swiper('.swiper-hero', {
     loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next', // Selector del botón "Siguiente"
-      prevEl: '.swiper-button-prev', // Selector del botón "Anterior"
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
-  });*/
-}
-
-
-
-// Función para cargar cada ítem del carrusel
-function cargarItemsDeCarousel(pelicula) {
-  const $itemCarousel = document.createElement("div");
-  $itemCarousel.classList.add("carousel-item");
-
-  const $imagen = document.createElement("img");
-  $imagen.src = pelicula.caratula;
-  $imagen.alt = pelicula.titulo;
-
-  $itemCarousel.appendChild($imagen);
+  });
 }

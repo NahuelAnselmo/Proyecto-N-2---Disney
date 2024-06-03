@@ -3,14 +3,14 @@ import { Pelicula } from './peliculaSeries.js';
 import { cargarTabla } from "./utils.js";
 
 
-export const agregarPelicula = (titulo, tipo, categoria, caratula, trailer, descripcion, publicada) => {
-  const pelicula = new Pelicula(titulo, tipo, categoria, caratula, trailer, descripcion, publicada);
+export const agregarPelicula = (titulo, tipo, categoria, caratula, portada, trailer, descripcion, publicada) => {
+  const pelicula = new Pelicula(titulo, tipo, categoria, caratula, portada, trailer, descripcion, publicada);
   pelicula.destacada = false;
 
   agregarPeliculaALS(pelicula);
 };
 
-export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descripcion, publicada) => {
+export const editarPelicula = (titulo, tipo, categoria, caratula, portada, trailer, descripcion, publicada) => {
   const peliculas = obtenerPeliculaSerieDeLs();
   const codigoPelicula = sessionStorage.getItem("codigoPelicula");
 
@@ -29,10 +29,10 @@ export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descr
   peliculas[posicionPelicula].tipo = tipo;
   peliculas[posicionPelicula].categoria = categoria;
   peliculas[posicionPelicula].caratula = caratula;
+  peliculas[posicionPelicula].portada = portada;
   peliculas[posicionPelicula].trailer = trailer;
   peliculas[posicionPelicula].descripcion = descripcion;
   peliculas[posicionPelicula].publicada = publicada;
-  peliculas[posicionPelicula].destacada = destacada;
 
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
 
@@ -97,18 +97,33 @@ export const destacarPelicula = (codigoPelicula) => {
   const posicionPelicula = peliculas.findIndex((pelicula) => pelicula.codigo === codigoPelicula);
 
   if (posicionPelicula !== -1) {
-    peliculas[posicionPelicula].destacada = true;
+    // Verificar el estado actual de destacada
+    const estaDestacada = peliculas[posicionPelicula].destacada;
+
+    // Cambiar el estado de destacada
+    peliculas[posicionPelicula].destacada = !estaDestacada;
 
     localStorage.setItem('peliculas', JSON.stringify(peliculas));
 
-    swal.fire({
-      title: 'Éxito',
-      text: `Película ${peliculas[posicionPelicula].titulo} destacada correctamente`,
-      icon: 'success',
-      showConfirmButton: true,
-      showCancelButton: false,
-      confirmButtonText: 'Aceptar',
-    });
+    if (estaDestacada) {
+      swal.fire({
+        title: 'Éxito',
+        text: `Película ${peliculas[posicionPelicula].titulo} desdestacada correctamente`,
+        icon: 'success',
+        showConfirmButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Aceptar',
+      });
+    } else {
+      swal.fire({
+        title: 'Éxito',
+        text: `Película ${peliculas[posicionPelicula].titulo} destacada correctamente`,
+        icon: 'success',
+        showConfirmButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Aceptar',
+      });
+    }
 
     cargarTabla();
   } else {

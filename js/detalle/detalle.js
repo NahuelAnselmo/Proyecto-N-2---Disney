@@ -1,99 +1,116 @@
-const bgImg = document.querySelector("#bgImg");
-const imgTitle = document.querySelector("#imgTitle");
-const subtitle = document.querySelector(".subTitle");
-const description = document.querySelector(".description");
-
-document.addEventListener("DOMContentLoaded", async () => {
-    const res = await fetch("../.vscode/disneyPlusMoviesData.json");
-    const required = await res.json();
-    const data = required.movies;
-
-    let movie = getData();
-
-    if (movie === "Inside Out") {
-        bgImg.src = data[1].backgroundImg;
-        imgTitle.src = data[1].titleImg;
-        subtitle.innerHTML = data[1].subTitle;
-        description.innerHTML = data[1].description;
-    } else if (movie === "A tail of two kitties") {
-        bgImg.src = data[2].backgroundImg;
-        imgTitle.src = data[2].titleImg;
-        subtitle.innerHTML = data[2].subTitle;
-        description.innerHTML = data[2].description;
-    } else if (movie === "Bao") {
-        bgImg.src = data[3].backgroundImg;
-        imgTitle.src = data[3].titleImg;
-        subtitle.innerHTML = data[3].subTitle;
-        description.innerHTML = data[3].description;
-    } else if (movie === "Tangled") {
-        bgImg.src = data[4].backgroundImg;
-        imgTitle.src = data[4].titleImg;
-        subtitle.innerHTML = data[4].subTitle;
-        description.innerHTML = data[4].description;
-    } else if (movie === "Soul") {
-        bgImg.src = data[5].backgroundImg;
-        imgTitle.src = data[5].titleImg;
-        subtitle.innerHTML = data[5].subTitle;
-        description.innerHTML = data[5].description;
-    } else if (movie === "Moana") {
-        bgImg.src = data[6].backgroundImg;
-        imgTitle.src = data[6].titleImg;
-        subtitle.innerHTML = data[6].subTitle;
-        description.innerHTML = data[6].description;
-    } else if (movie === "Incredibles 2") {
-        bgImg.src = data[7].backgroundImg;
-        imgTitle.src = data[7].titleImg;
-        subtitle.innerHTML = data[7].subTitle;
-        description.innerHTML = data[7].description;
-    } else if (movie === "Assembled") {
-        bgImg.src = data[8].backgroundImg;
-        imgTitle.src = data[8].titleImg;
-        subtitle.innerHTML = data[8].subTitle;
-        description.innerHTML = data[8].description;
-    } else if (movie === "Burrow") {
-        bgImg.src = data[9].backgroundImg;
-        imgTitle.src = data[9].titleImg;
-        subtitle.innerHTML = data[9].subTitle;
-        description.innerHTML = data[9].description;
-    } else if (movie === "The Simpsons") {
-        bgImg.src = data[10].backgroundImg;
-        imgTitle.src = data[10].titleImg;
-        subtitle.innerHTML = data[10].subTitle;
-        description.innerHTML = data[10].description;
-    } else if (movie === "Legends") {
-        bgImg.src = data[11].backgroundImg;
-        imgTitle.src = data[11].titleImg;
-        subtitle.innerHTML = data[11].subTitle;
-        description.innerHTML = data[11].description;
-    } else if (movie === "Raya") {
-        bgImg.src = data[12].backgroundImg;
-        imgTitle.src = data[12].titleImg;
-        subtitle.innerHTML = data[12].subTitle;
-        description.innerHTML = data[12].description;
-    } else if (movie === "Auntie EDNA") {
-        bgImg.src = data[13].backgroundImg;
-        imgTitle.src = data[13].titleImg;
-        subtitle.innerHTML = data[13].subTitle;
-        description.innerHTML = data[13].description;
-    } else if (movie === "Mickey mouse") {
-        bgImg.src = data[14].backgroundImg;
-        imgTitle.src = data[14].titleImg;
-        subtitle.innerHTML = data[14].subTitle;
-        description.innerHTML = data[14].description;
-    } else if (movie === "The falcon and the winter soldier") {
-        bgImg.src = data[15].backgroundImg;
-        imgTitle.src = data[15].titleImg;
-        subtitle.innerHTML = data[15].subTitle;
-        description.innerHTML = data[15].description;
-    } else if (movie === "My music story") {
-        bgImg.src = data[16].backgroundImg;
-        imgTitle.src = data[16].titleImg;
-        subtitle.innerHTML = data[16].subTitle;
-        description.innerHTML = data[16].description;
-    }
-});
-
-const getData = () => {
-    let movieData = JSON.parse(localStorage.getItem('movieData'));
-    return movieData;
-}
+export const cargarPaginaDetalles = () => {
+    const pelicula = JSON.parse(localStorage.getItem("peliculaSeleccionada"));
+    
+    const $sectionPelicula = document.getElementById("section-pelicula");
+    
+    $sectionPelicula.innerHTML = " ";
+  
+    const $divContainer = document.createElement("div");
+    $divContainer.classList.add("video-container");
+  
+    const $iframePelicula = document.createElement("iframe");
+    $iframePelicula.src = pelicula.video;
+    $iframePelicula.title = pelicula.title;
+    $iframePelicula.frameBorder = "0";
+    $iframePelicula.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    $iframePelicula.referrerpolicy = "strict-origin-when-cross-origin";
+    $iframePelicula.allowFullscreen = true;
+    $iframePelicula.classList.add("video-pelicula");
+  
+    $divContainer.appendChild($iframePelicula);
+    $sectionPelicula.appendChild($divContainer);
+  
+    const $sectionInfoPelicula = document.getElementById("section-info");
+    $sectionInfoPelicula.classList.add("container", "my-4");
+    $sectionInfoPelicula.innerHTML = "";
+  
+    const $row = document.createElement("div");
+    $row.classList.add("row");
+  
+    const $primerCol = document.createElement("div");
+    $primerCol.classList.add("col-md-6", "mb-3", "mb-md-0");
+  
+    const $titleContainer = document.createElement("div");
+    $titleContainer.classList.add("title-container");
+  
+    const $title = document.createElement("h3");
+    $title.classList.add("title");
+    $title.textContent = pelicula.title;
+  
+    const $enlaceFavoritos = document.createElement("a");
+    $enlaceFavoritos.href = "#";
+    $enlaceFavoritos.classList.add("title");
+  
+    const $iconFavoritos = document.createElement("i");
+    $iconFavoritos.classList.add("far", "fa-bookmark", "fs-5");
+  
+    $enlaceFavoritos.appendChild($iconFavoritos);
+  
+    $titleContainer.appendChild($title);
+    $titleContainer.appendChild($enlaceFavoritos);
+  
+    const $iconContainer = document.createElement("div");
+    $iconContainer.classList.add("icon-container");
+  
+    const $likeDislike = document.createElement("div");
+    $likeDislike.classList.add("like-dislike");
+  
+    const $enlaceLike = document.createElement("a");
+    $enlaceLike.href = "#";
+    $enlaceLike.classList.add("text-decoration-none");
+  
+    const $iconoLike = document.createElement("i");
+    $iconoLike.classList.add("far", "fa-thumbs-up", "fs-5");
+  
+    $enlaceLike.appendChild($iconoLike);
+  
+    const $enlaceDislike = document.createElement("a");
+    $enlaceDislike.href = "#";
+    $enlaceDislike.classList.add("text-decoration-none");
+  
+    const $iconoDislike = document.createElement("i");
+    $iconoDislike.classList.add("far", "fa-thumbs-down", "fs-5", "mx-3");
+  
+    $enlaceDislike.appendChild($iconoDislike);
+  
+    $likeDislike.appendChild($enlaceLike);
+    $likeDislike.appendChild($enlaceDislike);
+  
+    const $enlaceShare = document.createElement("a");
+    $enlaceShare.href = "#";
+    $enlaceShare.classList.add("text-decoration-none");
+  
+    const $iconoShare = document.createElement("i");
+    $iconoShare.classList.add("fas", "fa-share-alt");
+  
+    $enlaceShare.appendChild($iconoShare);
+  
+    $iconContainer.appendChild($likeDislike);
+    $iconContainer.appendChild($enlaceShare);
+  
+    const $description = document.createElement("p");
+    $description.classList.add("description", "mt-3");
+    $description.textContent = pelicula.description;
+  
+    $primerCol.appendChild($titleContainer);
+    $primerCol.appendChild($iconContainer);
+    $primerCol.appendChild($description);
+  
+    const $segundaCol = document.createElement("div");
+    $segundaCol.classList.add("col-md-6", "img-container");
+  
+    const $imgPelicula = document.createElement("img");
+    $imgPelicula.classList.add("img-detalle-pelicula");
+    $imgPelicula.src = pelicula.image;
+    $imgPelicula.alt = pelicula.title;
+  
+    $segundaCol.appendChild($imgPelicula);
+  
+    $row.appendChild($primerCol);
+    $row.appendChild($segundaCol);
+  
+    $sectionInfoPelicula.appendChild($row);
+  };
+  
+  cargarPaginaDetalles();

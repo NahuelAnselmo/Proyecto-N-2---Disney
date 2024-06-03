@@ -32,6 +32,10 @@ export function obtenerPeliculasDestacadas() {
   const peliculasDestacadas = peliculas.filter(pelicula => pelicula.destacada === true);
   return peliculasDestacadas;
 }
+
+export const guardarPeliculasDestacadasEnLS = (peliculasDestacadas) => {
+  localStorage.setItem("peliculasDestacadas", JSON.stringify(peliculasDestacadas));
+}
 export function imageExists(url, callback) {
   const img = new Image();
   img.onload = () => callback(true);

@@ -7,6 +7,7 @@ const $inputTitulo = document.getElementById("input-titulo");
 const $inputTipo = document.getElementById("input-tipo");
 const $inputCategoria = document.getElementById("input-categoria");
 const $inputCaratula = document.getElementById("input-caratula");
+const $inputPortada = document.getElementById("input-portada");
 const $inputTrailer = document.getElementById("input-trailer");
 const $inputDescripcion = document.getElementById("input-descripcion");
 const $inputPublicada = document.getElementById("input-publicada");
@@ -24,6 +25,9 @@ $inputTipo.addEventListener("blur", () => {
 
 $inputCaratula.addEventListener("blur", () => {
   validateUrl($inputCaratula);
+});
+$inputPortada.addEventListener("blur", () => {
+  validateUrl($inputPortada);
 });
 
 $inputTrailer.addEventListener("blur", () => {
@@ -45,6 +49,7 @@ $form.addEventListener("submit", (event) => {
     !validateName($inputTitulo) ||
     !validateName($inputTipo) ||
     !validateUrl($inputCaratula) ||
+    !validateUrl($inputPortada) ||
     !validateUrl($inputTrailer)
   ) {
     alert("Revisa los campos");
@@ -56,17 +61,18 @@ $form.addEventListener("submit", (event) => {
   const categoriaSelect = $inputCategoria.selectedOptions[0];
   const categoria = categoriaSelect ? categoriaSelect.value : "";
   const caratula = $inputCaratula.value;
+  const portada = $inputPortada.value;
   const trailer = $inputTrailer.value;
   const descripcion = $inputDescripcion.value;
   const publicada = $inputPublicada.value;
 
   if (estaEditando()) {
     editarPelicula(
-      titulo, tipo, categoria, caratula, trailer, descripcion, publicada
+      titulo, tipo, categoria, caratula, portada, trailer, descripcion, publicada
     );
   } else {
     agregarPelicula(
-      titulo, tipo, categoria, caratula, trailer, descripcion, publicada
+      titulo, tipo, categoria, caratula, portada, trailer, descripcion, publicada
     );
   }
 
@@ -75,6 +81,7 @@ $form.addEventListener("submit", (event) => {
   $inputTipo.classList.remove("is-valid", "is-invalid");
   $inputCategoria.classList.remove("is-valid", "is-invalid");
   $inputCaratula.classList.remove("is-valid", "is-invalid");
+  $inputPortada.classList.remove("is-valid", "is-invalid");
   $inputTrailer.classList.remove("is-valid", "is-invalid");
   $inputDescripcion.classList.remove("is-valid", "is-invalid");
   $inputPublicada.classList.remove("is-valid", "is-invalid");
