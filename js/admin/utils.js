@@ -186,38 +186,62 @@ export function existePelicula(tituloPelicula) {
 }
 export function cargarCarousel() {
   const peliculasDestacadas = obtenerPeliculasDestacadas();
-  const $carouselInner = document.getElementById("carousel-inner");
+  const $swiperWrapper = document.getElementById("wrapper-cards");
+  $swiperWrapper.innerHTML = "";
 
-  $carouselInner.innerHTML = "";
+  peliculasDestacadas.forEach((peliculaSerie) => {
+    const $slideCards = document.createElement("div");
+    $slideCards.classList.add("swiper-slide");
 
-  peliculasDestacadas.forEach((pelicula) => {
-    cargarItemsDeCarousel(pelicula);
+    const $card = document.createElement("div");
+    $card.classList.add("card");
+
+    const $imgCard = document.createElement("img");
+    $imgCard.src = peliculaSerie.imagen;
+    $imgCard.alt = peliculaSerie.titulo;
+
+    const $overlayCard = document.createElement("div");
+    $overlayCard.classList.add("overlay-card");
+
+    const $text = document.createElement("div");
+    $text.classList.add("text");
+
+    const $title = document.createElement("h5");
+    $title.textContent = peliculaSerie.titulo;
+
+    const $description = document.createElement("p");
+    $description.textContent = peliculaSerie.descripcion;
+
+    $text.appendChild($title);
+    $text.appendChild($description);
+    $overlayCard.appendChild($text);
+    $card.appendChild($imgCard);
+    $card.appendChild($overlayCard);
+    $slideCards.appendChild($card);
+    $swiperWrapper.appendChild($slideCards);
   });
 
-  const prevButton = document.getElementById("prev-btn");
-  const nextButton = document.getElementById("next-btn");
-
-  let position = 0;
-
-  nextButton.addEventListener("click", () => {
-    position -= 100;
-    if (position < -(peliculasDestacadas.length - 1) * 100) {
-      position = 0;
-    }
-    $carouselInner.style.transform = `translateX(${position}%)`;
-  });
-
-  prevButton.addEventListener("click", () => {
-    position += 100;
-    if (position > 0) {
-      position = -(peliculasDestacadas.length - 1) * 100;
-    }
-    $carouselInner.style.transform = `translateX(${position}%)`;
-  });
+  // Inicializar Swiper después de cargar los elementos
+  /*const swiper = new Swiper('slider-films', {
+    // Configuración de Swiper
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next', // Selector del botón "Siguiente"
+      prevEl: '.swiper-button-prev', // Selector del botón "Anterior"
+    },
+  });*/
 }
 
+
+
+// Función para cargar cada ítem del carrusel
 function cargarItemsDeCarousel(pelicula) {
-  const $carouselInner = document.getElementById("carousel-inner");
   const $itemCarousel = document.createElement("div");
   $itemCarousel.classList.add("carousel-item");
 
@@ -226,5 +250,4 @@ function cargarItemsDeCarousel(pelicula) {
   $imagen.alt = pelicula.titulo;
 
   $itemCarousel.appendChild($imagen);
-  $carouselInner.appendChild($itemCarousel);
 }
