@@ -1,20 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
     const movieList = document.getElementById("movieList");
-    const prevButton = document.getElementById("prevButton");
-    const nextButton = document.getElementById("nextButton");
 
-    // Función para crear una tarjeta de película
-    const crearTarjetaPelicula = (src, alt) => {
+    const crearTarjetaPelicula = (src, alt, id) => {
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide";
+
         const card = document.createElement("div");
         card.className = "card";
+
         const img = document.createElement("img");
         img.src = src;
         img.alt = alt;
+
+        const overlay = document.createElement("div");
+        overlay.className = "overlay";
+
+        const link = document.createElement("a");
+        link.href = `./pages/detallePeliculas.html?id=${id}`;
+        link.textContent = "Ver detalles";
+
+        overlay.appendChild(link);
         card.appendChild(img);
-        return card;
+        card.appendChild(overlay);
+        slide.appendChild(card);
+
+        return slide;
     };
 
-    // Cargar películas desde localStorage
     let peliculasStorage = [];
     try {
         peliculasStorage = JSON.parse(localStorage.getItem("peliculas")) || [];
@@ -23,36 +35,42 @@ document.addEventListener("DOMContentLoaded", () => {
         peliculasStorage = [];
     }
 
-    // Función para mostrar las películas publicadas de 5 en 5
-    const mostrarPeliculasPublicadas = (inicio) => {
-        movieList.innerHTML = ""; // Limpiar la lista antes de mostrar las películas
+    const mostrarPeliculasPublicadas = () => {
+        const peliculasPublicadas = peliculasStorage.filter(pelicula => pelicula.publicada === 'Si');
 
-        // Filtrar solo las películas publicadas
-        const peliculasPublicadas = peliculasStorage.filter(pelicula => pelicula.publicada === 'si');
+        peliculasPublicadas.forEach(pelicula => {
+            const slide = crearTarjetaPelicula(pelicula.caratula, pelicula.titulo, pelicula.id);
+            movieList.appendChild(slide);
+        });
 
-        // Mostrar las siguientes 5 películas a partir del índice "inicio"
-        peliculasPublicadas.slice(inicio, inicio + 5).forEach(pelicula => {
-            const card = crearTarjetaPelicula(pelicula.caratula, pelicula.titulo);
-            movieList.appendChild(card);
+        new Swiper('.swiper-container', {
+            spaceBetween: 15,
+            direction: 'horizontal',
+            loop: false,
+            autoplay: false,
+            navigation: {
+                nextEl: '#nextButton',
+                prevEl: '#prevButton',
+            },
+            breakpoints: {
+                576: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+                },
+                992: {
+                    slidesPerView: 4,
+                },
+                1200: {
+                    slidesPerView: 5,
+                },
+                1400: {
+                    slidesPerView: 6,
+                },
+            },
         });
     };
 
-    // Mostrar las primeras 5 películas publicadas al cargar la página
-    mostrarPeliculasPublicadas(0);
-
-    // Añadir listeners a los botones de navegación
-    let startIndex = 0; // Índice inicial para mostrar las películas
-    const scrollAmount = 250; // Cantidad de desplazamiento horizontal
-
-    prevButton.addEventListener("click", () => {
-        startIndex = Math.max(startIndex - 5, 0); // Asegurarse de no ir más allá del principio
-        mostrarPeliculasPublicadas(startIndex);
-    });
-
-    nextButton.addEventListener("click", () => {
-        if (startIndex + 5 < peliculasStorage.length) { // Asegurarse de no ir más allá del final
-            startIndex += 5;
-            mostrarPeliculasPublicadas(startIndex);
-        }
-    });
+    mostrarPeliculasPublicadas();
 });

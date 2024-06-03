@@ -220,12 +220,12 @@ export function cargarPeliculasDestacadas () {
     $buttons.classList.add("buttons");
 
     const $playButton = document.createElement("a");
-    $playButton.href = ""; // Agrega la URL del trailer
+    $playButton.href = "../pages/detalle.html"; // Agrega la URL del trailer
     $playButton.classList.add("btn", "btn-primary", "btn-lg", "btn-primary");
     $playButton.innerHTML = '<i class="fa-regular fa-circle-play me-1"></i>Reproducir';
 
     const $moreButton = document.createElement("a");
-    $moreButton.href = ""; // Agrega la URL para ver más detalles
+    $moreButton.href = "../pages/detalle.html"; // Agrega la URL para ver más detalles
     $moreButton.classList.add("btn", "btn-outline-warning", "btn-secondary-outline", "btn-lg");
     $moreButton.innerHTML = '<i class="ri-error-warning-line"></i>Ver Más';
 
