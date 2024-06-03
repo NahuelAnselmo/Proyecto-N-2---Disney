@@ -1,4 +1,4 @@
-import { obtenerPeliculaSerieDeLs, obtenerCategoriasDeLS } from "../utils.js";
+import { obtenerPeliculaSerieDeLs, obtenerCategoriasDeLS, obtenerPeliculasDestacadas } from "../utils.js";
 import { eliminarPelicula } from "./abm.js";
 import { destacarPelicula } from "./abm.js";
 
@@ -167,7 +167,7 @@ export function cargarCategoriasEnSelect($selectCategoria) {
 
 export function existePelicula(tituloPelicula) {
   tituloPelicula = tituloPelicula.toUpperCase();
-  const peliculas = obtenerPeliculasDeLs();
+  const peliculas = obtenerPeliculaSerieDeLs();
   for (const pelicula of peliculas) {
     if (pelicula.titulo.toUpperCase() === tituloPelicula) {
       const mensaje = `Esa película ya existe, por favor, intente de nuevo`;
@@ -183,4 +183,71 @@ export function existePelicula(tituloPelicula) {
     }
   }
   return false;
+}
+export function cargarCarousel() {
+  const peliculasDestacadas = obtenerPeliculasDestacadas();
+  const $swiperWrapper = document.getElementById("wrapper-cards");
+  $swiperWrapper.innerHTML = "";
+
+  peliculasDestacadas.forEach((peliculaSerie) => {
+    const $slideCards = document.createElement("div");
+    $slideCards.classList.add("swiper-slide");
+
+    const $card = document.createElement("div");
+    $card.classList.add("card");
+
+    const $imgCard = document.createElement("img");
+    $imgCard.src = peliculaSerie.imagen;
+    $imgCard.alt = peliculaSerie.titulo;
+
+    const $overlayCard = document.createElement("div");
+    $overlayCard.classList.add("overlay-card");
+
+    const $text = document.createElement("div");
+    $text.classList.add("text");
+
+    const $title = document.createElement("h5");
+    $title.textContent = peliculaSerie.titulo;
+
+    const $description = document.createElement("p");
+    $description.textContent = peliculaSerie.descripcion;
+
+    $text.appendChild($title);
+    $text.appendChild($description);
+    $overlayCard.appendChild($text);
+    $card.appendChild($imgCard);
+    $card.appendChild($overlayCard);
+    $slideCards.appendChild($card);
+    $swiperWrapper.appendChild($slideCards);
+  });
+
+  // Inicializar Swiper después de cargar los elementos
+  /*const swiper = new Swiper('slider-films', {
+    // Configuración de Swiper
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next', // Selector del botón "Siguiente"
+      prevEl: '.swiper-button-prev', // Selector del botón "Anterior"
+    },
+  });*/
+}
+
+
+
+// Función para cargar cada ítem del carrusel
+function cargarItemsDeCarousel(pelicula) {
+  const $itemCarousel = document.createElement("div");
+  $itemCarousel.classList.add("carousel-item");
+
+  const $imagen = document.createElement("img");
+  $imagen.src = pelicula.caratula;
+  $imagen.alt = pelicula.titulo;
+
+  $itemCarousel.appendChild($imagen);
 }

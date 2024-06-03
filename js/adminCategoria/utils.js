@@ -19,7 +19,7 @@ export const iniciarCategoriaMix = () => {
 
 export const agregarCategoriasALS = (categoria) => {
   let categorias = obtenerCategoriasDeLS();
-  categorias.push(categoria); // Agregar la nueva categoría a la lista de categorías
+  categorias.push(categoria); 
   localStorage.setItem('categorias', JSON.stringify(categorias));
 };
 

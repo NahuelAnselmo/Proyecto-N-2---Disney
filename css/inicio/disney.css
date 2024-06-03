@@ -96,3 +96,59 @@
     grid-column-gap: 15px;
   }
 }
+.swiper-slide {
+  width: 200px; /* Ancho deseado para cada elemento del carrusel */
+  margin-right: 20px; /* Margen entre elementos */
+}
+.slider-films {
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-contenedor{
+  height: 300px;
+}
+
+#wrapper-cards {
+  display: flex; /* Mostrar los elementos en línea */
+}
+/* Estilos para los botones de navegación del carrusel */
+/* Estilos para los botones de navegación del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: #fff; /* Color del icono */
+  background-color: rgba(0, 0, 0, 0.5); /* Color de fondo */
+  border: none; /* Quitamos el borde */
+  border-radius: 50%; /* Hacer los botones redondos */
+  width: 40px; /* Ancho de los botones */
+  height: 40px; /* Alto de los botones */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Cambiamos el color de fondo al pasar el mouse */
+}
+
+/* Estilos para el icono de flecha */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 20px; /* Ancho del icono */
+  height: 20px; /* Alto del icono */
+}
+
+/* Ajustes adicionales para posicionar los botones más cerca de las imágenes */
+.carousel-control-prev {
+  left: 20px; /* Posición del botón "Anterior" desde el borde izquierdo */
+}
+
+.carousel-control-next {
+  right: 20px; /* Posición del botón "Siguiente" desde el borde derecho */
+}
