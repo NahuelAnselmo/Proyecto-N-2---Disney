@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Disney, peliculas, series">
+    <meta name="author" content="Julieta, Ivan Balceda, Ignacio Sal Paz, Nahuel Anselmo"/>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="shortcut icon" href="img/icons/logo.svg" type="imgage/x-con" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-FpPXxUjNmazR7Yqg3CLPPuyCp9Nf7eWeVpC86Gb/hyFLuT+ZpePWw58nYmzN8rKfjB69e8AKaUrKQjCND+3pAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <title>Disney+ | Disney, Pixar, Marvel y National Geographic</title>
+  </head>
+  <body class="index-bg-color">
+    <main>
+      <section class="inicio p-0">
+        <div class="row no-gutters">
+          <article class="col-12 mt-2 d-flex justify-content-end">
+            <div class="inicio-btn-login-contenedor me-3 mt-2">
+                <button type="button" class="btn btn-outline-dark btn-login h-100 inicio-btn-login border-white " id="btnIniciarSesion">
+                    INICIAR SESIÓN
+                </button>
+            </div>
+          </article>
+          <article class="col-12 col-md-6 inicio-content-txt-margin">
+            <div class="row no-gutters text-center text-md-start justify-content-center justify-content-md-start">
+              <img
+                  src="./img/disney/disney-inicio-logo.png"
+                  alt="Disney"
+                  class="col-12 inicio-img-size mb-4"
+              />
+              <h1 class="col-12 text-white fs-1 mb-4">
+                  Tus historias favoritas, todas en un mismo lugar.
+              </h1>
+              <div class="col-12 mb-3 inicio-btn-contratar-contenedor">
+                  <button type="button" class="btn btn-primary btn-contratar-bg-color inicio-btn-contratar-size suscripcion">
+                      CONTRATÁ LA OFERTA COMBO+
+                  </button>
+              </div>
+                <a href="./pages/registro.html" class="col-12 text-white fs-6 mb-2">
+                    Suscribirme solo a Disney+
+                </a>
+             </div>
+            </div>
+        </article>
+        </div>
+    </section>
+    <section class="tabla">
+      <h2 class="text-white text-center">Elegí tu plan</h2>
+      <p class="text-secondary fw-bold fs-size-txt text-center">Podés cancelar en cualquier momento</p>
+      <div class="table-container">
+        <table class="table tabla-plan mt-3">
+          <thead class="sticky-header">
+            <tr>
+              <th class="text-white text-center"></th>
+              <th class="text-white text-center borde-superior">
+                <div class="text-center">
+                  <p>Disney+</p>
+                </div>
+                <div class="tabla-contenedor-img my-4">
+                  <img src="./img/disney/disney-inicio-img.png" alt="Disney" class="tabla-img">
+                </div>
+                <div class="text-center w-100 tabla-contenedor-btn">
+                  <button type="button" class="btn btn-info tabla-btn mx-2 h-100 suscripcion">ARS 3.999/MES (FINAL)*</button>
+                </div>
+              </th>
+              <th class="bg-dark text-white text-center borde-superior">
+                <div class="text-center">
+                  <p>Combo+</p>
+                </div>
+                <div class="tabla-contenedor-img my-4">
+                  <img src="./img/disney/combo+.png" alt="Combo+" class="tabla-img">
+                </div>
+                <div class="text-center w-100 tabla-contenedor-btn">
+                  <button type="button" class="btn btn-contratar-bg-color tabla-btn mx-2 h-100 suscripcion">ARS 6.999/MES (FINAL)*</button>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tbody-plan container">
+            <tr>
+              <td class="text-secondary align-middle">Precio anual</td>
+              <td class="text-white text-center">
+                <p>¡12 meses al precio de 9!</p>
+                <div class="tabla-contenedor-img">
+                  <button type="button" class="btn btn-info tabla-btn mx-2 h-100 suscripcion">ARS 35.899/AÑO (FINAL)*</button>
+                </div>
+              </td>
+              <td class="bg-dark text-white text-center">
+                <i class="fas fa-minus"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Estrenos de películas, series originales y clásicos de Disney, Pixar, Marvel, Star Wars y National Geographic</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Deportes en vivo de las mejores ligas del mundo y los torneos más importantes de ESPN</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-minus"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Producciones locales y películas, series y programas de TV premiados exclusivos de Star+</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-minus"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Dispositivos para ver en simultáneo</td>
+              <td class="text-white text-center align-middle">
+                4
+              </td>
+              <td class="bg-dark text-secondary text-center align-middle">
+                4+4
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Descargas para ver tus favoritos sin conexión ni demoras</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Dispositivos para ver en simultáneo</td>
+              <td class="text-white text-center align-middle">
+                7
+              </td>
+              <td class="bg-dark text-secondary text-center align-middle">
+                7+7
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Controles parentales para proteger a tu familia</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="dispositivos">
+      <div class="row">
+        <div class="col-12 d-md-none d-flex justify-content-center mb-0">
+          <img
+              src="./img/disney/original.png"
+              alt="Disney+ en cualquier dispositivo"
+              class="img-size img-fluid"
+          />
+        </div>
+          <div class="col-12 col-md-6 dispositivos-txt-margin">
+              <h2 class="text-white text-center text-md-start">Cuando quieras, donde quieras</h2>
+              <p class="text-secondary fw-bold fs-size-txt text-center text-md-start">
+                  Disfrútalo en tu pantalla favorita, ya sea tu TV, tableta,
+                  computadora, teléfono y otros. Vive una experiencia única con una
+                  amplia selección de títulos en 4K. Además, puedes ver en cuatro
+                  pantallas simultáneamente para que nadie se quede afuera.
+              </p>
+          </div>
+          <div class="col-12 col-md-6 d-none d-md-block">
+              <img
+                  src="./img/disney/original.png"
+                  alt="Disney+ en cualquier dispositivo"
+                  class="img-size img-fluid"
+              />
+          </div>
+      </div>
+  </section>
+      <section class="container mt-4">
+        <div class="row">
+          <h2 class="col-12 text-center text-white">
+            Originales Disney+ exclusivos
+          </h2>
+          <p class="col-12 text-secondary fw-bold fs-size-txt text-center py-3">
+            Disfrutá de películas, series y documentales nunca antes vistos.
+            Solo en Disney+.
+          </p>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-4 ourservices-content-img p-0">
+                <img
+                  src="./img/disney/loki.jpeg"
+                  alt="Loki"
+                  class="ourservices-img-border p-2"
+                />
+              </div>
+              <div class="col-4 ourservices-content-img p-0">
+                <img
+                  src="./img/disney/cars.jpeg"
+                  alt="Loki"
+                  class="ourservices-img-border p-2"
+                />
+              </div>
+              <div class="col-4 ourservices-content-img p-0">
+                <img
+                  src="./img/disney/abracadabra2.jpeg"
+                  alt="Loki"
+                  class="ourservices-img-border p-2"
+                />
+              </div>
+              <div class="col-4 ourservices-content-img p-0">
+                <img
+                  src="./img/disney/chueco.jpeg"
+                  alt="Loki"
+                  class="ourservices-img-border p-2"
+                />
+              </div>
+              <div class="col-4 ourservices-content-img p-0">
+                <img
+                  src="./img/disney/invasionsecreta.jpeg"
+                  alt="Loki"
+                  class="ourservices-img-border p-2"
+                />
+              </div>
+              <div class="col-4 ourservices-content-img p-0">
+                <img
+                  src="./img/disney/ahsoka.jpeg"
+                  alt="Loki"
+                  class="ourservices-img-border p-2"
+                />
+              </div>
+              <div class="col-4 ourservices-content-img p-0">
+                <img
+                  src="./img/disney/desencantada.png"
+                  alt="Loki"
+                  class="ourservices-img-border p-2"
+                />
+              </div>
+              <div class="col-4 ourservices-content-img p-0">
+                <img
+                  src="./img/disney/msmarvel.jpeg"
+                  alt="Loki"
+                  class="ourservices-img-border p-2"
+                />
+              </div>
+              <div class="col-4 ourservices-content-img p-0">
+                <img
+                  src="./img/disney/sinlimites.jpeg"
+                  alt="Loki"
+                  class="ourservices-img-border p-2"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="answer container">
+        <h2 class="text-white text-center">Preguntas frecuentes</h2>
+        <div class="accordion accordion-custom my-3" id="acordeon-answer">
+          <div class="accordion-item my-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                ¿Qué incluye Disney+?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+            >
+              <div class="accordion-body">
+                <p class="text-secondary fs-size-txt pt-0">Beneficios de la suscripción a Disney+:</p>
+                <ul>
+                  <li class="text-secondary fs-size-txt my-4">Experiencia de entretenimiento exclusiva.</li>
+                  <li class="text-secondary fs-size-txt my-4">Las mejores historias de Disney, Pixar, Marvel, Star Wars y National Geographic, todo en un mismo lugar.</li>
+                  <li class="text-secondary fs-size-txt my-4">Descargas ilimitadas hasta en diez dispositivos compatibles.</li>
+                  <li class="text-secondary fs-size-txt my-4">Más de 300 títulos en 4K UHD y HDR.</li>
+                  <li class="text-secondary fs-size-txt my-4">Hasta cuatro pantallas a la vez: ¡disfrutan todos!</li>
+                  <li class="text-secondary fs-size-txt my-4">IMAX Enhanced: disponible en algunos títulos de Marvel y en todos los dispositivos compatibles con Disney+.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item my-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                ¿Ya tenés Disney+ o Star+ y querés Combo+?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+            >
+            <div class="accordion-body">
+              <p class="text-secondary fs-size-txt pt-0">Con Combo+:</p>
+              <ul>
+                <li class="text-secondary fs-size-txt my-4">Descontaremos el valor de tu suscripción actual del precio de Combo+.</li>
+                <li class="text-secondary fs-size-txt my-4">Si tenés una suscripción mensual, el valor que pagás mensualmente se descontará del precio final de Combo+.</li>
+                <li class="text-secondary fs-size-txt my-4">Por el momento, si tenés una suscripción anual a Disney+ y recibís la factura a través de Disney+, no podés cambiarte a Combo+. Comunicate con <a href="./pages/Error404.html" class="text-white fs-size-txt">Atención al Cliente de Disney+</a> para más opciones.</li>
+                <li class="text-secondary fs-size-txt my-4">Te llegará un correo electrónico con el detalle de los cargos apenas confirmes el pago.</li>
+                <li class="text-secondary fs-size-txt my-4">Recordá que podés cancelar en cualquier momento.</li>
+                
+              </ul>
+              <p class="text-secondary fs-size-txt my-4">La suscripción a Combo+ es únicamente mensual, por el momento.</p>
+            </div>
+            </div>
+          </div>
+          <div class="accordion-item my-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                ¿Cómo puedo pagar?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                <p class="text-secondary fs-size-txt pt-0">Podés pagar con tarjeta de crédito, débito, Mercado Pago o también a través de terceros, como App Store de Apple, Mercado Libre y proveedores locales de TV, telefonía e internet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item my-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                ¿Cómo puedo ver el contenido +16 y +18?
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                <p class="text-secondary fs-size-txt pt-0">Con una suscripción a Disney+ en Latinoamérica, tenés que actualizar los controles parentales de tu perfil para acceder al catálogo completo que incluye contenido 16+ y 18+. Podés restringir el contenido así como agregar un PIN de bloqueo en cada perfil. También podés dejar los controles parentales como están y seguir disfrutando Disney+ en un ambiente 14+ con la opción de modificarlos cuando quieras en Editar perfiles.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item my-3">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+              >
+                ¿Dónde puedo ver Disney+?
+              </button>
+            </h2>
+            <div
+              id="collapseFive"
+              class="accordion-collapse collapse"
+            >
+              <div class="accordion-body">
+                <p class="text-secondary fs-size-txt pt-0">La aplicación de Disney+ está disponible en tu dispositivo móvil, navegador web, consola de videojuegos, decodificador y Smart TV. Podés ver <a href="./pages/Error404.html" class="text-white fs-size-txt">la lista completa de dispositivos compatibles en el Centro de ayuda.</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
