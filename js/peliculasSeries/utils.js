@@ -26,12 +26,11 @@ export const cargarPeliculasPorCategoria = () => {
 };
 
 export const cargarCategorias = () => {
-    const categorias = obtenerCategoriasDeLS(); // Obtener todas las categorías
+    const categorias = obtenerCategoriasDeLS();
     const $carouselCategorias = document.getElementById('contenedor-categorias');
     $carouselCategorias.innerHTML = '';
 
     categorias.forEach((categoria) => {
-        // Crear un botón para cada categoría
         const $btnCategoria = document.createElement('button');
         $btnCategoria.classList.add('categoria-btn', 'swiper-slide');
         $btnCategoria.textContent = categoria.nombre;
