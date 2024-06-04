@@ -305,6 +305,19 @@ export const cargarPeliculasDestacadas = () => {
       $iconoInfoSwiper.classList.add("ri-error-warning-line", "me-1");
       $btnInfoSwiper.appendChild($iconoInfoSwiper);
       $btnInfoSwiper.appendChild(document.createTextNode("Ver más"));
+      $btnInfoSwiper.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        
+        const movieCode = pelicula.codigo; 
+        
+        if (movieCode) {
+          console.log(movieCode); 
+          sessionStorage.setItem('selectedMovieUUID', movieCode); 
+          window.location.href = '../pages/detalle.html';
+        } else {
+          console.error('No se pudo obtener el código de la película.'); // En caso de que no se pueda obtener el código de la película
+        }
+      });
 
       $highlightButtonSwiper.appendChild($btnReproducirSwiper);
       $highlightButtonSwiper.appendChild($btnInfoSwiper);

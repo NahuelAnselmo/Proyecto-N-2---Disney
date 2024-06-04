@@ -1,4 +1,3 @@
-
 import { obtenerCategoriasDeLS, obtenerPeliculaSerieDeLs } from '../utils.js';
 
 export const cargarTodasLasPeliculas = () => {
@@ -26,7 +25,11 @@ export const cargarPeliculasPorCategoria = () => {
 };
 
 export const cargarCategorias = () => {
+<<<<<<< HEAD
     const categorias = obtenerCategoriasDeLS();
+=======
+    const categorias = obtenerCategoriasDeLS(); 
+>>>>>>> 6e570e38c4e74657d114ad2e2cfab851dc7b2813
     const $carouselCategorias = document.getElementById('contenedor-categorias');
     $carouselCategorias.innerHTML = '';
 
@@ -38,7 +41,6 @@ export const cargarCategorias = () => {
         $carouselCategorias.appendChild($btnCategoria);
     });
 
-    // Inicializar Swiper.js
     new Swiper('.swiper-container', {
         slidesPerView: 'auto',
         spaceBetween: 10,
@@ -48,7 +50,6 @@ export const cargarCategorias = () => {
         },
     });
 
-    // Agregar event listener para cargar películas por categoría
     document.querySelectorAll('.categoria-btn').forEach(($btnCategoria) => {
         $btnCategoria.addEventListener('click', () => {
             const categoriaId = $btnCategoria.dataset.categoriaId; 
