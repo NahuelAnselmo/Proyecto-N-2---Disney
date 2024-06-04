@@ -25,11 +25,7 @@ export const cargarPeliculasPorCategoria = () => {
 };
 
 export const cargarCategorias = () => {
-<<<<<<< HEAD
     const categorias = obtenerCategoriasDeLS();
-=======
-    const categorias = obtenerCategoriasDeLS(); 
->>>>>>> 6e570e38c4e74657d114ad2e2cfab851dc7b2813
     const $carouselCategorias = document.getElementById('contenedor-categorias');
     $carouselCategorias.innerHTML = '';
 
