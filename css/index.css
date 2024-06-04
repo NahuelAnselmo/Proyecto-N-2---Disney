@@ -21,6 +21,10 @@
     background-position: top center; 
     
   }
+  .inicio-content-txt-margin{
+    margin-top: 10px;
+    background-color: #d6d6d6;
+  }
 }
 
 @media (min-width: 801px) {
