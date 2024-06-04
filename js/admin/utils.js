@@ -192,68 +192,153 @@ export function existePelicula(tituloPelicula) {
   return false;
 }
 
-export function cargarPeliculasDestacadas () {
+export const cargarPeliculasDestacadas = () => {
   const peliculasDestacadas = obtenerPeliculasDestacadas();
-  const $swiperWrapper = document.querySelector(".swiper-wrapper");
-  $swiperWrapper.innerHTML = "";
+  const $swiperContainer = document.querySelector(".swiper-hero .swiper-wrapper");
+  $swiperContainer.innerHTML = "";
 
-  peliculasDestacadas.forEach((pelicula) => {
-    const $slide = document.createElement("div");
-    $slide.classList.add("swiper-slide");
+  if (peliculasDestacadas.length === 0) {
+    const $swiperSlide = document.createElement("div");
+    $swiperSlide.classList.add("swiper-slide");
 
-    const $img = document.createElement("img");
-    $img.src = pelicula.portada;
-    $img.alt = pelicula.titulo;
+    const $defaultBanner = document.createElement("img");
+    $defaultBanner.classList.add("img-banner-disney");
+    $defaultBanner.src = "";
+    $defaultBanner.alt = "Banner por defecto disney";
 
     const $overlay = document.createElement("div");
     $overlay.classList.add("overlay");
 
     const $title = document.createElement("h1");
     $title.classList.add("title");
-    $title.textContent = pelicula.titulo;
 
     const $description = document.createElement("p");
     $description.classList.add("description");
-    $description.textContent = pelicula.descripcion;
 
     const $buttons = document.createElement("div");
     $buttons.classList.add("buttons");
 
-    const $playButton = document.createElement("a");
-    $playButton.href = "../pages/detalle.html"; // Agrega la URL del trailer
-    $playButton.classList.add("btn", "btn-primary", "btn-lg", "btn-primary");
-    $playButton.innerHTML = '<i class="fa-regular fa-circle-play me-1"></i>Reproducir';
+    const $btnReproducir = document.createElement("a");
+    $btnReproducir.href = "";
+    $btnReproducir.classList.add("btn", "btn-play", "btn-lg", "btn-orange", "btn-secondary");
 
-    const $moreButton = document.createElement("a");
-    $moreButton.href = "../pages/detalle.html"; // Agrega la URL para ver más detalles
-    $moreButton.classList.add("btn", "btn-outline-warning", "btn-secondary-outline", "btn-lg");
-    $moreButton.innerHTML = '<i class="ri-error-warning-line"></i>Ver Más';
+    const $iconoReproducir = document.createElement("i");
+    $iconoReproducir.classList.add("fa-regular", "fa-circle-play", "me-1");
 
-    $buttons.appendChild($playButton);
-    $buttons.appendChild($moreButton);
+    $btnReproducir.appendChild($iconoReproducir);
+    $btnReproducir.appendChild(document.createTextNode("Reproducir"));
+
+    const $btnInfo = document.createElement("a");
+    $btnInfo.href = "#";
+    $btnInfo.classList.add("btn", "btn-outline-secondary", "btn-orange-outline", "btn-lg");
+
+    const $iconoInfo = document.createElement("i");
+    $iconoInfo.classList.add("ri-error-warning-line", "me-1");
+
+    $btnInfo.appendChild($iconoInfo);
+    $btnInfo.appendChild(document.createTextNode("Ver Más"));
+
+    $buttons.appendChild($btnReproducir);
+    $buttons.appendChild($btnInfo);
 
     $overlay.appendChild($title);
     $overlay.appendChild($description);
     $overlay.appendChild($buttons);
 
-    $slide.appendChild($img);
-    $slide.appendChild($overlay);
+    $swiperSlide.appendChild($defaultBanner);
+    $swiperSlide.appendChild($overlay);
 
-    $swiperWrapper.appendChild($slide);
-  });
+    $swiperContainer.appendChild($swiperSlide);
+  } else {
+    peliculasDestacadas.forEach((pelicula) => {
+      const $swiperSlide = document.createElement("div");
+      $swiperSlide.classList.add("swiper-slide");
 
-  // Inicializar Swiper
-  const swiper = new Swiper('.swiper-hero', {
+      const $imgSwiper = document.createElement("img");
+      $imgSwiper.src = pelicula.portada;
+      $imgSwiper.alt = pelicula.titulo;
+
+      const $overlaySwiper = document.createElement("div");
+      $overlaySwiper.classList.add("overlay");
+
+      const $titleSwiper = document.createElement("h1");
+      $titleSwiper.classList.add("title");
+      $titleSwiper.textContent = pelicula.titulo;
+
+      const $descriptionSwiper = document.createElement("p");
+      $descriptionSwiper.classList.add("description");
+      $descriptionSwiper.textContent = pelicula.descripcion;
+
+      const $highlightButtonSwiper = document.createElement("div");
+      $highlightButtonSwiper.classList.add("buttons");
+
+      const $btnReproducirSwiper = document.createElement("a");
+      $btnReproducirSwiper.href = "../pages/detalle.html";
+      $btnReproducirSwiper.classList.add(
+        "btn",
+        "btn-play",
+        "btn-lg",
+        "btn-orange",
+        "btn-secondary"
+      );
+
+      $btnReproducirSwiper.dataset.id = pelicula.code;
+
+      const $iconoReproducirSwiper = document.createElement("i");
+      $iconoReproducirSwiper.classList.add(
+        "fa-regular",
+        "fa-circle-play",
+        "me-1"
+      );
+      $btnReproducirSwiper.appendChild($iconoReproducirSwiper);
+      $btnReproducirSwiper.appendChild(document.createTextNode("Reproducir"));
+
+      const $btnInfoSwiper = document.createElement("a");
+      $btnInfoSwiper.href = "../pages/detalle.html";
+      $btnInfoSwiper.classList.add(
+        "btn",
+        "btn-outline-secondary",
+        "btn-orange-outline",
+        "btn-lg"
+      );
+      const $iconoInfoSwiper = document.createElement("i");
+      $iconoInfoSwiper.classList.add("ri-error-warning-line", "me-1");
+      $btnInfoSwiper.appendChild($iconoInfoSwiper);
+      $btnInfoSwiper.appendChild(document.createTextNode("Ver más"));
+
+      $highlightButtonSwiper.appendChild($btnReproducirSwiper);
+      $highlightButtonSwiper.appendChild($btnInfoSwiper);
+
+      $overlaySwiper.appendChild($titleSwiper);
+      $overlaySwiper.appendChild($descriptionSwiper);
+      $overlaySwiper.appendChild($highlightButtonSwiper);
+
+      $swiperSlide.appendChild($imgSwiper);
+      $swiperSlide.appendChild($overlaySwiper);
+
+      $swiperContainer.appendChild($swiperSlide);
+    });
+  }
+  new Swiper(".swiper-hero", {
+    direction: "horizontal",
     loop: true,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
+    effect: "fade",
+    autoplay: {
+      delay: 10000,
+      pauseOnMouseEnter: true,
+      disableOnInteraction: false,
     },
+  
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: "true",
+      dynamicBullets: "true",
+    },
+  
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
-}
+  
+};
