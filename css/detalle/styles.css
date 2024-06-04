@@ -6,48 +6,10 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    background-color: #040714;
-    color: #f9f9f9;
-    font-family: Avenir-Roman, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 a {
     color: #f9f9f9;
     text-decoration: none;
 }
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 70px;
-    background-color: #090b13;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 36px;
-    letter-spacing: 16px;
-    z-index: 3;
-}
-
-.navLogo {
-    padding: 0;
-    width: 80px;
-    margin-top: 4px;
-    max-height: 70px;
-    font-size: 0;
-    display: inline-block;
-}
-
-.navLogo img {
-    display: block;
-    width: 100%;
-}
-
 .login {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 8px 16px;
