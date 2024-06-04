@@ -53,7 +53,7 @@ a {
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url("/assets/images/login-background.jpg");
+    background-image: url("../img/portadas/1.jpg");
     position: absolute;
     top: 0;
     right: 0;

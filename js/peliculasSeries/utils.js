@@ -1,3 +1,4 @@
+
 import { obtenerCategoriasDeLS, obtenerPeliculaSerieDeLs } from '../utils.js';
 
 export const cargarTodasLasPeliculas = () => {
@@ -22,18 +23,34 @@ export const cargarPeliculasPorCategoria = () => {
             cargarItemPelicula(pelicula, $contenedorPeliculas);
         }
     });
-    
 };
 
 export const cargarCategorias = () => {
-    const peliculas = obtenerPeliculaSerieDeLs();
-    const $carouselCategorias = document.getElementById('carousel-categorias');
+    const categorias = obtenerCategoriasDeLS(); // Obtener todas las categorías
+    const $carouselCategorias = document.getElementById('contenedor-categorias');
     $carouselCategorias.innerHTML = '';
-    peliculas.forEach((pelicula) => {
-        cargarItemCategoria(pelicula, $carouselCategorias);
+
+    categorias.forEach((categoria) => {
+        // Crear un botón para cada categoría
+        const $btnCategoria = document.createElement('button');
+        $btnCategoria.classList.add('categoria-btn', 'swiper-slide');
+        $btnCategoria.textContent = categoria.nombre;
+        $btnCategoria.dataset.categoriaId = categoria.id; 
+        $carouselCategorias.appendChild($btnCategoria);
     });
 
-    $carouselCategorias.querySelectorAll('.categoria-btn').forEach(($btnCategoria) => {
+    // Inicializar Swiper.js
+    new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    // Agregar event listener para cargar películas por categoría
+    document.querySelectorAll('.categoria-btn').forEach(($btnCategoria) => {
         $btnCategoria.addEventListener('click', () => {
             const categoriaId = $btnCategoria.dataset.categoriaId; 
             sessionStorage.setItem('idCategoria', categoriaId); 
@@ -42,23 +59,7 @@ export const cargarCategorias = () => {
     });
 };
 
-const cargarItemCategoria = (pelicula, $contenedorCategorias) => {
-    if(pelicula.tipo==='pelicula'){
-        const categorias = obtenerCategoriasDeLS();
-        categorias.forEach((categoria) => {
-            if (pelicula.categoria === categoria.id) {
-                const $btnCategoria = document.createElement('button');
-                $btnCategoria.classList.add('categoria-btn', 'btn', 'btn-secondary', 'mb-3', 'mx-4');
-                $btnCategoria.textContent = categoria.nombre;
-                $btnCategoria.dataset.categoriaId = categoria.id; 
-                $contenedorCategorias.appendChild($btnCategoria);
-            }
-        });
-       
-    }
-};
-
-export const cargarItemPelicula = (pelicula, contenedorPeliculas) => {
+const cargarItemPelicula = (pelicula, contenedorPeliculas) => {
     const $divCard = document.createElement('div');
     $divCard.classList.add('card-disney');
 
@@ -76,3 +77,4 @@ export const cargarItemPelicula = (pelicula, contenedorPeliculas) => {
 
     contenedorPeliculas.appendChild($divCard);
 };
+
