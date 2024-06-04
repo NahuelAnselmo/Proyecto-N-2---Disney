@@ -1,4 +1,3 @@
-/* VARIABLES */
 :root {
     --color-morado: #9755F6;
     --color-azul-celeste: #3DB2E7;
@@ -8,7 +7,6 @@
     --font-family: 'Roboto', sans-serif;
 }
 
-/* GENERAL */
 .main {
     position: relative;
     color: #fff;
@@ -46,7 +44,6 @@
     z-index: -100;
 }
 
-/* contacto */
 
 .content-form {
     width: 80%;
@@ -169,4 +166,55 @@
         background-color: var(--color-morado)!important;
     }
   }
+  .footer-navegacion-txt {
+    font-size: 14px;
+    color: #717377;
+}
 
+.footer-navegacion-txt:hover {
+    color: black;
+}
+
+.footer-txt {
+    font-size: 14px;
+    color: #717377;
+}
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.footer-links a {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1100.98px) {
+    .footer-navegacion-txt {
+        width: 33.33%;
+        max-width: 33.33%; 
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer-navegacion-txt {
+        width: 50%;
+        max-width: 50%; 
+    }
+}
+
+@media (max-width: 575.98px) {
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer-navegacion-txt {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }   
+}

@@ -63,6 +63,8 @@ form.addEventListener('submit', (event) => {
           showConfirmButton: true,
           showCancelButton: false,
           confirmButtonText: '¡OK!',
+        }).then(() => {
+          window.location.assign('/index.html');
         });
 
         $inputNombre.classList.remove('is-valid', 'is-invalid');
