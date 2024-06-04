@@ -5,7 +5,6 @@ export const cargarTodasLasSeries = () => {
     const series = obtenerPeliculaSerieDeLs();
     const $contenedorPeliculas = document.querySelector('.main .grid');
     $contenedorPeliculas.innerHTML = '';
-
     series.forEach((serie) => {
         if (serie.tipo === 'serie') {
             cargarItemSerie(serie, $contenedorPeliculas);
@@ -27,18 +26,32 @@ export const cargarSeriesPorCategoria = () => {
 };
 
 export const cargarCategorias = () => {
-    const series = obtenerPeliculaSerieDeLs();
-    const $carouselCategorias = document.getElementById('carousel-categorias');
+    const categorias = obtenerCategoriasDeLS(); 
+    const $carouselCategorias = document.getElementById('contenedor-categorias');
     $carouselCategorias.innerHTML = '';
-    series.forEach((serie) => {
-        cargarItemCategoria(serie, $carouselCategorias);
+
+    categorias.forEach((categoria) => {
+        const $btnCategoria = document.createElement('button');
+        $btnCategoria.classList.add('categoria-btn', 'swiper-slide');
+        $btnCategoria.textContent = categoria.nombre;
+        $btnCategoria.dataset.categoriaId = categoria.id; 
+        $carouselCategorias.appendChild($btnCategoria);
     });
 
-    $carouselCategorias.querySelectorAll('.categoria-btn').forEach(($btnCategoria) => {
+    new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+    document.querySelectorAll('.categoria-btn').forEach(($btnCategoria) => {
         $btnCategoria.addEventListener('click', () => {
             const categoriaId = $btnCategoria.dataset.categoriaId; 
             sessionStorage.setItem('idCategoria', categoriaId); 
-            cargarSeriesPorCategoria(); x
+            cargarSeriesPorCategoria(); 
         });
     });
 };
