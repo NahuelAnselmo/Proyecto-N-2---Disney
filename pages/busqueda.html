@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="../css/inicio/disney.css">
   <link rel="stylesheet" href="../css/inicio/cardsDinamicas.css">
   <link rel="stylesheet" href="../css/inicio/InicioCyC.css">
-  <link rel="stylesheet" href="../css/películas.css">
-  <title>Serie | Disney+</title>
+  <link rel="stylesheet" href="../css/busqueda.css">
+  <title>Busqueda | Disney+</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
               </svg></span>
             <p class="name-tag mt-4 ">inicio</p>
           </a></li>
-        <li  id="btnBusqueda"><a href="../pages/busqueda.html"><span class="icons"><svg alt="search" viewBox="0 0 36 36"
+        <li id="btnBusqueda"><a href="#"><span class="icons"><svg alt="search" viewBox="0 0 36 36"
                 style="height: 24px; min-width: 24px; width: 24px; z-index: auto;">
                 <path
                   d="M21.866 24.337c-3.933 2.762-9.398 2.386-12.914-1.13-3.936-3.936-3.936-10.318 0-14.255 3.937-3.936 10.32-3.936 14.256 0 3.327 3.327 3.842 8.402 1.545 12.27l4.56 4.558a2 2 0 0 1 0 2.829l-.174.173a2 2 0 0 1-2.828 0l-4.445-4.445zm-5.786-1.36a6.897 6.897 0 1 0 0-13.794 6.897 6.897 0 0 0 0 13.794z">
@@ -144,28 +144,17 @@
     </div>
   </header>
   <main class="inicio-peliculas">
-    <h1 class="text-center text-secondary fw-bold">Series</h1>
-    <section class="contenedor-categorias">
-        <div id="carousel-categorias" class="carousel">
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-categorias"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
-            <div class="carousel-inner" id="contenedor-categorias">
-            </div>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel-categorias"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Atras</span>
-            </button>
-        </div>
-    </section>
-    <div class="main disney rows mt-5 mb-5 container">
-        <div class="grid">
-            <div class="card-disney">
-                <div class="item-border" id="contenedor-img">
-                    <img src="../img/disney/disney-txt.png" alt="" class="item-image">
+    <div class="input-contenedor mb-5">
+        <input type="text" class="w-100 h-100 bg-secondary input-fs-size" placeholder="Categoria" id="inputBuscar">
+    </div>
+    <div class="container">
+        <h1 class="text-start text-white fw-bold">Explorar</h1>
+        <div class="main disney rows mt-5 mb-5 container">
+            <div class="grid">
+                <div class="card-disney">
+                    <div class="item-border" id="contenedor-img">
+                        <img src="../img/disney/disney-txt.png" alt="" class="item-image">
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,6 +191,6 @@
       © Disney. Todos los derechos reservados.
     </p>
   </footer>
-  <script type="module" src="../js/serie/app.js"></script>
+  <script type="module" src="../js/busqueda/app.js"></script>
 </body>
 </html>

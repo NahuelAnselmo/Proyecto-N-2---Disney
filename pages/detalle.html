@@ -20,9 +20,7 @@
   <link rel="stylesheet" href="../css/detalle/detalle.css">
   <link rel="stylesheet" href="../css/detalle/styles.css">
 </head>
-
 <body>
-
   <header class="header">
     <a href="./inicio.html" class="logo">
       <img src="../img/icons/logo.svg" width="100" alt="">
@@ -37,7 +35,7 @@
               </svg></span>
             <p class="name-tag mt-4 ">inicio</p>
           </a></li>
-        <li><a href="#"><span class="icons"><svg alt="search" viewBox="0 0 36 36"
+        <li id="btnBusqueda"><a href="../pages/busqueda.html"><span class="icons"><svg alt="search" viewBox="0 0 36 36"
                 style="height: 24px; min-width: 24px; width: 24px; z-index: auto;">
                 <path
                   d="M21.866 24.337c-3.933 2.762-9.398 2.386-12.914-1.13-3.936-3.936-3.936-10.318 0-14.255 3.937-3.936 10.32-3.936 14.256 0 3.327 3.327 3.842 8.402 1.545 12.27l4.56 4.558a2 2 0 0 1 0 2.829l-.174.173a2 2 0 0 1-2.828 0l-4.445-4.445zm-5.786-1.36a6.897 6.897 0 1 0 0-13.794 6.897 6.897 0 0 0 0 13.794z">
@@ -139,40 +137,38 @@
       </nav>
     </div>
   </header>
-
-  <div class="detail">
-    <div class="detailBgImg">
-      <img id="bgImg" alt="" src="" />
-    </div>
-
-    <div class="detailImgTitle">
-      <img id="imgTitle" alt="" src="" />
-    </div>
-    <div class="contentMeta">
-      <div class="controls">
-        <button class="player">
-          <img src="../assets/images/play-icon-black.png" alt="" />
-          <span>Play</span>
-        </button>
-        <button class="trailer">
-          <img src="../assets/images/play-icon-white.png" alt="" />
-          <span>Trailer</span>
-        </button>
-        <div class="addList">
-          <span></span>
-          <span></span>
-        </div>
-        <div class="groupWatch">
-          <div>
-            <img src="../assets/images/group-icon.png" alt="" />
+  <main>
+    <div class="detail">
+      <div class="detailBgImg">
+        <img id="bgImg" alt="" src="" />
+      </div>
+      <div class="detailImgTitle">
+      </div>
+      <div class="contentMeta">
+        <div class="controls">
+          <button class="player">
+            <img src="../assets/images/play-icon-black.png" alt="" />
+            <span>Play</span>
+          </button>
+          <button class="trailer">
+            <img src="../assets/images/play-icon-white.png" alt="" />
+            <span>Trailer</span>
+          </button>
+          <div class="addList">
+            <span></span>
+            <span></span>
+          </div>
+          <div class="groupWatch">
+            <div>
+              <img src="../assets/images/group-icon.png" alt="" />
+            </div>
           </div>
         </div>
+        <div class="subTitle"></div>
+        <div class="description"></div>
       </div>
-      <div class="subTitle"></div>
-      <div class="description"></div>
     </div>
-  </div>
-
+  </main>
 <footer class="py-3 mt-5 responsive">
   <div class="d-flex justify-content-between px-5">
     <a href="https://privacy.thewaltdisneycompany.com/es/politica-de-privacidad/"
@@ -204,7 +200,7 @@
     © Disney. Todos los derechos reservados.
   </p>
 </footer>
-  <script src="../js/detalle/detalle.js"></script>
+  <script type="module" src="../js/detalle/detalle.js"></script>
 </body>
 
 </html>

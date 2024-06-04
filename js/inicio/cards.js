@@ -36,7 +36,6 @@ export const cargarSlider = () => {
       $divBotonesCard.classList.add("buttons", "d-flex", "justify-content-center");
 
       const $btnDetallesCard = document.createElement("a");
-      $btnDetallesCard.href = "../pages/detalle.html";
       $btnDetallesCard.classList.add(
         "text-decoration-none",
         "btn-orange-outline",
@@ -45,6 +44,11 @@ export const cargarSlider = () => {
         "fs-5"
       );
       $btnDetallesCard.textContent = "Detalles";
+      $btnDetallesCard.addEventListener("click", (e) => {
+        e.preventDefault(); 
+        sessionStorage.setItem("selectedMovieUUID", peliculaSerie.codigo);
+        window.location.href = "../pages/detalle.html"; 
+      });
 
       $divBotonesCard.appendChild($btnDetallesCard);
 
