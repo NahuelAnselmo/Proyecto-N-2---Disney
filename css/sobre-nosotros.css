@@ -1,6 +1,14 @@
-
-.main {
+.main{
     position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.fondo {
+    position: absolute;
     color: #fff;
     width: 100vw;
     height: 100vh;
@@ -15,7 +23,7 @@
 }
 
 .image-wrapper>.image {
-    background-image: url("../imagen/disney-fondo.jpg");
+    background-image: url("../img/imagen/disney-fondo.jpg");
     background-position: center;
     background-size: cover;
     height: 100%;
@@ -90,13 +98,15 @@
     height: 100%;
 }
 
-.modal-content{
+.modals{
+    position: absolute;
+    box-sizing: border-box;
     color: cadetblue;
     background: linear-gradient(15deg, #2a2d46, #535067);
 }
 
 .imagen-integrantes{
-    max-height: 400px;
+    max-height: 320px;
     width: 100%;
     height: 100%;
     object-fit: contain;
