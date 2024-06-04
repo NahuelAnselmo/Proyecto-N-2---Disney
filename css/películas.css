@@ -1,0 +1,23 @@
+.inicio-peliculas{
+margin-top:100px;
+}
+.carousel {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    padding: 10px;
+    height: 100px;
+}
+
+.categoria-btn {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    padding: 10px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80px;
+}
