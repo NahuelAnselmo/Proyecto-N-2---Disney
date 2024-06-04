@@ -141,40 +141,191 @@
     </div>
   </header>
 
-<main>
-  <div class="detail">
-    <div class="detailBgImg">
-      <img id="bgImg" alt="" src="" />
-    </div>
-
-    <div class="detailImgTitle">
-      <img id="imgTitle" alt="" src="" />
-    </div>
-    <div class="contentMeta">
-      <div class="controls">
-        <button class="player">
-          <img src="../img/imgDetalle/play-icon-black.png" alt="" />
-          <span>Play</span>
-        </button>
-        <button class="trailer">
-          <img src="../img/imgDetalle/play-icon-white.png" alt="" />
-          <span>Trailer</span>
-        </button>
-        <div class="addList">
-          <span></span>
-          <span></span>
+  <main>
+    <!-- Portada trailer -->
+    <section class="container-fluid trailer-seccion">
+      <article class="row">
+        <div class="col-12 trailer-container">
+          <img id="portada-trailer" src="" alt="Portada del trailer">
         </div>
-        <div class="groupWatch">
-          <div>
-            <img src="../img/imgDetalle/group-icon.png" alt="" />
+      </article>
+    </section>
+
+    <!-- Título y logo -->
+    <section class="container mt-5 d-flex trailer-seccion">
+      <article class="row w-100">
+        <div class="col-12 col-sm-6">
+          <h2 class="titulo-detalle"></h2>
+          <p id="categoria-detalle"></p>
+          <p id="descripcion-detalle"></p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Botón Reproducir -->
+    <section class="container mt-2">
+      <a class="btn reproducir-detalle" href="#"><i class="fa-solid fa-play"></i> Ver Ahora</a>
+    </section>
+
+    <!-- Seguir explorando -->
+    <section class="container mb-5">
+      <article class="mt-5">
+        <h2>SEGUIR EXPLORANDO</h2>
+      </article>
+      <article class="mt-4">
+        <div class="row imagenes-explorando-detalle">
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/age-of-ice-2-1.jpg?resize=1047%2C1536&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>Age of Ice</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/anna_1-1.jpg?resize=1047%2C1536&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>Anna</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/armour-of-god-2.jpg?resize=1047%2C1536&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>Armour of God</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/el-huesped-2.jpg?resize=1047%2C1536&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>El Huésped</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/league-of-gods_1-1.jpg?resize=1047%2C1536&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>League of Gods</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/mas-alla-del-horizonte-2-1.jpg?resize=1047%2C1536&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>Más allá del horizonte</h5>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="subTitle"></div>
-      <div class="description"></div>
-    </div>
-  </div>
-</main>
+      </article>
+      <article class="mt-4">
+        <div class="row imagenes-explorando-detalle">
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/juego-de-tronos-1.jpg?resize=768%2C1126&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>Game Of Thrones</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/the-punisher-1.jpg?resize=768%2C1126&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>The Punisher</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/la-periferia-1.jpg?resize=768%2C1126&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>La Periferia</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/la-senal-1.jpg?resize=768%2C1126&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>La Señal</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/dos-hombres-y-medio-1.jpg?resize=768%2C1126&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>Two and a Half Men</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6 col-xs-6">
+            <div class="card tarjeta-resultados-categorias">
+              <img
+                src="https://i0.wp.com/revistayafue.com/wp-content/uploads/2024/05/the-last-of-us-1.jpg?resize=768%2C1126&ssl=1"
+                class="img-fluid"
+                alt="..."
+              />
+              <div class="card-title-overlay">
+                <h5>The Last Of Us</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
 
 <footer class="py-3 mt-5">
   <div class="d-flex justify-content-between px-5">

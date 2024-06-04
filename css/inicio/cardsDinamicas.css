@@ -14,6 +14,19 @@
     white-space: nowrap; /* Previene el ajuste de línea de los elementos */
 }
 
+h5{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    margin: 0px 0px 14px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;   
+}
+
 /* Card styles */
 .card {
     background-color: #fff;
@@ -38,13 +51,6 @@
     height: auto;
 }
 
-/* Optional: Text styles for the movie titles */
-.card p {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #333;
-}
-
 /* Hides the scrollbar for a cleaner look */
 #movieList::-webkit-scrollbar {
     display: none;
@@ -53,12 +59,13 @@
 /* Navigation button styles */
 .nav-button {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    display: inline-block;
+    top: 55%;
+    transform: translateY(-20%);
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50px;
-    border: 5px solid rgba(0, 0, 0, 0.5);
-    color: white;
+    border: 5px rgba(0, 0, 0, 0.5);
+    color: rgb(180, 226, 240);
     padding: 10px;
     cursor: pointer;
     z-index: 1;

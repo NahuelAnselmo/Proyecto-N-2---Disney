@@ -24,7 +24,6 @@ export const editarPelicula = (titulo, tipo, categoria, caratula, portada, trail
     return;
   }
 
-  // Actualizar los valores de la película existente
   peliculas[posicionPelicula].titulo = titulo;
   peliculas[posicionPelicula].tipo = tipo;
   peliculas[posicionPelicula].categoria = categoria;
@@ -51,7 +50,6 @@ export const editarPelicula = (titulo, tipo, categoria, caratula, portada, trail
 };
 
 export const eliminarPelicula = (idPelicula, nombrePelicula) => {
-  // 1. CONFIRMAR que se desea eliminar la película
   swal
     .fire({
       title: 'Atención',
@@ -64,21 +62,16 @@ export const eliminarPelicula = (idPelicula, nombrePelicula) => {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        // 2. Obtener el listado de películas
         const peliculas = obtenerPeliculaSerieDeLs();
 
-        // 3. Filtrar esa lista para eliminar la película con id indicado
         const nuevasPeliculas = peliculas.filter((pelicula) => {
           return pelicula.codigo !== idPelicula;
         });
 
-        // 4. Actualizar lista en LS
         localStorage.setItem('peliculas', JSON.stringify(nuevasPeliculas));
 
-        // 5. Actualizar la tabla
         cargarTabla();
 
-        // 6. Notificar al usuario del éxito
         swal.fire({
           title: 'Éxito',
           text: `Película ${nombrePelicula} eliminada correctamente`,
@@ -97,10 +90,9 @@ export const destacarPelicula = (codigoPelicula) => {
   const posicionPelicula = peliculas.findIndex((pelicula) => pelicula.codigo === codigoPelicula);
 
   if (posicionPelicula !== -1) {
-    // Verificar el estado actual de destacada
+
     const estaDestacada = peliculas[posicionPelicula].destacada;
 
-    // Cambiar el estado de destacada
     peliculas[posicionPelicula].destacada = !estaDestacada;
 
     localStorage.setItem('peliculas', JSON.stringify(peliculas));
