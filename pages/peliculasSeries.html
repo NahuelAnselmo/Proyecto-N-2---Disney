@@ -143,34 +143,25 @@
       </nav>
     </div>
   </header>
+  
   <main class="inicio-peliculas">
-    <h1 class="text-center text-secondary fw-bold">Películas</h1>
-    <section class="contenedor-categorias">
-        <div id="carousel-categorias" class="carousel">
-            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-categorias"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
-            <div class="carousel-inner" id="contenedor-categorias">
+    <h1 class="text-center text-secondary fw-bold mt-5">Películas</h1>
+    <section class="container contenedor-categorias">
+        <div id="carousel-categorias" class="swiper-container">
+            <div class="swiper-wrapper" id="contenedor-categorias">
+                <!-- Aquí se cargarán dinámicamente las categorías -->
             </div>
-            <button class="carousel-control-next" type="button" data-bs-target="#carousel-categorias"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Atras</span>
-            </button>
+            <div class="swiper-button-prev carousel-control-prev"></div>
+            <div class="swiper-button-next carousel-control-next"></div>
         </div>
     </section>
     <div class="main disney rows mt-5 mb-5 container">
         <div class="grid">
-            <div class="card-disney">
-                <div class="item-border" id="contenedor-img">
-                    <img src="../img/disney/disney-txt.png" alt="" class="item-image">
-                </div>
-            </div>
+            <!-- Aquí se cargarán dinámicamente las películas -->
         </div>
     </div>
 </main>
+
   <footer class="py-3 mt-5">
     <div class="d-flex justify-content-between px-5">
       <a href="https://privacy.thewaltdisneycompany.com/es/politica-de-privacidad/"

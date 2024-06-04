@@ -47,6 +47,10 @@ a {
   z-index: 1000; /* Asegurar que esté sobre otros elementos */
 }
 
+ul{
+  margin: auto;
+}
+
 .nav-links li {
   list-style: none;
 }
