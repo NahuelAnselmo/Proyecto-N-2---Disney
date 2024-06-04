@@ -3,14 +3,14 @@ import { Pelicula } from './peliculaSeries.js';
 import { cargarTabla } from "./utils.js";
 
 
-export const agregarPelicula = (titulo, tipo, categoria, caratula, trailer, descripcion, publicada) => {
-  const pelicula = new Pelicula(titulo, tipo, categoria, caratula, trailer, descripcion, publicada);
+export const agregarPelicula = (titulo, tipo, categoria, caratula, portada, trailer, descripcion, publicada) => {
+  const pelicula = new Pelicula(titulo, tipo, categoria, caratula, portada, trailer, descripcion, publicada);
   pelicula.destacada = false;
 
   agregarPeliculaALS(pelicula);
 };
 
-export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descripcion, publicada) => {
+export const editarPelicula = (titulo, tipo, categoria, caratula, portada, trailer, descripcion, publicada) => {
   const peliculas = obtenerPeliculaSerieDeLs();
   const codigoPelicula = sessionStorage.getItem("codigoPelicula");
 
@@ -24,15 +24,14 @@ export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descr
     return;
   }
 
-  // Actualizar los valores de la película existente
   peliculas[posicionPelicula].titulo = titulo;
   peliculas[posicionPelicula].tipo = tipo;
   peliculas[posicionPelicula].categoria = categoria;
   peliculas[posicionPelicula].caratula = caratula;
+  peliculas[posicionPelicula].portada = portada;
   peliculas[posicionPelicula].trailer = trailer;
   peliculas[posicionPelicula].descripcion = descripcion;
   peliculas[posicionPelicula].publicada = publicada;
-  peliculas[posicionPelicula].destacada = destacada;
 
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
 
@@ -51,7 +50,6 @@ export const editarPelicula = (titulo, tipo, categoria, caratula, trailer, descr
 };
 
 export const eliminarPelicula = (idPelicula, nombrePelicula) => {
-  // 1. CONFIRMAR que se desea eliminar la película
   swal
     .fire({
       title: 'Atención',
@@ -64,21 +62,16 @@ export const eliminarPelicula = (idPelicula, nombrePelicula) => {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        // 2. Obtener el listado de películas
         const peliculas = obtenerPeliculaSerieDeLs();
 
-        // 3. Filtrar esa lista para eliminar la película con id indicado
         const nuevasPeliculas = peliculas.filter((pelicula) => {
           return pelicula.codigo !== idPelicula;
         });
 
-        // 4. Actualizar lista en LS
         localStorage.setItem('peliculas', JSON.stringify(nuevasPeliculas));
 
-        // 5. Actualizar la tabla
         cargarTabla();
 
-        // 6. Notificar al usuario del éxito
         swal.fire({
           title: 'Éxito',
           text: `Película ${nombrePelicula} eliminada correctamente`,
@@ -97,18 +90,32 @@ export const destacarPelicula = (codigoPelicula) => {
   const posicionPelicula = peliculas.findIndex((pelicula) => pelicula.codigo === codigoPelicula);
 
   if (posicionPelicula !== -1) {
-    peliculas[posicionPelicula].destacada = true;
+
+    const estaDestacada = peliculas[posicionPelicula].destacada;
+
+    peliculas[posicionPelicula].destacada = !estaDestacada;
 
     localStorage.setItem('peliculas', JSON.stringify(peliculas));
 
-    swal.fire({
-      title: 'Éxito',
-      text: `Película ${peliculas[posicionPelicula].titulo} destacada correctamente`,
-      icon: 'success',
-      showConfirmButton: true,
-      showCancelButton: false,
-      confirmButtonText: 'Aceptar',
-    });
+    if (estaDestacada) {
+      swal.fire({
+        title: 'Éxito',
+        text: `Película ${peliculas[posicionPelicula].titulo} desdestacada correctamente`,
+        icon: 'success',
+        showConfirmButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Aceptar',
+      });
+    } else {
+      swal.fire({
+        title: 'Éxito',
+        text: `Película ${peliculas[posicionPelicula].titulo} destacada correctamente`,
+        icon: 'success',
+        showConfirmButton: true,
+        showCancelButton: false,
+        confirmButtonText: 'Aceptar',
+      });
+    }
 
     cargarTabla();
   } else {

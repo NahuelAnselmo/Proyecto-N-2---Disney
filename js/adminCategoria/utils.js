@@ -2,10 +2,8 @@ import { obtenerCategoriasDeLS } from '../utils.js';
 import { eliminarCategoria } from './abmCategoria.js';
 import {Categoria} from './Categoria.js';
 
-const $btnAgregarCategoria=document.getElementById("btnAgregarCategoria");
 const $inputNombreCategoria=document.getElementById("inputNombreCategoria");
 const $inputDescripcionCategoria=document.getElementById("inputDescripcionCategoria");
-const $btnCancelarCategoria=document.getElementById("btnCancelarCategoria");
 const $modalAgregarCategoria=document.getElementById("modalAgregarCategoria");
 
 export const iniciarCategoriaMix = () => {
@@ -19,7 +17,7 @@ export const iniciarCategoriaMix = () => {
 
 export const agregarCategoriasALS = (categoria) => {
   let categorias = obtenerCategoriasDeLS();
-  categorias.push(categoria); // Agregar la nueva categoría a la lista de categorías
+  categorias.push(categoria); 
   localStorage.setItem('categorias', JSON.stringify(categorias));
 };
 

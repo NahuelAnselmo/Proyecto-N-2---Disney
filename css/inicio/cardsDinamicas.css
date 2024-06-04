@@ -1,0 +1,120 @@
+
+#movieListContainer {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden; /* Oculta el desbordamiento para mostrar solo 5 tarjetas a la vez */
+    padding: 2px 60px; /* Añade espacio para los botones de navegación */
+    margin: auto;
+}
+
+#movieList {
+    display: flex;
+    overflow-x: auto; /* Permite el scroll horizontal */
+    gap: 20px;
+    white-space: nowrap; /* Previene el ajuste de línea de los elementos */
+}
+
+h5{
+    position: relative;
+    color: white;
+    font-size: 20px;
+    margin: 0px 0px 14px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;   
+}
+
+/* Card styles */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 200px; /* Aumenta el tamaño de las tarjetas */
+    text-align: center;
+    display: inline-block; /* Asegura que las tarjetas se mantengan en línea */
+    vertical-align: top; /* Alinea las tarjetas en la parte superior */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styles */
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Hides the scrollbar for a cleaner look */
+#movieList::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navigation button styles */
+.nav-button {
+    position: absolute;
+    display: inline-block;
+    top: 55%;
+    transform: translateY(-20%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+    border: 5px rgba(0, 0, 0, 0.5);
+    color: rgb(180, 226, 240);
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 15px;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Title styles */
+.list-title {
+    top: 0;
+    left: 7%;
+    transform: translateX(-50%);
+    margin: 20px;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    #movieListContainer {
+        padding: 10px 60px;
+    }
+
+    .card {
+        width: 180px;
+    }
+
+    .nav-button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 150px;
+    }
+
+    .nav-button {
+        padding: 6px;
+    }
+}

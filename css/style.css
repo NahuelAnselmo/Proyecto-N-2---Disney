@@ -7,3 +7,9 @@ h1 {
   height: 50px;
   object-fit: cover;
 }
+
+.portada-tabla {
+  width: 100px;
+  height: 50px;
+  object-fit: cover;
+}

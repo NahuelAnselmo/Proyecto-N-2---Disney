@@ -17,7 +17,6 @@ export const estaLogueado = () => {
       return 0;
     });
   };
-  
 
 export const obtenerPeliculaSerieDeLs = () => {
   return JSON.parse(localStorage.getItem('peliculas')) || [];
@@ -29,14 +28,21 @@ export const agregarPeliculaALS = (pelicula) => {
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
 };
 export function obtenerPeliculasDestacadas() {
-    const pelicula = JSON.parse(localStorage.getItem('pelicula')) || [];
-    return pelicula.filter(pelicula => pelicula.destacada);
+  const peliculas = obtenerPeliculaSerieDeLs();
+  const peliculasDestacadas = peliculas.filter(pelicula => pelicula.destacada === true);
+  return peliculasDestacadas;
 }
 
-
+export const guardarPeliculasDestacadasEnLS = (peliculasDestacadas) => {
+  localStorage.setItem("peliculasDestacadas", JSON.stringify(peliculasDestacadas));
+}
 export function imageExists(url, callback) {
   const img = new Image();
   img.onload = () => callback(true);
   img.onerror = () => callback(false);
   img.src = url;
 }
+
+export const obtenerUsuariosDeLS = () => {
+  return ordenarLista(JSON.parse(localStorage.getItem('usuarios')) || []);
+};

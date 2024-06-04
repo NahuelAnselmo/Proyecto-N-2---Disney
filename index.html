@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Juli, Ivan, Nacho, Nahuel">
+    <meta name="keywords" content="Disney, peliculas, series">
+    <meta name="author" content="Julieta Vignoli, Ivan Balceda, Ignacio Sal Paz, Nahuel Anselmo"/>
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -23,151 +24,156 @@
     <link rel="stylesheet" href="css/index.css" />
     <link rel="shortcut icon" href="img/icons/logo.svg" type="imgage/x-con" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-FpPXxUjNmazR7Yqg3CLPPuyCp9Nf7eWeVpC86Gb/hyFLuT+ZpePWw58nYmzN8rKfjB69e8AKaUrKQjCND+3pAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>Disney+ | Disney, Pixar, Marvel y National Geographic</title>
   </head>
   <body class="index-bg-color">
-    <main>
+    <main class="mb-5">
       <section class="inicio p-0">
         <div class="row no-gutters">
           <article class="col-12 mt-2 d-flex justify-content-end">
-            <div class="inicio-btn-login-contenedor">
-                <button type="button" class="btn btn-outline-dark btn-login h-100 inicio-btn-login border-white" id="btnIniciarSesion">
+            <div class="inicio-btn-login-contenedor me-3 mt-2">
+                <button type="button" class="btn btn-outline-dark btn-login h-100 inicio-btn-login border-white " id="btnIniciarSesion">
                     INICIAR SESIÓN
                 </button>
             </div>
           </article>
           <article class="col-12 col-md-6 inicio-content-txt-margin">
-            <div class="row no-gutters">
-                <img
-                    src="./img/disney/disney-inicio-logo.png"
-                    alt="Disney"
-                    class="col-12 inicio-img-size mb-4"
-                />
-                <h1 class="col-12 text-white fs-1 mb-4">
-                    Tus historias favoritas, todas en un mismo lugar.
-                </h1>
-                <div class="col-12 mb-3 inicio-btn-contratar-contenedor">
-                    <button type="button" class="btn btn-primary btn-contratar-bg-color inicio-btn-contratar-size">
-                        CONTRATÁ LA OFERTA COMBO+
-                    </button>
-                </div>
-                <a href="./pages/Error404.html" class="col-12 text-white fs-6 mb-2">
+            <div class="row no-gutters text-center text-md-start justify-content-center justify-content-md-start">
+              <img
+                  src="./img/disney/disney-inicio-logo.png"
+                  alt="Disney"
+                  class="col-12 inicio-img-size mb-4"
+              />
+              <h1 class="col-12 text-white fs-1 mb-4">
+                  Tus historias favoritas, todas en un mismo lugar.
+              </h1>
+              <div class="col-12 mb-3 inicio-btn-contratar-contenedor">
+                  <button type="button" class="btn btn-primary btn-contratar-bg-color inicio-btn-contratar-size suscripcion">
+                      CONTRATÁ LA OFERTA COMBO+
+                  </button>
+              </div>
+                <a href="./pages/registro.html" class="col-12 text-white fs-6 mb-2">
                     Suscribirme solo a Disney+
                 </a>
+             </div>
             </div>
         </article>
         </div>
     </section>
-    <section class="tabla my-5">
+    <section class="tabla">
       <h2 class="text-white text-center">Elegí tu plan</h2>
       <p class="text-secondary fw-bold fs-size-txt text-center">Podés cancelar en cualquier momento</p>
-      <div class="table-container mx-5">
+      <div class="table-container">
         <table class="table tabla-plan mt-3">
-            <thead class="sticky-header">
-                <tr>
-                    <th class="text-white text-center"></th>
-                    <th class="text-white text-center borde-superior">
-                        <div class="text-center">
-                            <p>Disney+</p>
-                        </div>
-                        <div class="tabla-contenedor-img my-4">
-                            <img src="./img/disney/disney-inicio-img.png" alt="Disney" class="tabla-img">
-                        </div>
-                        <div class="text-center w-100 tabla-contenedor-btn">
-                            <button type="button" class="btn btn-info tabla-btn mx-2 h-100">ARS 3.999/MES (FINAL)*</button>
-                        </div>
-                    </th>
-                    <th class="bg-dark text-white text-center borde-superior">
-                        <div class="text-center">
-                            <p>Combo+</p>
-                        </div>
-                        <div class="tabla-contenedor-img my-4">
-                            <img src="./img/disney/combo+.png" alt="Combo+" class="tabla-img">
-                        </div>
-                        <div class="text-center w-100 tabla-contenedor-btn">
-                            <button type="button" class="btn btn-contratar-bg-color tabla-btn mx-2 h-100">ARS 6.999/MES (FINAL)*</button>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-            <tbody id="tbody-plan">
-                <tr>
-                    <td class="text-secondary align-middle">Precio anual</td>
-                    <td class="text-white text-center">
-                        <p>¡12 meses al precio de 9!</p>
-                        <div class="tabla-contenedor-img">
-                            <button type="button" class="btn btn-info tabla-btn mx-2 h-100">ARS 35.899/AÑO (FINAL)*</button>
-                        </div>
-                    </td>
-                    <td class="bg-dark text-white text-center">
-                        <i class="fas fa-minus"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-secondary align-middle">Estrenos de películas, series originales y clásicos de Disney, Pixar, Marvel, Star Wars y National Geographic</td>
-                    <td class="text-white text-center align-middle">
-                        <i class="fas fa-check"></i>
-                    </td>
-                    <td class="bg-dark text-white text-center align-middle">
-                        <i class="fas fa-check"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-secondary align-middle">Deportes en vivo de las mejores ligas del mundo y los torneos más importantes de ESPN</td>
-                    <td class="text-white text-center align-middle">
-                        <i class="fas fa-minus"></i>
-                    </td>
-                    <td class="bg-dark text-white text-center align-middle">
-                        <i class="fas fa-check"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-secondary align-middle">Producciones locales y películas, series y programas de TV premiados exclusivos de Star+</td>
-                    <td class="text-white text-center align-middle">
-                        <i class="fas fa-minus"></i>
-                    </td>
-                    <td class="bg-dark text-white text-center align-middle">
-                        <i class="fas fa-check"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-secondary align-middle">Dispositivos para ver en simultáneo</td>
-                    <td class="text-white text-center align-middle">
-                        4
-                    </td>
-                    <td class="bg-dark text-secondary text-center align-middle">
-                        4+4
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-secondary align-middle">Descargas para ver tus favoritos sin conexión ni demoras</td>
-                    <td class="text-white text-center align-middle">
-                        <i class="fas fa-check"></i>
-                    </td>
-                    <td class="bg-dark text-white text-center align-middle">
-                        <i class="fas fa-check"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-secondary align-middle">Dispositivos para ver en simultáneo</td>
-                    <td class="text-white text-center align-middle">
-                        7
-                    </td>
-                    <td class="bg-dark text-secondary text-center align-middle">
-                        7+7
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-secondary align-middle">Controles parentales para proteger a tu familia</td>
-                    <td class="text-white text-center align-middle">
-                        <i class="fas fa-check"></i>
-                    </td>
-                    <td class="bg-dark text-white text-center align-middle">
-                        <i class="fas fa-check"></i>
-                    </td>
-                </tr>
-            </tbody>
+          <thead class="sticky-header">
+            <tr>
+              <th class="text-white text-center"></th>
+              <th class="text-white text-center borde-superior">
+                <div class="text-center">
+                  <p>Disney+</p>
+                </div>
+                <div class="tabla-contenedor-img my-4">
+                  <img src="./img/disney/disney-inicio-img.png" alt="Disney" class="tabla-img">
+                </div>
+                <div class="text-center w-100 tabla-contenedor-btn">
+                  <button type="button" class="btn btn-info tabla-btn mx-2 h-100 suscripcion">ARS 3.999/MES (FINAL)*</button>
+                </div>
+              </th>
+              <th class="bg-dark text-white text-center borde-superior">
+                <div class="text-center">
+                  <p>Combo+</p>
+                </div>
+                <div class="tabla-contenedor-img my-4">
+                  <img src="./img/disney/combo+.png" alt="Combo+" class="tabla-img">
+                </div>
+                <div class="text-center w-100 tabla-contenedor-btn">
+                  <button type="button" class="btn btn-contratar-bg-color tabla-btn mx-2 h-100 suscripcion">ARS 6.999/MES (FINAL)*</button>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="tbody-plan container">
+            <tr>
+              <td class="text-secondary align-middle">Precio anual</td>
+              <td class="text-white text-center">
+                <p>¡12 meses al precio de 9!</p>
+                <div class="tabla-contenedor-img">
+                  <button type="button" class="btn btn-info tabla-btn mx-2 h-100 suscripcion">ARS 35.899/AÑO (FINAL)*</button>
+                </div>
+              </td>
+              <td class="bg-dark text-white text-center">
+                <i class="fas fa-minus"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Estrenos de películas, series originales y clásicos de Disney, Pixar, Marvel, Star Wars y National Geographic</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Deportes en vivo de las mejores ligas del mundo y los torneos más importantes de ESPN</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-minus"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Producciones locales y películas, series y programas de TV premiados exclusivos de Star+</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-minus"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Dispositivos para ver en simultáneo</td>
+              <td class="text-white text-center align-middle">
+                4
+              </td>
+              <td class="bg-dark text-secondary text-center align-middle">
+                4+4
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Descargas para ver tus favoritos sin conexión ni demoras</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Dispositivos para ver en simultáneo</td>
+              <td class="text-white text-center align-middle">
+                7
+              </td>
+              <td class="bg-dark text-secondary text-center align-middle">
+                7+7
+              </td>
+            </tr>
+            <tr>
+              <td class="text-secondary align-middle">Controles parentales para proteger a tu familia</td>
+              <td class="text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+              <td class="bg-dark text-white text-center align-middle">
+                <i class="fas fa-check"></i>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </section>
@@ -409,6 +415,32 @@
         </div>
       </section>
     </main>
-    <script src="./js/index.js"></script>
+    <footer class="index-bg-color py-3 mt-5">
+      <div class="d-flex justify-content-center">
+        <img
+                  src="./img/disney/disney-inicio-logo.png"
+                  alt="Disney"
+                  class="col-12 inicio-footer-img-size mb-4"
+              />
+      </div>
+      <div class="footer-links px-5">
+        <a href="./pages/404.html" class="footer-navegacion-txt text-decoration-none mb-3 mb-md-0">Términos de uso</a>
+            <a href="./pages/404.html" class="footer-navegacion-txt text-decoration-none mb-3 mb-md-0">Política de privacidad</a>
+            <a href="./pages/404.html" class="footer-navegacion-txt text-decoration-none mb-3 mb-md-0">Acuerdo de suscripcion</a>
+            <a href="./pages/contacto.html" class="footer-navegacion-txt text-decoration-none mb-3 mb-md-0">Ayuda</a>
+            <a href="./pages/404.html" class="footer-navegacion-txt text-decoration-none mb-3 mb-md-0">Dispositivos compatibles</a>
+            <a href="./pages/404.html" class="footer-navegacion-txt text-decoration-none mb-3 mb-md-0">Acerca de nosotros</a>
+            <a href="./pages/404.html" class="footer-navegacion-txt text-decoration-none mb-3 mb-md-0">Publicidad personalizada</a>
+      </div>
+      <div class="text-center mt-3 px-4">
+        <p class="footer-txt">
+          © 2024 Disney y su familia de compañías afiliadas. Todos los derechos reservados.
+        </p>
+      </div>
+      <p class="text-center px-5 footer-txt">
+        Disney+ es un servicio por suscripción de pago, su contenido está sujeto a disponibilidad. El servicio Disney+ es comercializado por The Walt Disney Company (Argentina) S.A., Tucumán 1, Piso 4º (C1049AAA) Ciudad Autónoma de Buenos Aires, Argentina y número de CUIT 30-63984459-1.
+      </p>
+    </footer>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>

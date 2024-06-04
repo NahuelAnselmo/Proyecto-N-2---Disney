@@ -1,4 +1,4 @@
-import { obtenerPeliculaSerieDeLs, obtenerCategoriasDeLS } from "../utils.js";
+import { obtenerPeliculaSerieDeLs, obtenerCategoriasDeLS, obtenerPeliculasDestacadas } from "../utils.js";
 import { eliminarPelicula } from "./abm.js";
 import { destacarPelicula } from "./abm.js";
 
@@ -46,6 +46,14 @@ const cargarFilaTabla = (pelicula, indice) => {
   const nombreCategoria = categoria ? categoria.nombre : "Sin categoría";
   $tdCategoria.textContent = nombreCategoria;
   $tr.appendChild($tdCategoria);
+
+  const $tdPortada = document.createElement("td");
+  const $portada = document.createElement("img");
+  $portada.src = pelicula.portada;
+  $portada.alt = pelicula.titulo;
+  $portada.classList.add("portada-tabla");
+  $tdPortada.appendChild($portada);
+  $tr.appendChild($tdPortada);
 
   const $tdDescripcion = document.createElement("td");
   $tdDescripcion.textContent = pelicula.descripcion;
@@ -116,7 +124,6 @@ export const prepararEdicionPelicula = (pelicula) => {
         $inputTrailer.value = pelicula.trailer;
         $inputDescripcion.value = pelicula.descripcion;
         $inputPublicada.value = pelicula.publicada;
-        $inputDestacada.value = pelicula.destacada;
 
         sessionStorage.setItem("codigoPelicula", pelicula.codigo);
 
@@ -167,7 +174,7 @@ export function cargarCategoriasEnSelect($selectCategoria) {
 
 export function existePelicula(tituloPelicula) {
   tituloPelicula = tituloPelicula.toUpperCase();
-  const peliculas = obtenerPeliculasDeLs();
+  const peliculas = obtenerPeliculaSerieDeLs();
   for (const pelicula of peliculas) {
     if (pelicula.titulo.toUpperCase() === tituloPelicula) {
       const mensaje = `Esa película ya existe, por favor, intente de nuevo`;
@@ -183,4 +190,70 @@ export function existePelicula(tituloPelicula) {
     }
   }
   return false;
+}
+
+export function cargarPeliculasDestacadas () {
+  const peliculasDestacadas = obtenerPeliculasDestacadas();
+  const $swiperWrapper = document.querySelector(".swiper-wrapper");
+  $swiperWrapper.innerHTML = "";
+
+  peliculasDestacadas.forEach((pelicula) => {
+    const $slide = document.createElement("div");
+    $slide.classList.add("swiper-slide");
+
+    const $img = document.createElement("img");
+    $img.src = pelicula.portada;
+    $img.alt = pelicula.titulo;
+
+    const $overlay = document.createElement("div");
+    $overlay.classList.add("overlay");
+
+    const $title = document.createElement("h1");
+    $title.classList.add("title");
+    $title.textContent = pelicula.titulo;
+
+    const $description = document.createElement("p");
+    $description.classList.add("description");
+    $description.textContent = pelicula.descripcion;
+
+    const $buttons = document.createElement("div");
+    $buttons.classList.add("buttons");
+
+    const $playButton = document.createElement("a");
+    $playButton.href = "../pages/detalle.html"; // Agrega la URL del trailer
+    $playButton.classList.add("btn", "btn-primary", "btn-lg", "btn-primary");
+    $playButton.innerHTML = '<i class="fa-regular fa-circle-play me-1"></i>Reproducir';
+
+    const $moreButton = document.createElement("a");
+    $moreButton.href = "../pages/detalle.html"; // Agrega la URL para ver más detalles
+    $moreButton.classList.add("btn", "btn-outline-warning", "btn-secondary-outline", "btn-lg");
+    $moreButton.innerHTML = '<i class="ri-error-warning-line"></i>Ver Más';
+
+    $buttons.appendChild($playButton);
+    $buttons.appendChild($moreButton);
+
+    $overlay.appendChild($title);
+    $overlay.appendChild($description);
+    $overlay.appendChild($buttons);
+
+    $slide.appendChild($img);
+    $slide.appendChild($overlay);
+
+    $swiperWrapper.appendChild($slide);
+  });
+
+  // Inicializar Swiper
+  const swiper = new Swiper('.swiper-hero', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 }
