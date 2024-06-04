@@ -1,23 +1,60 @@
-.inicio-peliculas{
-margin-top:100px;
+h1 {
+    padding: 60px;
+    text-align: center;
 }
-.carousel {
+
+.contenedor-categorias {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden; /* Asegúrate de que el contenedor no permita desbordamiento horizontal */
+}
+
+.swiper-container {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.swiper-wrapper {
     display: flex;
-    scroll-snap-type: x mandatory;
-    padding: 10px;
-    height: 100px;
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .categoria-btn {
-    scroll-snap-align: start;
-    flex: 0 0 auto;
-    margin-right: 10px;
-    padding: 10px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: #102229;
+    border: 2px solid #318aac;
+    margin: 5px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
 }
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 80px;
+
+.categoria-btn:hover {
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+    background-color: #1D1F2E;
+    border-color: #0a1418;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: #318aac;
+    
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .categoria-btn {
+        font-size: 14px;
+        padding: 0.4em 1em;
+    }
 }
