@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,12 +16,14 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/a253e5d80f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-  <link rel="shortcut icon" href="../img/icons/logo.svg" type="imgage/x-con">
+  <link rel="icon" href="../img/imagesContacto/DisneyPlus-Icon.png">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/inicio/disney.css">
+  <link rel="stylesheet" href="../css/inicio/cardsDinamicas.css">
   <link rel="stylesheet" href="../css/inicio/InicioCyC.css">
-  <title>Inicio | Disney+</title>
+  <link rel="stylesheet" href="../css/busqueda.css">
+  <title>Busqueda | Disney+</title>
 </head>
 
 <body>
@@ -40,7 +41,7 @@
               </svg></span>
             <p class="name-tag mt-4 ">inicio</p>
           </a></li>
-        <li id="btnBusqueda"><a href="#"><span class="icons"><svg alt="search" viewBox="0 0 36 36"
+        <li><a href="#"><span class="icons"><svg alt="search" viewBox="0 0 36 36"
                 style="height: 24px; min-width: 24px; width: 24px; z-index: auto;">
                 <path
                   d="M21.866 24.337c-3.933 2.762-9.398 2.386-12.914-1.13-3.936-3.936-3.936-10.318 0-14.255 3.937-3.936 10.32-3.936 14.256 0 3.327 3.327 3.842 8.402 1.545 12.27l4.56 4.558a2 2 0 0 1 0 2.829l-.174.173a2 2 0 0 1-2.828 0l-4.445-4.445zm-5.786-1.36a6.897 6.897 0 1 0 0-13.794 6.897 6.897 0 0 0 0 13.794z">
@@ -142,134 +143,23 @@
       </nav>
     </div>
   </header>
-  <main>
-    <section>
-      <div class="swiper swiper-hero">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="" alt="" />
-            <div class="overlay">
-              <h1 class="title"></h1>
-              <p class="description"></p>
-              <div class="buttons">
-                <a href="" class="btn btn-primary btn-lg btn-orange">
-                  <i class="fa-regular fa-circle-play me-1"></i>Reproducir
-                </a>
-                <a href="" class="btn btn-outline-secondary btn-orange-outline btn-lg">
-                  <i class="ri-error-warning-line"></i>Ver Más
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-pagination"></div>
-
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>
-    </section>
-    <div class="main disney rows mt-5 mb-5">
-      <div class="grid">
-        <div class="card-disney">
-          <div class="item-border">
-            <img src="../img/disney/disney-txt.png" alt="" class="item-image">
-            <img src="../img/disney/disney.gif" alt="" class="item-image hover image">
-          </div>
-        </div>
-        <div class="card-disney">
-          <div class="item-border">
-            <img src="../img/disney/pixar-txt.png" alt="" class="item-image">
-            <img src="../img/disney/pixar.gif" alt="" class="item-image hover image">
-          </div>
-        </div>
-        <div class="card-disney">
-          <div class="item-border">
-            <img src="../img/disney/marvel-txt.png" alt="" class="item-image">
-            <img src="../img/disney/marvel.gif" alt="" class="item-image hover image">
-          </div>
-        </div>
-        <div class="card-disney">
-          <div class="item-border">
-            <img src="../img/disney/star-txt.png" alt="" class="item-image">
-            <img src="../img/disney/starwars.gif" alt="" class="item-image hover image">
-          </div>
-        </div>
-        <div class="card-disney">
-          <div class="item-border">
-            <img src="../img/disney/national-txt.png" alt="" class="item-image">
-            <img src="../img/disney/national.gif" alt="" class="item-image hover image">
-          </div>
-        </div>
-      </div>
+  <main class="inicio-peliculas">
+    <div class="input-contenedor mb-5">
+        <input type="text" class="w-100 h-100 bg-secondary input-fs-size" placeholder="Categoria" id="inputBuscar">
     </div>
-
-    <section class="container-fluid">
-      <div>
-        <h3 class="text-light mt-3 text-center">Recomendaciones</h3>
-
-        <div class="swiper swiper-cards mt-3">
-          <div class="swiper-wrapper" id="wrapper-cards">
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="" alt="" />
-                <div class="overlay-card card">
-                  <div class="text card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text mb-4"></p>
-                    <div
-                      class="botones-card mt-auto d-flex justify-content-around"
-                    >
-                    <a href="../pages/detalle.html" class="btn-play"
-                        ><i class="ri-play-large-line"></i
-                      ></a>
-                      <a href=""><i class="ri-bookmark-line"></i></a>
-                      <a href=""><i class="ri-add-line"></i></a>
+    <div class="container">
+        <h1 class="text-start text-white fw-bold">Explorar</h1>
+        <div class="main disney rows mt-5 mb-5 container">
+            <div class="grid">
+                <div class="card-disney">
+                    <div class="item-border" id="contenedor-img">
+                        <img src="../img/disney/disney-txt.png" alt="" class="item-image">
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
         </div>
-      </div>
-      <div>
-        <h3 class="text-light mt-3 text-center">Comedia</h3>
-
-        <div class="swiper swiper-cards mt-3">
-          <div class="swiper-wrapper" id="wrapper-cards">
-            <div class="swiper-slide">
-              <div class="card">
-                <img src="" alt="" />
-                <div class="overlay-card card">
-                  <div class="text card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text mb-4"></p>
-                    <div
-                      class="botones-card mt-auto d-flex justify-content-around"
-                    >
-                      <a href="" class="btn-play"
-                        ><i class="ri-play-large-line"></i
-                      ></a>
-                      <a href=""><i class="ri-bookmark-line"></i></a>
-                      <a href=""><i class="ri-add-line"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+</main>
   <footer class="py-3 mt-5">
     <div class="d-flex justify-content-between px-5">
       <a href="https://privacy.thewaltdisneycompany.com/es/politica-de-privacidad/"
@@ -301,8 +191,6 @@
       © Disney. Todos los derechos reservados.
     </p>
   </footer>
-  <script type="module" src="../js/inicio/carrusel.js"></script>
-  <script type="module" src="../js/inicio/cards.js"></script>
+  <script type="module" src="../js/busqueda/app.js"></script>
 </body>
-
 </html>
