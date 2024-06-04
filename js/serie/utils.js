@@ -38,7 +38,7 @@ export const cargarCategorias = () => {
         $btnCategoria.addEventListener('click', () => {
             const categoriaId = $btnCategoria.dataset.categoriaId; 
             sessionStorage.setItem('idCategoria', categoriaId); 
-            cargarSeriesPorCategoria(); 
+            cargarSeriesPorCategoria(); x
         });
     });
 };
