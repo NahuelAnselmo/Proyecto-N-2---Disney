@@ -5,6 +5,7 @@ cargarPeliculasDestacadas();
 
 cargarSlider();
 
+
 const botonesPlay = document.querySelectorAll(".btn-play");
 
 botonesPlay.forEach((boton) => {
@@ -25,3 +26,5 @@ botonesPlay.forEach((boton) => {
   }
   });
 });
+
+

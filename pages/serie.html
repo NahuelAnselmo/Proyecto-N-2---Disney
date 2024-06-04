@@ -147,28 +147,19 @@
 
   <main class="inicio-series">
     <h1 class="text-center text-secondary fw-bold m-5">Series</h1>
-    <section class="contenedor-categorias">
-      <div id="carousel-categorias" class="carousel">
-        <button class="carousel-control-prev" type="button" data-bs-target="#carousel-categorias" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
-        <div class="carousel-inner" id="contenedor-categorias">
+    <section class="container contenedor-categorias">
+      <div id="carousel-categorias" class="swiper-container">
+        <div class="swiper-wrapper" id="contenedor-categorias">
         </div>
-        <button class="carousel-control-next" type="button" data-bs-target="#carousel-categorias" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Atras</span>
-        </button>
+        <div class="swiper-button-prev carousel-control-prev"></div>
+        <div class="swiper-button-next carousel-control-next"></div>
       </div>
     </section>
     <div class="main disney rows mt-5 mb-5 container">
       <div class="grid">
-        <!-- Aquí se cargarán las series -->
       </div>
     </div>
   </main>
-
-
   <footer class="index-bg-color py-3 mt-5">
     <div class="d-flex justify-content-center">
       <img src="../img/disney/disney-inicio-logo.png" alt="Disney" class="col-12 inicio-footer-img-size mb-4" />
